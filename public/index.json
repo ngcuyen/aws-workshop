@@ -1,0 +1,141 @@
+[
+{
+	"uri": "//localhost:1313/",
+	"title": "Triển khai Ứng dụng ShareNote với Auto Scaling Group",
+	"tags": [],
+	"description": "",
+	"content": "Triển khai Ứng dụng ShareNote với Auto Scaling Group Tổng quan Ở bài thực hành này, chúng ta sẽ tiến hành việc triển khai ứng dụng với Auto Scaling Group nhằm đảm bảo khả năng co giãn của ứng dụng đó theo nhu cầu của người truy cập. Thêm vào đó, chúng ta cũng sẽ triển khai Load Balancer nhằm cân bằng tải và điều phối các yêu cầu truy cập từ phía người dùng đến Application Tier của chúng ta.\nHãy chắc chắn rằng bạn đã xem qua tài liệu Triển khai Ứng dụng ShareNote trên Máy ảo Windows/AmazonLinux và nắm được cách triển khai ứng dụng trên máy ảo. Chúng ta sẽ cần sử dụng máy ảo được triển khai ShareNote cho việc triển khai đồng loạt và mở rộng trong Auto Scaling Group.\nAuto Scaling Group Auto Scaling Group (nhóm co giãn tự động) là một nhóm các EC2 Instance. Nhóm này có thể co giãn số lượng của các EC2 Instance thành viên theo chính sách co giãn (scaling policy) mà bạn đặt ra.\nLaunch Template Launch Template (khuôn mẫu khởi tạo) là một tính năng giúp bạn tạo khuôn mẫu cho việc khởi tạo các EC2 Instance. Nhờ thế, bạn có thể quy trình hóa và đơn giản hóa công tác khởi tạo các EC2 Instance cho dịch vụ Auto Scaling (co giãn tự động).\nLoad Balancer Load Balancer (máy cân bằng tải) là một công cụ có thể phân phối lưu lượng dữ liệu được trao đổi tới các tài nguyên AWS (cụ thể trong bài lab này là các EC2 Instances) trong Target Group.\nTarget Group Target Group (nhóm mục tiêu) là một nhóm những thành phần tài nguyên AWS sẽ nhận lưu lượng dữ liệu được phân phối và truyền tải bởi Load Balancer.\nNội dung: Các bước chuẩn bị Khởi tạo Launch Template Khởi tạo Target Group Khởi tạo Load Balancer Khởi tạo Auto Scaling Group Kiểm tra kết quả "
+},
+{
+	"uri": "//localhost:1313/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/2-preparation/2.1-iam-role/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/2-preparation/2.2-policy/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/3-collection-storage/3.1-s3-bucket/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/3-collection-storage/3.2-delivery-stream/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/3-collection-storage/3.3-sample-data/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/4-data-catalog/4.1-glue-crawler/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/4-data-catalog/4.2-test-data/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/6-analysis-visualize/6.1-athena/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/6-analysis-visualize/6.2-quicksight/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "//localhost:1313/2-preparation/",
+	"title": "Preparation Steps",
+	"tags": [],
+	"description": "",
+	"content": "Ở phần này, bạn sẽ tạo một Launch Template sử dụng AMI bạn đã tạo từ Ubuntu Instance ở bước trước.\nTạo Launch Template Để tạo Launch Template, chúng ta thực hiện như sau:\nTruy cập vào EC2 Management Console. Ở thanh điều hướng bên trái, chọn Launch Templates. Ở trang khởi đầu, chọn Create launch template. Ở trang Create launch template, thiết lập launch template với các thông số như sau: Launch template name and description: Launch template name - required: sharenote-template (Tên do bạn chọn) Amazon machine image (AMI): AMI: Lựa chọn sharenote-image mà chúng ta đã tạo ở bước trước. Kéo màn hình xuống dưới, mục Instance type Instance type: Lựa chọn t2.micro (Đây là lựa chọn cho bài thực hành, thực tế sẽ có yêu cầu cấu hình lớn hơn) Key pair (login) Key pair name: Lựa chọn key pair đang sử dụng của bạn. Network settings: Networking platform: Chọn Virtual Private Cloud (VPC) Security groups: Lựa chọn Security Group mà bạn đã tạo ra và phù hợp. (VD: sharenote-sg) Kéo màn hình xuống dưới cùng, click Create launch template để tạo launch template.\nChọn View lauch template để xem template vừa được khởi tạo.\n"
+},
+{
+	"uri": "//localhost:1313/3-collection-storage/",
+	"title": "Data Collection and Storage",
+	"tags": [],
+	"description": "",
+	"content": "Ở phần này, bạn sẽ tạo một Target Group để làm mục tiêu Load Balancer truyển tải lưu lượng dữ liệu tới.\nTạo Target Group Để tạo Target Group, chúng ta thực hiện như sau:\nTruy cập vào EC2 Management Console. Ở thanh điều hướng bên trái, kéo xuống dưới sau đó chọn Target Groups. Ở trang Target groups, chọn Create Target Group.\nỞ trang Specify group details, thiết lập các thông số như sau cho target group:\nBasic configuration: Choose a target type: Chọn Instances. Target group name: Nhập tên của target group (VD: sharenote-tg). Protocol: HTTP. Port: 8080 (Port sử dụng bởi ShareNote). Các mục còn lại để mặc định. Kéo màn hình xuống cuối trang, click Next.\nỞ trang Register targets,\nClick chọn EC2 instance chúng ta đã tạo. Click Create target group. Danh sách target group sẽ liệt kê target group mà chúng ta vừa tạo trong danh sách.\n"
+},
+{
+	"uri": "//localhost:1313/4-data-catalog/",
+	"title": "Create Data Catalog",
+	"tags": [],
+	"description": "",
+	"content": "Ở bước này, chúng ta sẽ triển khai Load Balancer điều phối các request từ người dùng đến các EC2 instance chạy ứng dụng ShareNote của chúng ta.\nTạo Load Balancer Truy cập vào EC2 Management Console. Ở thanh điều hướng bên trái, kéo xuống dưới và click Load Balancers. Ở trang danh sách Load Balancer, click Create Load Balancer. Ở trang Select load balancer type, chọn Create ở mục Application Load Balancer. Ở trang Create Application Load Balancer, thiết lập các thông số như sau: Basic Configuration: Name: Nhập tên của Load Balancer (VD: sharenote-lb) Scheme: internet-facing IP address type: ipv4 Kéo màn hình xuống dưới, tại mục Network mapping. Tại mục VPC chọn VPC default. Tại mục Mappings Chọn hai AZ ap-southeast-1a và ap-southeast-1b Kéo màn hình xuống dưới, tại mục Security Groups, click chọn sharenote-sg. Tại mục Listeners and routing , phần Default action click chọn sharenote-tg target group mà chúng ta đã tạo ở bước trước đó. Kéo màn hình xuống dưới cùng, click Create load balancer. Trang tạo Load Balancer thành công sẽ hiển thị ra cho bạn. Click View load balancers để trở về danh sách Load Balancer Quá trình tạo Load Balancer sẽ mất khoảng 5-10 phút để hoàn thành. Bạn có thể kiểm tra sự thay đổi trạng thái từ provisioning sang active ở danh sách Load Balancer.\nHãy ghi chú lại DNS name của Load Balancer lại vì đây sẽ là địa chỉ chúng ta dùng để truy cập vào ứng dụng dược triển khai. Truy cập địa chỉ DNS trên browser của bạn, đảm bảo có thể truy cập tới ứng dụng Share Note. Tuy nhiên lúc này chúng ta chỉ có 1 máy chủ EC2 duy nhất. Tiếp theo chúng ta sẽ tiến hành cấu hình tính năng Auto Scaling Group, giúp tự động tăng số lượng EC2 instance của chúng ta khi lượng truy cập tăng cao.\n"
+},
+{
+	"uri": "//localhost:1313/6-analysis-visualize/",
+	"title": "Analysis and visualization",
+	"tags": [],
+	"description": "",
+	"content": "Ở phần này, chúng ta sẽ triển khai một Auto Scaling Group cho ứng dụng ShareNote để đảm bảo ứng dụng của chúng ta sẽ được triển khai với tính sẵn sàng cao, và có khả năng tăng số lượng EC2 instance khi người dùng truy cập vào hệ thống tăng.\nTạo AutoScaling Group Truy cập vào EC2 Management Console. Ở thanh điều hướng bên trái, chọn Auto Scaling Groups. Ở trang Auto Scaling Groups, chọn Create an Auto Scaling group. Bắt đầu với trang Choose launch template or configuration, thiết lập các thông tin như sau: Name: Nhập vào tên của Auto Scaling Group (VD: sharenote-asg) Launch template: Chọn launch template chúng ta đã tạo trước đó (VD: sharenote-template) Kéo màn hình xuống dưới và click Next. Ở trang Configure settings: Mục Network, phần Subnets Lựa chọn 2 subnet ở hai AZ ap-northeast-1a và ap-northeast-1b. Kéo màn hình xuống dưới và click Next. Ở trang Configure advanced options: Mục Load balancing - optional click chọn Attach to an existing load balancer. Click chọn Choose from your load balancer target groups. Click chọn target group mà chúng ta đã tạo trước đó. (VD: sharenote-tg) Kéo màn hình xuống dưới và click Next. Ở trang Configure group size and scaling policies: Group size - optional: Desired capacity: Nhập 1. (Default) Minimum capacity: Nhập 1. (Default) Maximum capacity: Nhập 3. Tại mục Scaling policies - optional: Lựa chọn trong bài thực hành này nhằm tạo điều kiện dễ dàng hơn cho bước kiểm tra được thực hiện tiếp theo. Bạn hoàn toàn có thể thiết lập chính sách scale tài nguyên theo nhu cầu của bạn. Chọn Target tracking scaling policy. Metric type: Chọn Application Load Balancer request count per target. Target group: Chọn target group mà chúng ta đã tạo (VD: sharenote-tg). Target value: Nhập 30. Click Next. Ở trang Add notifications, chọn Next. Ở trang Add tags, chọn Next. Ở trang Review, chọn Create Auto Scaling Group Quá trình khởi tạo Auto Scaling Group sẽ được thực hiện, Auto Scaling Group vừa được tạo sẽ hiển thị trong danh sách, và bạn có thể chọn vào nó để xem thông tin chi tiết.\nVhúng ta có thể theo dõi các EC2 instance hiện có trong Auto Scaling Group ở trang Instance management. Các instance có tình trạng InService là các instance đã sẵn sàng hoạt động.\nĐến đây, chúng ta đã hoàn thành việc triển khai ứng dụng Share Note với Auto Scaling Group và Elastic Load Balancer. Với mô hình này, bạn có thể triển khai ứng dụng của mình với tính sẵn sàng cao, dễ dàng mở rộng và cân bằng tải các yêu cầu từ người dùng.\nỞ bước kế tiếp, chúng ta sẽ thử nghiệm tính năng thêm EC2 Instance dựa trên việc tăng số lượng truy cập đến ứng dụng của chúng ta.\nTrước khi thực hiện bước kế tiếp hãy kiểm tra cấu hình Automatic scaling của Auto Scaling Group của chúng ta có giống như dưới đây không. Nếu quá trình tạo scaling policy bị lỗi, chúng ta có thể click Create dynamic scaling policy để tiến hành tạo lại scaling policy mới.\n"
+},
+{
+	"uri": "//localhost:1313/5-data-transform/",
+	"title": "Data Transformation",
+	"tags": [],
+	"description": "",
+	"content": "Ở phần này, chúng ta sẽ triển khai một Auto Scaling Group cho ứng dụng ShareNote để đảm bảo ứng dụng của chúng ta sẽ được triển khai với tính sẵn sàng cao, và có khả năng tăng số lượng EC2 instance khi người dùng truy cập vào hệ thống tăng.\nTạo AutoScaling Group Truy cập vào EC2 Management Console. Ở thanh điều hướng bên trái, chọn Auto Scaling Groups. Ở trang Auto Scaling Groups, chọn Create an Auto Scaling group. Bắt đầu với trang Choose launch template or configuration, thiết lập các thông tin như sau: Name: Nhập vào tên của Auto Scaling Group (VD: sharenote-asg) Launch template: Chọn launch template chúng ta đã tạo trước đó (VD: sharenote-template) Kéo màn hình xuống dưới và click Next. Ở trang Configure settings: Mục Network, phần Subnets Lựa chọn 2 subnet ở hai AZ ap-northeast-1a và ap-northeast-1b. Kéo màn hình xuống dưới và click Next. Ở trang Configure advanced options: Mục Load balancing - optional click chọn Attach to an existing load balancer. Click chọn Choose from your load balancer target groups. Click chọn target group mà chúng ta đã tạo trước đó. (VD: sharenote-tg) Kéo màn hình xuống dưới và click Next. Ở trang Configure group size and scaling policies: Group size - optional: Desired capacity: Nhập 1. (Default) Minimum capacity: Nhập 1. (Default) Maximum capacity: Nhập 3. Tại mục Scaling policies - optional: Lựa chọn trong bài thực hành này nhằm tạo điều kiện dễ dàng hơn cho bước kiểm tra được thực hiện tiếp theo. Bạn hoàn toàn có thể thiết lập chính sách scale tài nguyên theo nhu cầu của bạn. Chọn Target tracking scaling policy. Metric type: Chọn Application Load Balancer request count per target. Target group: Chọn target group mà chúng ta đã tạo (VD: sharenote-tg). Target value: Nhập 30. Click Next. Ở trang Add notifications, chọn Next. Ở trang Add tags, chọn Next. Ở trang Review, chọn Create Auto Scaling Group Quá trình khởi tạo Auto Scaling Group sẽ được thực hiện, Auto Scaling Group vừa được tạo sẽ hiển thị trong danh sách, và bạn có thể chọn vào nó để xem thông tin chi tiết.\nVhúng ta có thể theo dõi các EC2 instance hiện có trong Auto Scaling Group ở trang Instance management. Các instance có tình trạng InService là các instance đã sẵn sàng hoạt động.\nĐến đây, chúng ta đã hoàn thành việc triển khai ứng dụng Share Note với Auto Scaling Group và Elastic Load Balancer. Với mô hình này, bạn có thể triển khai ứng dụng của mình với tính sẵn sàng cao, dễ dàng mở rộng và cân bằng tải các yêu cầu từ người dùng.\nỞ bước kế tiếp, chúng ta sẽ thử nghiệm tính năng thêm EC2 Instance dựa trên việc tăng số lượng truy cập đến ứng dụng của chúng ta.\nTrước khi thực hiện bước kế tiếp hãy kiểm tra cấu hình Automatic scaling của Auto Scaling Group của chúng ta có giống như dưới đây không. Nếu quá trình tạo scaling policy bị lỗi, chúng ta có thể click Create dynamic scaling policy để tiến hành tạo lại scaling policy mới.\n"
+},
+{
+	"uri": "//localhost:1313/7-data-warehouse/",
+	"title": "Data Warehouse",
+	"tags": [],
+	"description": "",
+	"content": "Ở phần này, chúng ta sẽ triển khai một Auto Scaling Group cho ứng dụng ShareNote để đảm bảo ứng dụng của chúng ta sẽ được triển khai với tính sẵn sàng cao, và có khả năng tăng số lượng EC2 instance khi người dùng truy cập vào hệ thống tăng.\nTạo AutoScaling Group Truy cập vào EC2 Management Console. Ở thanh điều hướng bên trái, chọn Auto Scaling Groups. Ở trang Auto Scaling Groups, chọn Create an Auto Scaling group. Bắt đầu với trang Choose launch template or configuration, thiết lập các thông tin như sau: Name: Nhập vào tên của Auto Scaling Group (VD: sharenote-asg) Launch template: Chọn launch template chúng ta đã tạo trước đó (VD: sharenote-template) Kéo màn hình xuống dưới và click Next. Ở trang Configure settings: Mục Network, phần Subnets Lựa chọn 2 subnet ở hai AZ ap-northeast-1a và ap-northeast-1b. Kéo màn hình xuống dưới và click Next. Ở trang Configure advanced options: Mục Load balancing - optional click chọn Attach to an existing load balancer. Click chọn Choose from your load balancer target groups. Click chọn target group mà chúng ta đã tạo trước đó. (VD: sharenote-tg) Kéo màn hình xuống dưới và click Next. Ở trang Configure group size and scaling policies: Group size - optional: Desired capacity: Nhập 1. (Default) Minimum capacity: Nhập 1. (Default) Maximum capacity: Nhập 3. Tại mục Scaling policies - optional: Lựa chọn trong bài thực hành này nhằm tạo điều kiện dễ dàng hơn cho bước kiểm tra được thực hiện tiếp theo. Bạn hoàn toàn có thể thiết lập chính sách scale tài nguyên theo nhu cầu của bạn. Chọn Target tracking scaling policy. Metric type: Chọn Application Load Balancer request count per target. Target group: Chọn target group mà chúng ta đã tạo (VD: sharenote-tg). Target value: Nhập 30. Click Next. Ở trang Add notifications, chọn Next. Ở trang Add tags, chọn Next. Ở trang Review, chọn Create Auto Scaling Group Quá trình khởi tạo Auto Scaling Group sẽ được thực hiện, Auto Scaling Group vừa được tạo sẽ hiển thị trong danh sách, và bạn có thể chọn vào nó để xem thông tin chi tiết.\nVhúng ta có thể theo dõi các EC2 instance hiện có trong Auto Scaling Group ở trang Instance management. Các instance có tình trạng InService là các instance đã sẵn sàng hoạt động.\nĐến đây, chúng ta đã hoàn thành việc triển khai ứng dụng Share Note với Auto Scaling Group và Elastic Load Balancer. Với mô hình này, bạn có thể triển khai ứng dụng của mình với tính sẵn sàng cao, dễ dàng mở rộng và cân bằng tải các yêu cầu từ người dùng.\nỞ bước kế tiếp, chúng ta sẽ thử nghiệm tính năng thêm EC2 Instance dựa trên việc tăng số lượng truy cập đến ứng dụng của chúng ta.\nTrước khi thực hiện bước kế tiếp hãy kiểm tra cấu hình Automatic scaling của Auto Scaling Group của chúng ta có giống như dưới đây không. Nếu quá trình tạo scaling policy bị lỗi, chúng ta có thể click Create dynamic scaling policy để tiến hành tạo lại scaling policy mới.\n"
+},
+{
+	"uri": "//localhost:1313/8-clean-up/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ dọn dẹp tài nguyên theo thứ tự như sau:\nXóa Auto Scaling Group: Truy cập EC2 Management Console Trên thanh điều hướng bên trái, chọn Auto Scaling Groups Chọn Auto Scaling Group liên quan tới bài lab. Click Delete Gõ delete vào ô trống và nhấn delete Xóa Load Balancer: Truy cập EC2 Management Console Trên thanh điều hướng bên trái, chọn Load Balancers Chọn Load Balancer liên quan tới bài lab. Click Actions. Click Delete. Xóa Target Group: Truy cập EC2 Management Console Trên thanh điều hướng bên trái, chọn Target Groups Chọn Target Group liên quan tới bài lab. Click Actions. Click Delete. Click Yes, delete Xóa Launch Template: Truy cập EC2 Management Console Trên thanh điều hướng bên trái, chọn Launch Templates Chọn Launch Template liên quan tới bài lab. Click Actions. Click Delete template Gõ delete vào ô trống và nhấn delete Xóa AMI: Truy cập EC2 Management Console Trên thanh điều hướng bên trái, chọn AMIs Chọn AMI liên quan tới bài lab. Click Actions. Click Deregister. Click Continue. Terminate EC2 instance Truy cập EC2 Management Console Trên thanh điều hướng bên trái, chọn Intances Chọn tất cả EC2 Instance liên quan tới bài lab. Click Actions. Click Manage Instance State. Chọn Terminate. Click Change State Xóa DB Instance Truy cập RDS Management Console Trên thanh điều hướng bên trái, chọn Databases Chọn tất cả DB Instance liên quan tới bài lab. Click Actions. Click Delete Bỏ chọn Create final snapshot? và chọn I acknowledge that upon instance deletion, automated backups, including system snapshots and point-in-time recovery, will no longer be available Gõ delete me vào ô trống. Click Delete Xóa Security Group Truy cập EC2 Management Console Trên thanh điều hướng bên trái, chọn Security Groups Chọn tất cả Security Groups liên quan tới bài lab. Click Actions. Click Delete security groups Click Delete "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
