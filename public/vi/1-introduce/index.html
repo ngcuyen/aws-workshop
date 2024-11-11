@@ -12,21 +12,21 @@
     <title>Giới thiệu :: Triển khai Ứng dụng ShareNote với Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1731314840" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1731314840" rel="stylesheet">
-    <link href="/css/hybrid.css?1731314840" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1731314840" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1731314840" rel="stylesheet">
-    <link href="/css/auto-complete.css?1731314840" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1731314840" rel="stylesheet">
-    <link href="/css/theme.css?1731314840" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1731314840" rel="stylesheet">
+    <link href="/css/nucleus.css?1731317689" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1731317689" rel="stylesheet">
+    <link href="/css/hybrid.css?1731317689" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1731317689" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1731317689" rel="stylesheet">
+    <link href="/css/auto-complete.css?1731317689" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1731317689" rel="stylesheet">
+    <link href="/css/theme.css?1731317689" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1731317689" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1731314840" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1731317689" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1731314840"></script>
+    <script src="/js/jquery-3.3.1.min.js?1731317689"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1731314840"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1731314840"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1731317689"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1731317689"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1731314840"></script>
+<script type="text/javascript" src="/js/search.js?1731317689"></script>
  
   </div>
 
@@ -564,32 +564,34 @@
 
 
 	<h2 id="tổng-quan">Tổng quan</h2>
-<p><strong>Data Lake</strong> là một thuật ngữ chuyên môn có liên quan đến Big Data (Dữ liệu lớn). Data Lake đơn giản là nơi chứa dữ liệu thô (chưa xử lý) chờ được xử lý phân tích và đưa ra các đánh giá nhận xét (insight).</p>
-<p><strong>Data Lake</strong> có các tính chất sau:</p>
-<p>Thu thập mọi thứ – chứa tất cả dữ liệu dạng thô hoặc đã được xử lý trong khoảng thời gian dài.
-Đa người dùng – cho phép nhiều người dùng tinh chỉnh, khám phá và làm phong phú dữ liệu.
-Truy cập linh hoạt – hỗ trợ nhiều cách thức truy cập dữ liệu (access pattern) trên cơ sở hạ tầng dùng chung: lô (batch), tương tác, trực tuyến, tìm kiếm, trong bộ nhớ và các công cụ xử lý khác.</p>
-<p><strong>Amazon Glue:</strong> là một dịch vụ ETL hoàn chỉnh. Bạn có thể sử dụng Glue Crawler để nhận diện dữ liệu của bạn và lưu trữ thông tin dữ liệu (metadata) liên quan (ví dụ: định nghĩa bảng và schema) trong Glue Data Catalog. Sau khi được phân loại, dữ liệu của bạn có thể được tìm kiếm ngay, truy vấn và sẵn sàng cho các công việc ETL.</p>
-<p><strong>AWS Glue ETL</strong> có thể tạo mã để thực hiện công việc chuyển đổi dữ liệu và đưa dữ liệu vào vùng lưu trữ. AWS Glue có khả năng tạo mã Python có thể tùy chỉnh, tái sử dụng.</p>
+<p><strong><em>Data Lake</em></strong> là một thuật ngữ chuyên môn có liên quan đến Big Data (Dữ liệu lớn). Data Lake đơn giản là nơi chứa dữ liệu thô (chưa xử lý) chờ được xử lý phân tích và đưa ra các đánh giá nhận xét (insight).</p>
+<p><strong><em>Data Lake</em></strong> có các tính chất sau:</p>
+<ul>
+<li>Thu thập mọi thứ – chứa tất cả dữ liệu dạng thô hoặc đã được xử lý trong khoảng thời gian dài.</li>
+<li>Đa người dùng – cho phép nhiều người dùng tinh chỉnh, khám phá và làm phong phú dữ liệu.</li>
+<li>Truy cập linh hoạt – hỗ trợ nhiều cách thức truy cập dữ liệu (access pattern) trên cơ sở hạ tầng dùng chung: lô (batch), tương tác, trực tuyến, tìm kiếm, trong bộ nhớ và các công cụ xử lý khác.</li>
+</ul>
+<p><strong><em>Amazon Glue:</em></strong> là một dịch vụ ETL hoàn chỉnh. Bạn có thể sử dụng Glue Crawler để nhận diện dữ liệu của bạn và lưu trữ thông tin dữ liệu (metadata) liên quan (ví dụ: định nghĩa bảng và schema) trong Glue Data Catalog. Sau khi được phân loại, dữ liệu của bạn có thể được tìm kiếm ngay, truy vấn và sẵn sàng cho các công việc ETL.</p>
+<p><strong><em>AWS Glue ETL</em></strong> có thể tạo mã để thực hiện công việc chuyển đổi dữ liệu và đưa dữ liệu vào vùng lưu trữ. AWS Glue có khả năng tạo mã Python có thể tùy chỉnh, tái sử dụng.</p>
 <p>Sau khi các ETL Job của bạn đã sẵn sàng, chúng ta có thể tạo lịch để chạy trên môi trường Apache Spark có khả năng mở rộng lớn được quản lý bởi AWS Glue.</p>
-<p><strong>Amazon Athena:</strong> một dịch vụ truy vấn tương tác được sử dụng để phân tích dữ liệu trong Amazon S3 với SQL tiêu chuẩn. Chúng ta chỉ cần trỏ đến dữ liệu của bạn trong Amazon S3, xác định schema và bắt đầu truy vấn bằng trình chỉnh sửa truy vấn tích hợp. Amazon Athena cho phép chúng ta khai thác tất cả dữ liệu của mình trong Amazon S3 mà không cần phải thiết lập các quy trình ETL phức tạp. Amazon Athena tính tiền dựa trên các truy vấn được chạy.</p>
-<p><strong>Amazon Athena</strong> sử dụng Presto với hỗ trợ SQL ANSI và hoạt động với nhiều định dạng dữ liệu tiêu chuẩn, bao gồm CSV, JSON, ORC, Avro và Parquet. Athena được khuyến nghị cho nhu cầu truy vấn nhanh, nhưng nó cũng có thể xử lý các phân tích phức tạp, bao gồm các phép Join với lượng dữ liệu lớn, các window functions và mảng.</p>
-<p><strong>Amazon QuickSight:</strong> một dịch vụ biểu diễn dữ liệu được quản lý hoàn toàn bởi AWS.</p>
+<p><strong><em>Amazon Athena:</em></strong> một dịch vụ truy vấn tương tác được sử dụng để phân tích dữ liệu trong Amazon S3 với SQL tiêu chuẩn. Chúng ta chỉ cần trỏ đến dữ liệu của bạn trong Amazon S3, xác định schema và bắt đầu truy vấn bằng trình chỉnh sửa truy vấn tích hợp. Amazon Athena cho phép chúng ta khai thác tất cả dữ liệu của mình trong Amazon S3 mà không cần phải thiết lập các quy trình ETL phức tạp. Amazon Athena tính tiền dựa trên các truy vấn được chạy.</p>
+<p><strong><em>Amazon Athena</em></strong> sử dụng Presto với hỗ trợ SQL ANSI và hoạt động với nhiều định dạng dữ liệu tiêu chuẩn, bao gồm CSV, JSON, ORC, Avro và Parquet. Athena được khuyến nghị cho nhu cầu truy vấn nhanh, nhưng nó cũng có thể xử lý các phân tích phức tạp, bao gồm các phép Join với lượng dữ liệu lớn, các window functions và mảng.</p>
+<p><strong><em>Amazon QuickSight:</em></strong> một dịch vụ biểu diễn dữ liệu được quản lý hoàn toàn bởi AWS.</p>
 <ul>
 <li>
-<p>Data source là một kho lưu trữ dữ liệu bên ngoài và bạn cần cấu hình việc truy cập dữ liệu trong kho dữ liệu bên ngoài này, ví dụ. Amazon S3, Amazon Athena, Salesforce, v.v.</p>
+<p><strong>Data source</strong> là một kho lưu trữ dữ liệu bên ngoài và bạn cần cấu hình việc truy cập dữ liệu trong kho dữ liệu bên ngoài này, ví dụ. Amazon S3, Amazon Athena, Salesforce, v.v.</p>
 </li>
 <li>
-<p>Dataset xác định dữ liệu cụ thể trong Data source mà bạn muốn sử dụng. Ví dụ: Data source có thể là một bảng nếu bạn đang kết nối với Data source cơ sở dữ liệu. Nó có thể là một file nếu bạn đang kết nối với Data source Amazon S3.</p>
+<p><strong>Dataset</strong> xác định dữ liệu cụ thể trong Data source mà bạn muốn sử dụng. Ví dụ: Data source có thể là một bảng nếu bạn đang kết nối với Data source cơ sở dữ liệu. Nó có thể là một file nếu bạn đang kết nối với Data source Amazon S3.</p>
 </li>
 <li>
-<p>Analysis là nơi chứa một tập hợp các Visual và câu chuyện có liên quan, ví dụ như tất cả các câu chuyện áp dụng cho một mục tiêu kinh doanh nhất định hoặc KPI.</p>
+<p><strong>Analysis</strong> là nơi chứa một tập hợp các Visual và câu chuyện có liên quan, ví dụ như tất cả các câu chuyện áp dụng cho một mục tiêu kinh doanh nhất định hoặc KPI.</p>
 </li>
 <li>
-<p>Visual là một biểu diễn đồ họa cho dữ liệu của bạn. Bạn có thể tạo nhiều loại Visual khác nhau trong một analysis, sử dụng các bộ dữ liệu và loại Visual khác nhau.</p>
+<p><strong>Visual</strong> là một biểu diễn đồ họa cho dữ liệu của bạn. Bạn có thể tạo nhiều loại Visual khác nhau trong một analysis, sử dụng các bộ dữ liệu và loại Visual khác nhau.</p>
 </li>
 <li>
-<p>Dashboard là một trang bao gồm một hoặc nhiều Analysis chỉ cho phép xem mà bạn có thể chia sẻ với những người dùng Amazon QuickSight khác cho mục đích báo cáo. Dashboard lưu giữ cấu hình của bản Analysis tại thời điểm bạn xuất bản nó, bao gồm những thứ như lọc, tham số, điều khiển và thứ tự sắp xếp.</p>
+<p><strong>Dashboard</strong> là một trang bao gồm một hoặc nhiều Analysis chỉ cho phép xem mà bạn có thể chia sẻ với những người dùng Amazon QuickSight khác cho mục đích báo cáo. Dashboard lưu giữ cấu hình của bản Analysis tại thời điểm bạn xuất bản nó, bao gồm những thứ như lọc, tham số, điều khiển và thứ tự sắp xếp.</p>
 </li>
 </ul>
 
@@ -933,19 +935,19 @@ Truy cập linh hoạt – hỗ trợ nhiều cách thức truy cập dữ liệ
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1731314840"></script>
-    <script src="/js/perfect-scrollbar.min.js?1731314840"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1731314840"></script>
-    <script src="/js/jquery.sticky.js?1731314840"></script>
-    <script src="/js/featherlight.min.js?1731314840"></script>
-    <script src="/js/highlight.pack.js?1731314840"></script>
+    <script src="/js/clipboard.min.js?1731317689"></script>
+    <script src="/js/perfect-scrollbar.min.js?1731317689"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1731317689"></script>
+    <script src="/js/jquery.sticky.js?1731317689"></script>
+    <script src="/js/featherlight.min.js?1731317689"></script>
+    <script src="/js/highlight.pack.js?1731317689"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1731314840"></script>
-    <script src="/js/learn.js?1731314840"></script>
-    <script src="/js/hugo-learn.js?1731314840"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1731317689"></script>
+    <script src="/js/learn.js?1731317689"></script>
+    <script src="/js/hugo-learn.js?1731317689"></script>
 
-    <link href="/mermaid/mermaid.css?1731314840" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1731314840"></script>
+    <link href="/mermaid/mermaid.css?1731317689" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1731317689"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
