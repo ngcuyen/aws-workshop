@@ -75,6 +75,6 @@ Hình dưới đây minh họa kiến trúc hệ thống Data Lake mà chúng ta
 - Triển khai một hệ thống Data Lake đơn giản bằng các dịch vụ AWS.
 - Tích hợp các công cụ phân tích và trực quan hóa để trích xuất thông tin hữu ích từ dữ liệu.
 
-::: note
-This is a note message.
-:::
+{{% notice info %}}
+Bài lab này được thực hiện ở region Singapore (ap-southeast-1).
+{{% /notice %}}
