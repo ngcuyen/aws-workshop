@@ -1,0 +1,12 @@
+/* CSS cho note */
+.note {
+	background-color: #f9f9f9;
+	border-left: 5px solid #4caf50;
+	padding: 10px;
+	margin: 20px 0;
+	font-style: italic;
+}
+
+.note p {
+	margin: 0;
+}
