@@ -54,6 +54,19 @@
                 href="http://localhost:1313/2-preparation/2.2-policy/"
                 />
   </url><url>
+    <loc>http://localhost:1313/2-preparation/2.3-attach-policy-to-role/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/vi/2-preparation/2.3-attach-policy-to-role/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/2-preparation/2.3-attach-policy-to-role/"
+                />
+  </url><url>
     <loc>http://localhost:1313/3-collection-storage/3.1-s3-bucket/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link

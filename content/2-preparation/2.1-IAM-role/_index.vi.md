@@ -45,7 +45,7 @@ Trong bước này, chúng ta sẽ chuyển tới giao diện IAM Console và t�
 
 5. Trong giao diện **Create role**, ở bước **Name, review and create**
 
-   - Ở **Role name**, đặt tên **AWSGlueServiceRoleDefault**
+   - Ở **Role name**, đặt tên `AWSGlueServiceRoleDefault`
      ![AWSGlueServiceRole](/images/1/name_role.png?width=90pc)
    - Xem lại thông tin role tại **Select trusted entity** và **Add Permission**
      ![AWSGlueServiceRole](/images/1/review_role.png?width=90pc)

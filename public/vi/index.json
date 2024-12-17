@@ -4,7 +4,7 @@
 	"title": "Tạo IAM role",
 	"tags": [],
 	"description": "",
-	"content": "Tạo IAM Role Trong bước này, chúng ta sẽ chuyển tới giao diện IAM Console và tạo role cho dịch vụ Glue. Role này sẽ cho phép AWS Glue truy cập tới dữ liệu nằm trong S3 và tạo các đối tượng cần thiết trong Glue Catalog.\nTruy cập vào giao diện AWS Management Console\nTìm IAM Chọn IAM để vào IAM Dashboard Trong IAM Dashboard\nChọn Role Chọn Create role "
+	"content": "Tạo IAM Role Trong bước này, chúng ta sẽ chuyển tới giao diện IAM Console và tạo role cho dịch vụ Glue. Role này sẽ cho phép AWS Glue truy cập tới dữ liệu nằm trong S3 và tạo các đối tượng cần thiết trong Glue Catalog.\nTruy cập vào giao diện AWS Management Console\nTìm IAM Chọn IAM để vào IAM Dashboard Trong IAM Dashboard\nChọn Role Chọn Create role Trong giao diện Create role, ở bước Select trusted entity\nChọn AWS Service Ở phần Service or use case chọn Glue Chọn Next Trong giao diện Create role, ở bước Add Permission\nTìm và chọn AmazonS3FullAccess Tìm và chọn AWSGlueServiceRole Chọn Next Trong giao diện Create role, ở bước Name, review and create\nỞ Role name, đặt tên AWSGlueServiceRoleDefault Xem lại thông tin role tại Select trusted entity và Add Permission Chọn Create role Giao diện tạo role thành công: "
 },
 {
 	"uri": "http://localhost:1313/vi/",
@@ -67,7 +67,7 @@
 	"title": "Tạo policy",
 	"tags": [],
 	"description": "",
-	"content": "Tạo policy "
+	"content": "Tạo policy Tiếp theo, ta sẽ tạo 1 policy.\nTại giao diện IAM\nChọn Policy Chọn Create policy Tại giao diện Create policy, ở bước Specify permission\nChọn JSON Paste đoạn code sau vào Policy Editor, chú ý để AccountID là account ID của bạn. Sau đó chọn Next {\r\u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;,\r\u0026#34;Statement\u0026#34;: [\r{\r\u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;,\r\u0026#34;Action\u0026#34;: \u0026#34;iam:PassRole\u0026#34;,\r\u0026#34;Resource\u0026#34;: \u0026#34;arn:aws:iam::AccountID:role/AWSGlueServiceRoleDefault\u0026#34;\r}\r]\r} Tại giao diện Create policy, ở bước Review and create\nĐặt Policy name là AWSGlueServicePolicy Review lại các thông số và chọn Create policy Tạo policy thành công "
 },
 {
 	"uri": "http://localhost:1313/vi/6-analysis-visualize/6.2-quicksight/",
@@ -82,6 +82,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Trong hướng dẫn này, chúng ta sẽ tạo một S3 bucket để lưu trữ dữ liệu và tạo một Delivery stream để thu thập dữ liệu.\nNội dung: Tạo S3 bucket Tạo Delivery Stream Tạo dữ liệu mẫu "
+},
+{
+	"uri": "http://localhost:1313/vi/2-preparation/2.3-attach-policy-to-role/",
+	"title": "Gắn policy vào role",
+	"tags": [],
+	"description": "",
+	"content": "Gắn policy vào role Ở phần này, ta gắn policy vào role đã tạo trước, để đảm bảo role có các quyền tương ứng được định nghĩa trong policy\nTrong IAM Dashboard\nChọn Role Chọn Create role "
 },
 {
 	"uri": "http://localhost:1313/vi/3-collection-storage/3.3-sample-data/",
