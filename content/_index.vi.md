@@ -82,5 +82,4 @@ Hình dưới đây minh họa kiến trúc hệ thống Data Lake mà chúng ta
 4. [Tạo Data Catalog](4-data-catalog)
 5. [Chuyển đổi dữ liệu](5-data-transform)
 6. [Phân tích và trực quan hóa](6-analysis-visualize)
-7. [Data Warehouse](7-data-warehouse)
-8. [Dọn dẹp tài nguyên](8-clean-up)
+7. [Dọn dẹp tài nguyên](7-clean-up)

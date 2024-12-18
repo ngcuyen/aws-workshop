@@ -12,21 +12,21 @@
     <title>Phân tích với Athena :: Triển khai Ứng dụng ShareNote với Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1734543100" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734543100" rel="stylesheet">
-    <link href="/css/hybrid.css?1734543100" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734543100" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734543100" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734543100" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734543100" rel="stylesheet">
-    <link href="/css/theme.css?1734543100" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734543100" rel="stylesheet">
+    <link href="/css/nucleus.css?1734550383" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734550383" rel="stylesheet">
+    <link href="/css/hybrid.css?1734550383" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734550383" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734550383" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734550383" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734550383" rel="stylesheet">
+    <link href="/css/theme.css?1734550383" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734550383" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734543100" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734550383" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734543100"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734550383"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734543100"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734543100"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734550383"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734550383"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734543100"></script>
+<script type="text/javascript" src="/js/search.js?1734550383"></script>
  
   </div>
 
@@ -386,24 +386,7 @@
 </li>
            
 <li
-  data-nav-id="/vi/7-data-warehouse/"
-  title="Data Warehouse"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="/vi/7-data-warehouse/">
-    <b>7. </b>Data Warehouse 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-           
-<li
-  data-nav-id="/vi/8-clean-up/"
+  data-nav-id="/vi/7-clean-up/"
   title="Dọn dẹp tài nguyên"
   class="dd-item 
         
@@ -411,8 +394,8 @@
         
         "
 >
-  <a href="/vi/8-clean-up/">
-    <b>8. </b>Dọn dẹp tài nguyên 
+  <a href="/vi/7-clean-up/">
+    <b>7. </b>Dọn dẹp tài nguyên 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -576,7 +559,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#phân-tích-với-athena">Phân tích với Athena</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -600,7 +587,50 @@
 
 
 
-	
+	<h2 id="phân-tích-với-athena">Phân tích với Athena</h2>
+<ol>
+<li>Tìm kiếm và chọn dịch vụ <strong>Athena</strong></li>
+</ol>
+<p><img alt="S3" src="/images/4/4.2/athena.png?width=90pc"></p>
+<ol start="2">
+<li>Thực hiện query với:</li>
+</ol>
+<ul>
+<li>Data source: AwsDataCatalog</li>
+<li>Database: summitdb</li>
+<li>Thực hiện câu truy vấn:</li>
+</ul>
+<pre tabindex="0"><code>SELECT artist_name,
+       count(artist_name) AS count
+FROM processed_data
+GROUP BY artist_name
+ORDER BY count DESC
+</code></pre><p><img alt="S3" src="/images/6/6.1/query_athena.png?width=90pc"></p>
+<ul>
+<li>Chọn Run query</li>
+</ul>
+<ol start="3">
+<li>Kết quả câu truy vấn trên:</li>
+</ol>
+<p><img alt="S3" src="/images/6/6.1/result_query1.png?width=90pc"></p>
+<ol start="2">
+<li>Tiếp theo, thực hiện query với:</li>
+</ol>
+<pre tabindex="0"><code>SELECT device_id,
+       track_name,
+       count(track_name) AS count
+FROM processed_data
+GROUP BY device_id, track_name
+ORDER BY count DESC
+</code></pre><p><img alt="S3" src="/images/6/6.1/query2.png?width=90pc"></p>
+<ul>
+<li>Chọn Run query</li>
+</ul>
+<ol start="3">
+<li>Kết quả câu truy vấn trên:</li>
+</ol>
+<p><img alt="S3" src="/images/6/6.1/result_query2.png?width=90pc"></p>
+
 
 
 
@@ -939,22 +969,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
         
@@ -977,19 +991,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734543100"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734543100"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734543100"></script>
-    <script src="/js/jquery.sticky.js?1734543100"></script>
-    <script src="/js/featherlight.min.js?1734543100"></script>
-    <script src="/js/highlight.pack.js?1734543100"></script>
+    <script src="/js/clipboard.min.js?1734550383"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734550383"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734550383"></script>
+    <script src="/js/jquery.sticky.js?1734550383"></script>
+    <script src="/js/featherlight.min.js?1734550383"></script>
+    <script src="/js/highlight.pack.js?1734550383"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734543100"></script>
-    <script src="/js/learn.js?1734543100"></script>
-    <script src="/js/hugo-learn.js?1734543100"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734550383"></script>
+    <script src="/js/learn.js?1734550383"></script>
+    <script src="/js/hugo-learn.js?1734550383"></script>
 
-    <link href="/mermaid/mermaid.css?1734543100" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734543100"></script>
+    <link href="/mermaid/mermaid.css?1734550383" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734550383"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

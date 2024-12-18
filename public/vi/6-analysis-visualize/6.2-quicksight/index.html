@@ -12,21 +12,21 @@
     <title>Visualize với QuickSight :: Triển khai Ứng dụng ShareNote với Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1734543100" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734543100" rel="stylesheet">
-    <link href="/css/hybrid.css?1734543100" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734543100" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734543100" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734543100" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734543100" rel="stylesheet">
-    <link href="/css/theme.css?1734543100" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734543100" rel="stylesheet">
+    <link href="/css/nucleus.css?1734550383" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734550383" rel="stylesheet">
+    <link href="/css/hybrid.css?1734550383" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734550383" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734550383" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734550383" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734550383" rel="stylesheet">
+    <link href="/css/theme.css?1734550383" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734550383" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734543100" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734550383" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734543100"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734550383"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734543100"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734543100"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734550383"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734550383"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734543100"></script>
+<script type="text/javascript" src="/js/search.js?1734550383"></script>
  
   </div>
 
@@ -386,24 +386,7 @@
 </li>
            
 <li
-  data-nav-id="/vi/7-data-warehouse/"
-  title="Data Warehouse"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="/vi/7-data-warehouse/">
-    <b>7. </b>Data Warehouse 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-           
-<li
-  data-nav-id="/vi/8-clean-up/"
+  data-nav-id="/vi/7-clean-up/"
   title="Dọn dẹp tài nguyên"
   class="dd-item 
         
@@ -411,8 +394,8 @@
         
         "
 >
-  <a href="/vi/8-clean-up/">
-    <b>8. </b>Dọn dẹp tài nguyên 
+  <a href="/vi/7-clean-up/">
+    <b>7. </b>Dọn dẹp tài nguyên 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -576,7 +559,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#visualize-với-quicksight">Visualize với QuickSight</a>
+      <ul>
+        <li><a href="#tạo-tài-khoản-quicksight">Tạo tài khoản QuickSight</a></li>
+        <li><a href="#thực-hiện-trực-quan-hóa-dữ-liệu">Thực hiện trực quan hóa dữ liệu</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -600,7 +592,115 @@
 
 
 
-	
+	<h2 id="visualize-với-quicksight">Visualize với QuickSight</h2>
+<p>Chúng ta sẽ dùng Quicksight để trực quan hóa dữ liệu từ table processed_data</p>
+<p>Trước tiên, ta sẽ tạo tài khoản Quicksight</p>
+
+<div class="notices info" ><p>Nếu bạn đã có tài khoản QuickSight thì có thể bỏ qua bước này</p>
+</div>
+
+<h3 id="tạo-tài-khoản-quicksight">Tạo tài khoản QuickSight</h3>
+<ol>
+<li>Tìm kiếm và chọn dịch vụ <strong>QuickSight</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/quicksight.png?width=90pc"></p>
+<ol start="2">
+<li>Sign up for QuickSight</li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/signup_ud.png?width=90pc"></p>
+<ol start="3">
+<li>Nhập email của bạn, chọn Authentication Method và chọn region Asia Pacific (Singapore)</li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/quicksight_form_ud.png?width=90pc"></p>
+<ol start="4">
+<li>Ở Account info</li>
+</ol>
+<ul>
+<li>Nhập <code>demo-visualize</code> làm QuickSight account name</li>
+<li>IAM role: chọn Use QuickSight-managed role (default)</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/quicksight_form2.png?width=90pc"></p>
+<ul>
+<li>Chọn Finish</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/fiinish_signup.png?width=90pc"></p>
+<ul>
+<li>Sau khi đăng ký thành công, ta vào được giao diện QuickSight</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/quicksight_dashboard.png?width=90pc"></p>
+<h3 id="thực-hiện-trực-quan-hóa-dữ-liệu">Thực hiện trực quan hóa dữ liệu</h3>
+<ol>
+<li>Tại giao diện QuickSight, chọn Manage QuickSight</li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/manage_quicksight.png?width=90pc"></p>
+<ol start="2">
+<li>Chọn Security &amp; permissions, chọn Manage</li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/click_manage_setting.png?width=90pc"></p>
+<ol start="3">
+<li>Tick chọn các service</li>
+</ol>
+<ul>
+<li>Đối với Amazon S3: chọn S3 Buckets Linked To QuickSight Account, chọn bucket <strong>asg-datalake-demo-2024</strong>, sau đó chọn Finish</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/allow_s3.png?width=90pc"></p>
+<ol start="4">
+<li>Tick chọn các dịch vụ còn lại, sau đó chọn Save</li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/save_allow.png?width=90pc"></p>
+<ol start="5">
+<li>Trở lại giao diện QuickSight</li>
+</ol>
+<ul>
+<li>Chọn Dataset</li>
+<li>Chọn New dataset</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/create_dataset_btn_ud.png?width=90pc"></p>
+<ol start="6">
+<li>Tạo data source</li>
+</ol>
+<ul>
+<li>Chọn Athena</li>
+<li>Nhập Data source name là <code>summitdemo</code></li>
+<li>Chọn Validate Connection. Nếu kết nối thành công, sẽ hiển thị SSL is enabled</li>
+<li>Chọn Create data source</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/create_data_source.png?width=90pc"></p>
+<ol start="7">
+<li>Chọn Table:</li>
+</ol>
+<ul>
+<li>Catalog, chọn AwsDataCatalog</li>
+<li>Database, nhập <code>summitdb</code></li>
+<li>Table, chọn processed_data</li>
+<li>Chọn Select</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/select_table.png?width=90pc"></p>
+<ol start="8">
+<li>Trong bước Finish dataset creation:</li>
+</ol>
+<ul>
+<li>Chọn Directly query your data</li>
+<li>Chọn Visualize</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/finish_create_dataset.png?width=90pc"></p>
+<ol start="9">
+<li>Sử dụng Amazon Quick Sight để visualize các dữ liệu đã được chuyển đổi (transform):</li>
+</ol>
+<ul>
+<li>Tạo 1 Tree map của users và số tracks nhạc mà họ nghe.</li>
+<li>Click vào chọn Tree Map</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/tree_map.png?width=90pc"></p>
+<ul>
+<li>Kết quả Tree map</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/treemap.png?width=90pc"></p>
+<ol start="10">
+<li>Ta có thể sử dung với các Visual types khác, chẳng hạn Pie chart</li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/piechart.png?width=90pc"></p>
+
 
 
 
@@ -942,22 +1042,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
         
@@ -970,7 +1054,7 @@
 			<a class="nav nav-prev" href="/vi/6-analysis-visualize/6.1-athena/" title="Phân tích với Athena"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/7-data-warehouse/" title="Data Warehouse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/7-clean-up/" title="Dọn dẹp tài nguyên" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -980,19 +1064,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734543100"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734543100"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734543100"></script>
-    <script src="/js/jquery.sticky.js?1734543100"></script>
-    <script src="/js/featherlight.min.js?1734543100"></script>
-    <script src="/js/highlight.pack.js?1734543100"></script>
+    <script src="/js/clipboard.min.js?1734550383"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734550383"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734550383"></script>
+    <script src="/js/jquery.sticky.js?1734550383"></script>
+    <script src="/js/featherlight.min.js?1734550383"></script>
+    <script src="/js/highlight.pack.js?1734550383"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734543100"></script>
-    <script src="/js/learn.js?1734543100"></script>
-    <script src="/js/hugo-learn.js?1734543100"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734550383"></script>
+    <script src="/js/learn.js?1734550383"></script>
+    <script src="/js/hugo-learn.js?1734550383"></script>
 
-    <link href="/mermaid/mermaid.css?1734543100" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734543100"></script>
+    <link href="/mermaid/mermaid.css?1734550383" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734550383"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

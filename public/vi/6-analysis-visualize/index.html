@@ -12,21 +12,21 @@
     <title>Phân tích và trực quan hóa :: Triển khai Ứng dụng ShareNote với Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1734543100" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734543100" rel="stylesheet">
-    <link href="/css/hybrid.css?1734543100" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734543100" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734543100" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734543100" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734543100" rel="stylesheet">
-    <link href="/css/theme.css?1734543100" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734543100" rel="stylesheet">
+    <link href="/css/nucleus.css?1734550383" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734550383" rel="stylesheet">
+    <link href="/css/hybrid.css?1734550383" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734550383" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734550383" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734550383" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734550383" rel="stylesheet">
+    <link href="/css/theme.css?1734550383" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734550383" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734543100" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734550383" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734543100"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734550383"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734543100"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734543100"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734550383"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734550383"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734543100"></script>
+<script type="text/javascript" src="/js/search.js?1734550383"></script>
  
   </div>
 
@@ -386,24 +386,7 @@
 </li>
            
 <li
-  data-nav-id="/vi/7-data-warehouse/"
-  title="Data Warehouse"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="/vi/7-data-warehouse/">
-    <b>7. </b>Data Warehouse 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-           
-<li
-  data-nav-id="/vi/8-clean-up/"
+  data-nav-id="/vi/7-clean-up/"
   title="Dọn dẹp tài nguyên"
   class="dd-item 
         
@@ -411,8 +394,8 @@
         
         "
 >
-  <a href="/vi/8-clean-up/">
-    <b>8. </b>Dọn dẹp tài nguyên 
+  <a href="/vi/7-clean-up/">
+    <b>7. </b>Dọn dẹp tài nguyên 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -572,8 +555,8 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tổng-quan-về-amazon-athena">Tổng quan về Amazon Athena</a></li>
-    <li><a href="#tổng-quan-về-amazon-quicksight">Tổng quan về Amazon QuickSight</a></li>
+    <li><a href="#amazon-athena">Amazon Athena</a></li>
+    <li><a href="#amazon-quicksight">Amazon QuickSight</a></li>
     <li><a href="#nội-dung">Nội dung:</a></li>
   </ul>
 </nav>
@@ -600,10 +583,10 @@
 
 
 
-	<h2 id="tổng-quan-về-amazon-athena">Tổng quan về Amazon Athena</h2>
+	<h2 id="amazon-athena">Amazon Athena</h2>
 <p><strong>Amazon Athena</strong> là một dịch vụ truy vấn tương tác được sử dụng để phân tích dữ liệu trong Amazon S3 bằng SQL tiêu chuẩn. Chúng ta chỉ cần trỏ đến dữ liệu của bạn trong Amazon S3, xác định schema và bắt đầu truy vấn bằng trình chỉnh sửa truy vấn tích hợp. Amazon Athena cho phép chúng ta khai thác tất cả dữ liệu của mình trong Amazon S3 mà không cần phải thiết lập các quy trình ETL phức tạp. Amazon Athena tính tiền dựa trên số lượng truy vấn được chạy.</p>
 <p><strong>Amazon Athena</strong> sử dụng Presto với hỗ trợ SQL ANSI và làm việc với nhiều định dạng dữ liệu tiêu chuẩn, bao gồm CSV, JSON, ORC, Avro, và Parquet. Athena được khuyến nghị cho các nhu cầu truy vấn nhanh, nhưng cũng có khả năng xử lý phân tích phức tạp, bao gồm các phép join với lượng dữ liệu lớn, các window function và mảng.</p>
-<h2 id="tổng-quan-về-amazon-quicksight">Tổng quan về Amazon QuickSight</h2>
+<h2 id="amazon-quicksight">Amazon QuickSight</h2>
 <p><strong>Amazon QuickSight</strong> là một dịch vụ biểu diễn dữ liệu được quản lý hoàn toàn bởi AWS.</p>
 <ul>
 <li>
@@ -965,22 +948,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
         
@@ -1003,19 +970,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734543100"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734543100"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734543100"></script>
-    <script src="/js/jquery.sticky.js?1734543100"></script>
-    <script src="/js/featherlight.min.js?1734543100"></script>
-    <script src="/js/highlight.pack.js?1734543100"></script>
+    <script src="/js/clipboard.min.js?1734550383"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734550383"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734550383"></script>
+    <script src="/js/jquery.sticky.js?1734550383"></script>
+    <script src="/js/featherlight.min.js?1734550383"></script>
+    <script src="/js/highlight.pack.js?1734550383"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734543100"></script>
-    <script src="/js/learn.js?1734543100"></script>
-    <script src="/js/hugo-learn.js?1734543100"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734550383"></script>
+    <script src="/js/learn.js?1734550383"></script>
+    <script src="/js/hugo-learn.js?1734550383"></script>
 
-    <link href="/mermaid/mermaid.css?1734543100" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734543100"></script>
+    <link href="/mermaid/mermaid.css?1734550383" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734550383"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
