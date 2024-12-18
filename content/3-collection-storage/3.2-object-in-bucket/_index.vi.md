@@ -16,7 +16,7 @@ pre = "<b>3.2. </b>"
 
    ![object](/images/3/name_folder_data.png?width=90pc)
 
-3. Kiểm tra các thông số và chọn **Create folder**
+3. Kiểm tra các cấu hình và chọn **Create folder**
 
    ![object](/images/3/name_folder_data_and_submit.png?width=90pc)
 
@@ -29,7 +29,7 @@ pre = "<b>3.2. </b>"
 
    ![object](/images/3/create_ref_data_folder_success.png?width=90pc)
 
-6. Tiến hành download file **tracks_list.json** [tại đây](https://raw.githubusercontent.com/AWS-First-Cloud-Journey/Lab-000035-DataLake-on-AWS/master/tracks_list.json)
+6. Tiến hành download file **tracks_list.json** [tại đây](https://raw.githubusercontent.com/ngcuyen/ws-doc/refs/heads/main/tracks_list.json)
 
    - **Ctrl + S** để lưu file
 

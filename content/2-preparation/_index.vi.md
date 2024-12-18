@@ -14,3 +14,4 @@ Chúng ta sẽ chuẩn bị để tạo IAM role và gắn các policy cần thi
 
 1. [Tạo IAM role](2.1-IAM-role)
 2. [Tạo policy](2.2-policy)
+3. [Attach policy vào role](2.3-attach-policy-to-role/)

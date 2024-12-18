@@ -12,5 +12,6 @@ ta sử dụng Kinesis Data Generator để tạo dữ liệu mẫu thông qua C
 #### Nội dung:
 
 1. [Tạo S3 bucket](3.1-s3-bucket)
-2. [Tạo Firehose Stream](3.2-kinesis-firehose-stream)
-3. [Tạo dữ liệu mẫu](3.3-sample-data)
+2. [Tạo các object trong bucket](3.2-object-in-bucket/)
+3. [Tạo Firehose Stream](3.3-kinesis-firehose-stream)
+4. [Tạo dữ liệu mẫu](3.4-sample-data)

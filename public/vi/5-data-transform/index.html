@@ -12,21 +12,21 @@
     <title>Chuyển đổi dữ liệu :: Triển khai Ứng dụng ShareNote với Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1734550383" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734550383" rel="stylesheet">
-    <link href="/css/hybrid.css?1734550383" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734550383" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734550383" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734550383" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734550383" rel="stylesheet">
-    <link href="/css/theme.css?1734550383" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734550383" rel="stylesheet">
+    <link href="/css/nucleus.css?1734556599" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734556599" rel="stylesheet">
+    <link href="/css/hybrid.css?1734556599" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734556599" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734556599" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734556599" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734556599" rel="stylesheet">
+    <link href="/css/theme.css?1734556599" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734556599" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734550383" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734556599" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734550383"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734556599"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734550383"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734550383"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734556599"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734556599"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734550383"></script>
+<script type="text/javascript" src="/js/search.js?1734556599"></script>
  
   </div>
 
@@ -591,7 +591,7 @@
 </ol>
 <p><img alt="Glue" src="/images/5/glue.png?width=90pc"></p>
 <ol start="2">
-<li>Chọn Notebook</li>
+<li>Chọn <strong>Notebook</strong></li>
 </ol>
 <p><img alt="Glue" src="/images/5/create_notebook_btn.png?width=90pc"></p>
 <ol start="3">
@@ -599,19 +599,19 @@
 <p>Tải file <a href="https://github.com/ngcuyen/ws-doc/blob/main/notebook.ipynb">notebook.ipynb</a></p>
 </li>
 <li>
-<p>Ở form Notebook</p>
+<p>Ở form <strong>Notebook</strong></p>
 </li>
 </ol>
 <ul>
-<li>Chọn Upload Notebook</li>
-<li>Chọn Choose file</li>
+<li>Chọn <strong>Upload Notebook</strong></li>
+<li>Chọn <strong>Choose file</strong></li>
 <li>Chọn file notebook đã tải</li>
-<li>IAM role: chọn AWSGlueServiceRoleDefault</li>
-<li>Chọn Create notebook</li>
+<li>IAM role: chọn <strong>AWSGlueServiceRoleDefault</strong></li>
+<li>Chọn <strong>Create notebook</strong></li>
 </ul>
 <p><img alt="Glue" src="/images/5/upload_notebook.png?width=90pc"></p>
 <ol start="5">
-<li>Đợi notebook start, ta chạy từng cell notebook và xem kết quả</li>
+<li>Đợi <strong>notebook</strong> start, ta chạy từng <strong>cell</strong> notebook và xem kết quả</li>
 </ol>
 <ul>
 <li>Đầu tiên, chúng ta sẽ run cell để tạo session</li>
@@ -622,79 +622,79 @@
 </ul>
 <p><img alt="Glue" src="/images/5/nb1.1.png?width=90pc"></p>
 <ul>
-<li>Vào Interactive Session, kiểm tra thấy session đã được tạo thành công</li>
+<li>Vào <strong>Interactive Session</strong>, kiểm tra thấy session đã được tạo thành công</li>
 </ul>
 <p><img alt="Glue" src="/images/5/session_created.png?width=90pc"></p>
 <ul>
-<li>Ở cell [2]: Import các libraries SparkContext, GlueContext, boto3, awsglue và khởi tạo session</li>
-<li>Ở cell [3]: Câu lệnh khởi tạo GlueContext để sử dụng các tính năng ETL của AWS Glue và lấy SparkSession để xử lý dữ liệu bằng Apache Spark.</li>
+<li>Ở cell [2]: Import các libraries <strong>SparkContext, GlueContext, boto3, awsglue và khởi tạo session</strong></li>
+<li>Ở cell [3]: Câu lệnh khởi tạo <strong>GlueContext</strong> để sử dụng các tính năng <strong>ETL</strong> của <strong>AWS Glue</strong> và lấy <strong>SparkSession</strong> để xử lý dữ liệu bằng <strong>Apache Spark</strong>.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb23.png?width=90pc"></p>
 <ul>
-<li>Ở cell [4]: tạo hai DynamicFrames raw_data và reference_data bằng cách truy xuất dữ liệu từ các bảng raw2024 và reference_data trong cơ sở dữ liệu summitdb trong AWS Glue Data Catalog.</li>
-<li>Ở cell [5]: Câu lệnh raw_data.printSchema() hiển thị cấu trúc lược đồ (schema) của DynamicFrame raw_data, bao gồm các cột, kiểu dữ liệu và cấu trúc lồng nhau (nếu có).</li>
+<li>Ở cell [4]: tạo hai <strong>DynamicFrames</strong> <strong>raw_data</strong> và <strong>reference_data</strong> bằng cách truy xuất dữ liệu từ các bảng <strong>raw2024</strong> và <strong>reference_data</strong> trong cơ sở dữ liệu <strong>summitdb</strong> trong <strong>AWS Glue Data Catalog</strong>.</li>
+<li>Ở cell [5]: Câu lệnh raw_data.printSchema() hiển thị cấu trúc lược đồ (schema) của <strong>DynamicFrame</strong> <strong>raw_data</strong>, bao gồm các cột, kiểu dữ liệu và cấu trúc lồng nhau (nếu có).</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb45.png?width=90pc"></p>
 <ul>
-<li>Ở cell [6]: Câu lệnh reference_data.printSchema() hiển thị cấu trúc lược đồ (schema) của DynamicFrame reference_data, bao gồm các cột và kiểu dữ liệu tương ứng.</li>
-<li>Ở cell [7]: Các câu lệnh này sẽ in ra số lượng bản ghi của hai DynamicFrames raw_data và reference_data.</li>
+<li>Ở cell [6]: Câu lệnh reference_data.printSchema() hiển thị cấu trúc lược đồ (schema) của <strong>DynamicFrame</strong> <strong>reference_data</strong>, bao gồm các cột và kiểu dữ liệu tương ứng.</li>
+<li>Ở cell [7]: Các câu lệnh này sẽ in ra số lượng bản ghi của hai <strong>DynamicFrames</strong> <strong>raw_data</strong> và <strong>reference_data</strong>.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb67.png?width=90pc"></p>
 <ul>
-<li>Ở cell [8]: xem nhanh 5 bản ghi đầu tiên trong raw_data dưới dạng DataFrame Spark.</li>
+<li>Ở cell [8]: xem nhanh 5 bản ghi đầu tiên trong raw_data dưới dạng <strong>DataFrame Spark</strong>.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb8.png?width=90pc"></p>
 <ul>
-<li>Ở cell [9]: xem nhanh 5 bản ghi đầu tiên trong reference_data dưới dạng DataFrame Spark.</li>
+<li>Ở cell [9]: xem nhanh 5 bản ghi đầu tiên trong reference_data dưới dạng <strong>DataFrame Spark</strong>.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb9.png?width=90pc"></p>
 <ul>
-<li>Ở cell [10]: tạo một bảng tạm thời từ raw_data, truy vấn các bản ghi có activity_type là &ldquo;Running&rdquo; và hiển thị số lượng cũng như 5 dòng đầu tiên của kết quả.</li>
+<li>Ở cell [10]: tạo một bảng tạm thời từ <strong>raw_data</strong>, truy vấn các bản ghi có <strong>activity_type</strong> là &ldquo;<strong>Running</strong>&rdquo; và hiển thị số lượng cũng như 5 dòng đầu tiên của kết quả.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb10.png?width=90pc"></p>
 <ul>
-<li>Ở cell [11]: truy vấn các bản ghi có activity_type là &ldquo;Working&rdquo; từ bảng tạm thời temp_raw_data, hiển thị số lượng kết quả và 5 dòng đầu tiên của chúng.</li>
+<li>Ở cell [11]: truy vấn các bản ghi có <strong>activity_type</strong> là &ldquo;<strong>Working</strong>&rdquo; từ bảng tạm thời <strong>temp_raw_data</strong>, hiển thị số lượng kết quả và 5 dòng đầu tiên của chúng.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb11.png?width=90pc"></p>
 <ul>
-<li>Ở cell [12]: áp dụng một hàm lọc để chỉ giữ lại các bản ghi có activity_type là &ldquo;Running&rdquo; từ raw_data và sau đó đếm số lượng bản ghi này.</li>
+<li>Ở cell [12]: áp dụng một hàm lọc để chỉ giữ lại các bản ghi có <strong>activity_type</strong> là &ldquo;<strong>Running</strong>&rdquo; từ <strong>raw_data</strong> và sau đó đếm số lượng bản ghi này.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb12.png?width=90pc"></p>
 <ul>
-<li>Ở cell [13]: giữ lại các bản ghi có activity_type là &ldquo;Working&rdquo; từ raw_data và sau đó in ra số lượng bản ghi này.</li>
-<li>Ở cell [14]: thực hiện phép nối giữa raw_data và reference_data dựa trên trường track_id, tạo ra một DynamicFrame mới có tên là joined_data</li>
+<li>Ở cell [13]: giữ lại các bản ghi có <strong>activity_type</strong> là &ldquo;<strong>Working</strong>&rdquo; từ <strong>raw_data</strong> và sau đó in ra số lượng bản ghi này.</li>
+<li>Ở cell [14]: thực hiện phép nối giữa <strong>raw_data</strong> và <strong>reference_data</strong> dựa trên trường <strong>track_id</strong>, tạo ra một <strong>DynamicFrame</strong> mới có tên là <strong>joined_data</strong></li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb1314.png?width=90pc"></p>
 <ul>
-<li>Ở cell [15]: cho cái nhìn tổng quan về các trường và kiểu dữ liệu sau khi hai DynamicFrame được nối lại với nhau.</li>
+<li>Ở cell [15]: cho cái nhìn tổng quan về các trường và kiểu dữ liệu sau khi hai <strong>DynamicFrame</strong> được nối lại với nhau.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb15.png?width=90pc"></p>
 <ul>
-<li>Ở cell [16]: loại bỏ các trường không cần thiết (partition_0, partition_1, partition_2, partition_3) khỏi joined_data và lưu kết quả vào joined_data_clean</li>
+<li>Ở cell [16]: loại bỏ các trường không cần thiết (<strong>partition_0, partition_1, partition_2, partition_3</strong>) khỏi <strong>joined_data</strong> và lưu kết quả vào <strong>joined_data_clean</strong></li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb16.png?width=90pc"></p>
 <ul>
-<li>Ở cell [17]: hiển thị lược đồ của joined_data_clean sau khi đã làm sạch dữ liệu bằng cách loại bỏ các trường không mong muốn</li>
+<li>Ở cell [17]: hiển thị lược đồ của <strong>joined_data_clean</strong> sau khi đã làm sạch dữ liệu bằng cách loại bỏ các trường không mong muốn</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb17.png?width=90pc"></p>
 <ul>
-<li>Ở cell [18]: xem nhanh 5 bản ghi đầu tiên trong joined_data_clean dưới dạng DataFrame Spark.</li>
+<li>Ở cell [18]: xem nhanh 5 bản ghi đầu tiên trong <strong>joined_data_clean</strong> dưới dạng <strong>DataFrame Spark</strong>.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb18.png?width=90pc"></p>
 <ul>
-<li>Ở cell [19]: ghi dữ liệu từ joined_data_clean vào S3 trong định dạng Parquet, và nếu có lỗi xảy ra trong quá trình ghi, thông báo lỗi sẽ được in ra.</li>
+<li>Ở cell [19]: ghi dữ liệu từ <strong>joined_data_clean</strong> vào S3 trong định dạng Parquet, và nếu có lỗi xảy ra trong quá trình ghi, thông báo lỗi sẽ được in ra.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb19.png?width=90pc"></p>
 <ul>
-<li>Ở cell [20]: sử dụng Boto3 để khởi chạy summitcrawler, sau đó kiểm tra trạng thái của crawler trong một vòng lặp cho đến khi crawler dừng lại. Khi crawler dừng, chương trình in ra thông báo và kết thúc.</li>
+<li>Ở cell [20]: sử dụng <strong>Boto3</strong> để khởi chạy <strong>summitcrawler</strong>, sau đó kiểm tra trạng thái của crawler trong một vòng lặp cho đến khi crawler dừng lại. Khi crawler dừng, chương trình in ra thông báo và kết thúc.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb20.png?width=90pc"></p>
 <ul>
-<li>Ở cell [21]: sử dụng AWS Glue client để lấy danh sách các bảng trong cơ sở dữ liệu summitdb và in ra tên của từng bảng.</li>
+<li>Ở cell [21]: sử dụng <strong>AWS Glue client</strong> để lấy danh sách các bảng trong cơ sở dữ liệu <strong>summitdb</strong> và in ra tên của từng bảng.</li>
 </ul>
 <p><img alt="Glue" src="/images/5/nb21.png?width=90pc"></p>
 <ol start="6">
-<li>Kiểm tra dữ liệu đã được nạp vào S3 hay chưa, tìm kiếm và chọn dịch vụ <strong>S3</strong></li>
+<li>Kiểm tra dữ liệu đã được nạp vào <strong>S3</strong> hay chưa, tìm kiếm và chọn dịch vụ <strong>S3</strong></li>
 </ol>
 <p><img alt="S3" src="/images/3/s3.png?width=90pc"></p>
 <ol start="7">
@@ -702,7 +702,7 @@
 </ol>
 <p><img alt="S3" src="/images/5/processdata_ins3.png?width=90pc"></p>
 <ol start="8">
-<li>Kiểm tra các object có trong processed-data</li>
+<li>Kiểm tra các object có trong <strong>processed-data</strong></li>
 </ol>
 <p><img alt="S3" src="/images/5/object_in_processdata.png?width=90pc"></p>
 
@@ -1065,19 +1065,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734550383"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734550383"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734550383"></script>
-    <script src="/js/jquery.sticky.js?1734550383"></script>
-    <script src="/js/featherlight.min.js?1734550383"></script>
-    <script src="/js/highlight.pack.js?1734550383"></script>
+    <script src="/js/clipboard.min.js?1734556599"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734556599"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734556599"></script>
+    <script src="/js/jquery.sticky.js?1734556599"></script>
+    <script src="/js/featherlight.min.js?1734556599"></script>
+    <script src="/js/highlight.pack.js?1734556599"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734550383"></script>
-    <script src="/js/learn.js?1734550383"></script>
-    <script src="/js/hugo-learn.js?1734550383"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734556599"></script>
+    <script src="/js/learn.js?1734556599"></script>
+    <script src="/js/hugo-learn.js?1734556599"></script>
 
-    <link href="/mermaid/mermaid.css?1734550383" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734550383"></script>
+    <link href="/mermaid/mermaid.css?1734556599" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734556599"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

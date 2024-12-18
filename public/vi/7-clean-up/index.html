@@ -12,21 +12,21 @@
     <title>Dọn dẹp tài nguyên :: Triển khai Ứng dụng ShareNote với Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1734550383" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734550383" rel="stylesheet">
-    <link href="/css/hybrid.css?1734550383" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734550383" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734550383" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734550383" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734550383" rel="stylesheet">
-    <link href="/css/theme.css?1734550383" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734550383" rel="stylesheet">
+    <link href="/css/nucleus.css?1734557068" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734557068" rel="stylesheet">
+    <link href="/css/hybrid.css?1734557068" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734557068" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734557068" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734557068" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734557068" rel="stylesheet">
+    <link href="/css/theme.css?1734557068" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734557068" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734550383" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734557068" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734550383"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734557068"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734550383"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734550383"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734557068"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734557068"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734550383"></script>
+<script type="text/javascript" src="/js/search.js?1734557068"></script>
  
   </div>
 
@@ -586,71 +586,169 @@
 
 
 	<p>Chúng ta sẽ dọn dẹp các tài nguyên sau:</p>
-<h5 id="1-xóa-visual-quicksight">1. <strong>Xóa Visual QuickSight</strong>:</h5>
+<h4 id="dọn-dẹp-tài-nguyên-ở-visual-quicksight"><strong>Dọn dẹp tài nguyên ở Visual QuickSight</strong>:</h4>
 <ol>
-<li>Chọn <strong>Sheet</strong> cần xóa.</li>
-<li>Chọn <strong>Delete</strong>.</li>
+<li><strong>Xóa Pie chart sheet</strong></li>
 </ol>
-<hr>
-<h5 id="2-xóa-analyses-quicksight">2. <strong>Xóa Analyses QuickSight</strong>:</h5>
-<ol>
-<li>Chọn <strong>Analyses</strong> cần xóa.</li>
-<li>Chọn <strong>Delete</strong>.</li>
+<p><img alt="QuickSight" src="/images/7/delete_piechart.png?width=90pc"></p>
+<ol start="2">
+<li><strong>Xóa Analyses QuickSight:</strong></li>
 </ol>
+<ul>
+<li>Chọn <strong>Analyses</strong>.</li>
+<li>Chọn <strong>Analysis</strong> cần xóa.</li>
+<li>Chọn <strong>Delete</strong>.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_qs_ana.png?width=90pc"></p>
+<ul>
+<li>Delete done</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_done.png?width=90pc"></p>
+<ol start="3">
+<li><strong>Xóa Dataset QuickSight:</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/7/delete_dataset.png?width=90pc">
+<img alt="QuickSight" src="/images/7/delete_cf_dataset.png?width=90pc"></p>
+<ol start="4">
+<li>Bạn cũng có thể xóa tài khoản QuickSight nếu không sử dụng</li>
+</ol>
+<ul>
+<li>Tại giao diện <strong>QuickSight</strong>, chọn <strong>Manage QuickSight</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/manage_quicksight.png?width=90pc"></p>
+<ul>
+<li>Tại <strong>Account settings</strong>, chọn <strong>Manage</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_qs_acc.png?width=90pc"></p>
+<ul>
+<li>Thực hiện xóa tài khoản</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_acc_form.png?width=90pc"></p>
+<ul>
+<li>Hủy đăng ký <strong>QuickSight</strong> thành công</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_success.png?width=90pc"></p>
 <hr>
-<h5 id="3-xóa-table-database-trong-aws-glue">3. <strong>Xóa Table database trong AWS Glue</strong>:</h5>
+<h4 id="dọn-dẹp-tài-nguyên-ở-aws-glue"><strong>Dọn dẹp tài nguyên ở AWS Glue</strong>:</h4>
+<p>Truy cập vào <strong>AWS Glue</strong>.</p>
 <ol>
-<li>Truy cập vào <strong>AWS Glue</strong>.</li>
+<li><strong>Xóa các tables</strong></li>
+</ol>
+<ul>
 <li>Chọn <strong>Tables</strong>.</li>
 <li>Chọn các table cần xóa.</li>
-<li>Chọn <strong>Action</strong>.</li>
 <li>Chọn <strong>Delete</strong> để xác nhận xóa Table.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_tables.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_table.png?width=90pc"></p>
+<ol start="2">
+<li><strong>Xóa Interactive Sessions</strong></li>
 </ol>
+<ul>
+<li>Chọn <strong>Interactive Sessions</strong>.</li>
+<li>Chọn các session cần xóa.</li>
+<li>Chọn <strong>Delete</strong> để xác nhận xóa session.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_session.png?width=90pc"></p>
+<ol start="2">
+<li><strong>Xóa crawler</strong></li>
+</ol>
+<ul>
+<li>Chọn <strong>Crawler</strong>.</li>
+<li>Chọn các crawler cần xóa.</li>
+<li>Chọn Action</li>
+<li>Chọn <strong>Delete crawler</strong> để xác nhận xóa crawler.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_cwl.png?width=90pc"></p>
 <hr>
-<h5 id="4-xóa-database-trong-aws-glue">4. <strong>Xóa Database trong AWS Glue</strong>:</h5>
-<ol>
-<li>Truy cập vào <strong>AWS Glue</strong>.</li>
-<li>Chọn <strong>Databases</strong>.</li>
-<li>Chọn database liên quan bài lab.</li>
-<li>Chọn <strong>Action</strong>.</li>
-<li>Chọn <strong>Delete</strong> xác nhận xóa database.</li>
-</ol>
+<h4 id="dọn-dẹp-tài-nguyên-ở-cloudformation"><strong>Dọn dẹp tài nguyên ở CloudFormation</strong>:</h4>
+<ul>
+<li>Vào giao diện <strong>CloudFormation</strong></li>
+<li>Chọn <strong>Stack</strong></li>
+<li>Chọn <strong>stack name</strong> cần xóa</li>
+<li>Chọn <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_cloudform.png?width=90pc"></p>
+<ul>
+<li>Nếu delete stack <strong>fail</strong>
+<ul>
+<li>Chọn <strong>Retry delete</strong></li>
+<li>Chọn <strong>Force delete this entire stack</strong></li>
+</ul>
+</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/force_delete_stack.png?width=90pc"></p>
 <hr>
-<h5 id="5-xóa-notebook">5. <strong>Xóa Notebook</strong>:</h5>
-<ol>
-<li>Truy cập vào <strong>AWS Glue</strong>.</li>
-<li>Chọn <strong>Notebooks</strong>.</li>
-<li>Chọn <strong><em>aws-glue-notebook1</em></strong>.</li>
-<li>Chọn <strong>Action</strong>.</li>
-<li>Chọn <strong>Delete</strong> để xóa notebook.</li>
-</ol>
+<h4 id="dọn-dẹp-tài-nguyên-ở-kinesis"><strong>Dọn dẹp tài nguyên ở Kinesis</strong>:</h4>
+<ul>
+<li>Vào <strong>Amazon Data Firehose</strong></li>
+<li>Chọn <strong>Firehose stream</strong> cần xóa</li>
+<li>Chọn <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_firehose.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_firehose.png?width=90pc"></p>
 <hr>
-<h5 id="6-xóa-development-endpoints">6. <strong>Xóa development endpoints</strong></h5>
-<ol>
-<li>Truy cập <strong>AWS Glue</strong>.</li>
-<li>Chọn endpoint cần xóa.</li>
-<li>Chọn <strong>Action</strong>.</li>
-<li>Chọn <strong>Delete</strong> để xác nhận xóa endpoint.</li>
-</ol>
+<h4 id="dọn-dẹp-tài-nguyên-ở-cloudwatch"><strong>Dọn dẹp tài nguyên ở CloudWatch</strong>:</h4>
+<ul>
+<li>Vào giao diện <strong>CloudWatch</strong></li>
+<li>Chọn <strong>Log groups</strong></li>
+<li>Chọn tất cả <strong>Log groups</strong></li>
+<li>Chọn <strong>Action</strong></li>
+<li>Chọn <strong>Delete log group(s)</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_logs.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_logs.png?width=90pc"></p>
 <hr>
-<h5 id="7-xóa-aws-s3-bucket">7. <strong>Xóa AWS S3 bucket</strong></h5>
-<ol>
-<li>Truy cập vào <strong>AWS S3</strong>.</li>
-<li>Chọn <strong>Buckets</strong>.</li>
-<li>Chọn bucket liên quan bài lab.</li>
-<li>Chọn <strong>Empty</strong>.</li>
-<li>Nhập <strong>permanently delete</strong>, sau đó chọn <strong>Empty</strong>.</li>
-<li>Chọn lại bucket cần xóa, chọn <strong>Delete</strong>.</li>
-<li>Xác nhận xóa <strong>bucket</strong>.</li>
-</ol>
+<h4 id="dọn-dẹp-tài-nguyên-ở-s3"><strong>Dọn dẹp tài nguyên ở S3</strong>:</h4>
+<ul>
+<li>
+<p>Xóa tất cả các bucket liên quan tới bài lab</p>
+</li>
+<li>
+<p>Chọn <strong>bucket</strong></p>
+</li>
+<li>
+<p><strong>Empty bucket</strong></p>
+</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/empty__bucket.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_empty_s3.png?width=90pc"></p>
+<ul>
+<li>Chọn lại bucket vừa empty</li>
+<li>Chọn <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_s3_bucket.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_bucket.png?width=90pc"></p>
+
+<div class="notices note" ><p>Thực hiện tương tự với các bucket còn lại</p>
+</div>
+
 <hr>
-<h5 id="8-xóa-stack-cloudformation">8. <strong>Xóa stack CloudFormation</strong></h5>
-<ol>
-<li>Truy cập <strong>AWS CloudFormation</strong>.</li>
-<li>Chọn <strong>Stack</strong>.</li>
-<li>Chọn Stack liên quan bài lab.</li>
-<li>Chọn <strong>Delete</strong>.</li>
-</ol>
+<h4 id="dọn-dẹp-tài-nguyên-ở-iam"><strong>Dọn dẹp tài nguyên ở IAM</strong>:</h4>
+<p>Vào giao diện IAM</p>
+<p><strong>1. Xóa Policy</strong></p>
+<ul>
+<li>Chọn <strong>Policies</strong></li>
+<li>Chọn <strong>policy</strong> liên quan đến bài lab</li>
+<li>Chọn <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_policy.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_policy.png?width=90pc"></p>
+<ul>
+<li>Xóa policy thành công</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_policy_success.png?width=90pc"></p>
+<p><strong>2. Xóa Role</strong></p>
+<ul>
+<li>Chọn <strong>Roles</strong></li>
+<li>Chọn <strong>role</strong> liên quan đến bài lab</li>
+<li>Chọn <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_role.png?width=90pc"></p>
+<ul>
+<li>Xóa role thành công</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_role_success.png?width=90pc"></p>
 
 
 
@@ -1008,19 +1106,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734550383"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734550383"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734550383"></script>
-    <script src="/js/jquery.sticky.js?1734550383"></script>
-    <script src="/js/featherlight.min.js?1734550383"></script>
-    <script src="/js/highlight.pack.js?1734550383"></script>
+    <script src="/js/clipboard.min.js?1734557068"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734557068"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734557068"></script>
+    <script src="/js/jquery.sticky.js?1734557068"></script>
+    <script src="/js/featherlight.min.js?1734557068"></script>
+    <script src="/js/highlight.pack.js?1734557068"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734550383"></script>
-    <script src="/js/learn.js?1734550383"></script>
-    <script src="/js/hugo-learn.js?1734550383"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734557068"></script>
+    <script src="/js/learn.js?1734557068"></script>
+    <script src="/js/hugo-learn.js?1734557068"></script>
 
-    <link href="/mermaid/mermaid.css?1734550383" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734550383"></script>
+    <link href="/mermaid/mermaid.css?1734557068" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734557068"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

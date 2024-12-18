@@ -6,73 +6,118 @@ chapter = false
 pre = "<b>5. </b>"
 +++
 
-Ở phần này, chúng ta sẽ triển khai một Auto Scaling Group cho ứng dụng ShareNote để đảm bảo ứng dụng của chúng ta sẽ được triển khai với tính sẵn sàng cao, và có khả năng tăng số lượng EC2 instance khi người dùng truy cập vào hệ thống tăng.
+### Data Transformation
 
-#### Tạo AutoScaling Group
+1. Search for and select the **Glue** service
 
-1. Truy cập vào **EC2 Management Console**.
-2. Ở thanh điều hướng bên trái, chọn **Auto Scaling Groups**.
-3. Ở trang **Auto Scaling Groups**, chọn **Create an Auto Scaling group**.
+![Glue](/images/5/glue.png?width=90pc)
 
-![Launch Template](/images/asg/034.png?width=90pc)
+2. Select **Notebook**
 
-4. Bắt đầu với trang **Choose launch template or configuration**, thiết lập các thông tin như sau:
+![Glue](/images/5/create_notebook_btn.png?width=90pc)
 
-- Name: Nhập vào tên của Auto Scaling Group (VD: **sharenote-asg**)
-- Launch template: Chọn launch template chúng ta đã tạo trước đó (VD: sharenote-template)
-- Kéo màn hình xuống dưới và click **Next**.
+3. Download the file [notebook.ipynb](https://github.com/ngcuyen/ws-doc/blob/main/notebook.ipynb)
 
-![Launch Template](/images/asg/035.png?width=90pc)
+4. In the **Notebook** form:
 
-5. Ở trang **Configure settings**:
+- Select **Upload Notebook**
+- Choose **Choose file**
+- Select the downloaded notebook file
+- IAM role: select **AWSGlueServiceRoleDefault**
+- Select **Create notebook**
 
-- Mục **Network**, phần **Subnets** Lựa chọn 2 subnet ở hai AZ **ap-northeast-1a** và **ap-northeast-1b**.
-- Kéo màn hình xuống dưới và click **Next**.
+![Glue](/images/5/upload_notebook.png?width=90pc)
 
-![Launch Template](/images/asg/036.png?width=90pc)
+5. Wait for the **notebook** to start, then run each **cell** of the notebook and view the results
 
-6. Ở trang **Configure advanced options**:
-   - Mục **Load balancing - optional** click chọn **Attach to an existing load balancer**.
-   - Click chọn **Choose from your load balancer target groups**.
-   - Click chọn target group mà chúng ta đã tạo trước đó. (VD: **sharenote-tg**)
-   - Kéo màn hình xuống dưới và click **Next**.
+- First, run the cell to create the session
 
-![Launch Template](/images/asg/037.png?width=90pc)
+![Glue](/images/5/nb1.png?width=90pc)
 
-7. Ở trang **Configure group size and scaling policies**:
-   - Group size - optional:
-     - Desired capacity: Nhập **1**. (Default)
-     - Minimum capacity: Nhập **1**. (Default)
-     - Maximum capacity: Nhập **3**.
+- Session initialized successfully
 
-![Launch Template](/images/asg/038.png?width=90pc)
+![Glue](/images/5/nb1.1.png?width=90pc)
 
-8. Tại mục **Scaling policies - optional:** Lựa chọn trong bài thực hành này nhằm tạo điều kiện dễ dàng hơn cho bước kiểm tra được thực hiện tiếp theo. Bạn hoàn toàn có thể thiết lập chính sách scale tài nguyên theo nhu cầu của bạn.
+- Go to **Interactive Session**, check and see the session has been successfully created
 
-- Chọn **Target tracking scaling policy**.
-- Metric type: Chọn **Application Load Balancer request count per target**.
-- Target group: Chọn target group mà chúng ta đã tạo (VD: **sharenote-tg**).
-- Target value: Nhập **30**.
-- Click **Next**.
+![Glue](/images/5/session_created.png?width=90pc)
 
-![Launch Template](/images/asg/039.png?width=90pc)
+- In cell [2]: Import **SparkContext, GlueContext, boto3, awsglue**, and initialize the session
+- In cell [3]: The **GlueContext** initialization command is used to access **ETL** features of **AWS Glue** and retrieve **SparkSession** for data processing with **Apache Spark**.
 
-9. Ở trang **Add notifications**, chọn **Next**.
-10. Ở trang **Add tags**, chọn **Next**.
-11. Ở trang **Review**, chọn **Create Auto Scaling Group**
+![Glue](/images/5/nb23.png?width=90pc)
 
-Quá trình khởi tạo Auto Scaling Group sẽ được thực hiện, Auto Scaling Group vừa được tạo sẽ hiển thị trong danh sách, và bạn có thể chọn vào nó để xem thông tin chi tiết.
+- In cell [4]: Create two **DynamicFrames** **raw_data** and **reference_data** by retrieving data from the **raw2024** and **reference_data** tables in the **summitdb** database in the **AWS Glue Data Catalog**.
+- In cell [5]: The command `raw_data.printSchema()` displays the schema of the **DynamicFrame** **raw_data**, including the columns, data types, and nested structures (if any).
 
-Vhúng ta có thể theo dõi các EC2 instance hiện có trong Auto Scaling Group ở trang **Instance management**. Các instance có tình trạng **InService** là các instance đã sẵn sàng hoạt động.
+![Glue](/images/5/nb45.png?width=90pc)
 
-![Launch Template](/images/asg/040.png?width=90pc)
+- In cell [6]: The command `reference_data.printSchema()` displays the schema of the **DynamicFrame** **reference_data**, including the columns and corresponding data types.
+- In cell [7]: These commands display the number of records in both **DynamicFrames** **raw_data** and **reference_data**.
 
-Đến đây, chúng ta đã hoàn thành việc triển khai ứng dụng Share Note với Auto Scaling Group và Elastic Load Balancer. Với mô hình này, bạn có thể triển khai ứng dụng của mình với tính sẵn sàng cao, dễ dàng mở rộng và cân bằng tải các yêu cầu từ người dùng.
+![Glue](/images/5/nb67.png?width=90pc)
 
-Ở bước kế tiếp, chúng ta sẽ thử nghiệm tính năng thêm EC2 Instance dựa trên việc tăng số lượng truy cập đến ứng dụng của chúng ta.
+- In cell [8]: View the first 5 records in **raw_data** as a **Spark DataFrame**.
 
-{{%notice tip%}}
-Trước khi thực hiện bước kế tiếp hãy kiểm tra cấu hình Automatic scaling của Auto Scaling Group của chúng ta có giống như dưới đây không. Nếu quá trình tạo scaling policy bị lỗi, chúng ta có thể click **Create dynamic scaling policy** để tiến hành tạo lại scaling policy mới.
-{{%/notice%}}
+![Glue](/images/5/nb8.png?width=90pc)
 
-![Launch Template](/images/asg/041.png?width=90pc)
+- In cell [9]: View the first 5 records in **reference_data** as a **Spark DataFrame**.
+
+![Glue](/images/5/nb9.png?width=90pc)
+
+- In cell [10]: Create a temporary table from **raw_data**, query records with **activity_type** equal to "**Running**" and display the count and the first 5 records of the result.
+
+![Glue](/images/5/nb10.png?width=90pc)
+
+- In cell [11]: Query records with **activity_type** equal to "**Working**" from the temporary table **temp_raw_data**, display the count and the first 5 records.
+
+![Glue](/images/5/nb11.png?width=90pc)
+
+- In cell [12]: Apply a filter to keep only the records with **activity_type** equal to "**Running**" from **raw_data**, then count these records.
+
+![Glue](/images/5/nb12.png?width=90pc)
+
+- In cell [13]: Keep only the records with **activity_type** equal to "**Working**" from **raw_data**, then display the count of these records.
+- In cell [14]: Perform a join between **raw_data** and **reference_data** based on the **track_id** field, creating a new **DynamicFrame** called **joined_data**
+
+![Glue](/images/5/nb1314.png?width=90pc)
+
+- In cell [15]: View an overview of the fields and data types after the two **DynamicFrames** are joined.
+
+![Glue](/images/5/nb15.png?width=90pc)
+
+- In cell [16]: Remove unnecessary fields (**partition_0, partition_1, partition_2, partition_3**) from **joined_data** and store the result in **joined_data_clean**
+
+![Glue](/images/5/nb16.png?width=90pc)
+
+- In cell [17]: Display the schema of **joined_data_clean** after cleaning the data by removing unwanted fields.
+
+![Glue](/images/5/nb17.png?width=90pc)
+
+- In cell [18]: View the first 5 records in **joined_data_clean** as a **Spark DataFrame**.
+
+![Glue](/images/5/nb18.png?width=90pc)
+
+- In cell [19]: Write the data from **joined_data_clean** to S3 in Parquet format, and if an error occurs during the write, print the error message.
+
+![Glue](/images/5/nb19.png?width=90pc)
+
+- In cell [20]: Use **Boto3** to trigger **summitcrawler**, then check the crawler status in a loop until it stops. When the crawler stops, print a message and exit.
+
+![Glue](/images/5/nb20.png?width=90pc)
+
+- In cell [21]: Use the **AWS Glue client** to retrieve a list of tables in the **summitdb** database and print the name of each table.
+
+![Glue](/images/5/nb21.png?width=90pc)
+
+6. Check if the data has been loaded into **S3**, search for and select the **S3** service
+
+![S3](/images/3/s3.png?width=90pc)
+
+7. Check in **asg-datalake-demo-2024/data**
+
+![S3](/images/5/processdata_ins3.png?width=90pc)
+
+8. Check the objects in **processed-data**
+
+![S3](/images/5/object_in_processdata.png?width=90pc)

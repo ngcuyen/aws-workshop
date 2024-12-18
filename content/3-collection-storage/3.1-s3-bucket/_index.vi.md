@@ -20,7 +20,7 @@ pre = "<b>3.1. </b>"
 
    ![S3](/images/3/name_bucket.png?width=90pc)
 
-4. Kiểm tra các thông số như hình dưới:
+4. Kiểm tra các cấu hình như hình dưới:
 
    ![S3](/images/3/create_bucket_2.png?width=90pc)
 

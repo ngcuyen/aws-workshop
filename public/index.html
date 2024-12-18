@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Triển khai Ứng dụng ShareNote với Auto Scaling Group :: Deploy ShareNote Application on Auto Scaling Group</title>
+    <title>Data Lake :: Deploy ShareNote Application on Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1734550383" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734550383" rel="stylesheet">
-    <link href="/css/hybrid.css?1734550383" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734550383" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734550383" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734550383" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734550383" rel="stylesheet">
-    <link href="/css/theme.css?1734550383" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734550383" rel="stylesheet">
+    <link href="/css/nucleus.css?1734557067" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734557067" rel="stylesheet">
+    <link href="/css/hybrid.css?1734557067" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734557067" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734557067" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734557067" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734557067" rel="stylesheet">
+    <link href="/css/theme.css?1734557067" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734557067" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734550383" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734557067" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734550383"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734557067"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734550383"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734550383"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734557067"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734557067"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734550383"></script>
+<script type="text/javascript" src="/js/search.js?1734557067"></script>
  
   </div>
 
@@ -106,7 +106,7 @@
             
 <li
   data-nav-id="/2-preparation/2.1-iam-role/"
-  title="Introduction"
+  title="Create IAM Role"
   class="dd-item 
         
         
@@ -114,7 +114,7 @@
         "
 >
   <a href="/2-preparation/2.1-iam-role/">
-    <b>1. </b>Introduction 
+    <b>2.1. </b>Create IAM Role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -124,7 +124,7 @@
             
 <li
   data-nav-id="/2-preparation/2.2-policy/"
-  title="Introduction"
+  title="Create Policy"
   class="dd-item 
         
         
@@ -132,7 +132,7 @@
         "
 >
   <a href="/2-preparation/2.2-policy/">
-    <b>1. </b>Introduction 
+    <b>2.2. </b>Create Policy 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -142,7 +142,7 @@
             
 <li
   data-nav-id="/2-preparation/2.3-attach-policy-to-role/"
-  title="Introduction"
+  title="Attach Policy to Role"
   class="dd-item 
         
         
@@ -150,7 +150,7 @@
         "
 >
   <a href="/2-preparation/2.3-attach-policy-to-role/">
-    <b>1. </b>Introduction 
+    <b>2.3. </b>Attach Policy to Role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -163,7 +163,7 @@
            
 <li
   data-nav-id="/3-collection-storage/"
-  title="Data Collection and Storage"
+  title="Collecting and Storing Data"
   class="dd-item 
         
         
@@ -171,7 +171,7 @@
         "
 >
   <a href="/3-collection-storage/">
-    <b>3. </b>Data Collection and Storage 
+    <b>3. </b>Collecting and Storing Data 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -181,7 +181,7 @@
             
 <li
   data-nav-id="/3-collection-storage/3.1-s3-bucket/"
-  title="Introduction"
+  title="Create S3 Bucket"
   class="dd-item 
         
         
@@ -189,7 +189,7 @@
         "
 >
   <a href="/3-collection-storage/3.1-s3-bucket/">
-    <b>1. </b>Introduction 
+    <b>3.1. </b>Create S3 Bucket 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -199,7 +199,7 @@
             
 <li
   data-nav-id="/3-collection-storage/3.2-object-in-bucket/"
-  title="Introduction"
+  title="Create Object for S3 Bucket"
   class="dd-item 
         
         
@@ -207,7 +207,7 @@
         "
 >
   <a href="/3-collection-storage/3.2-object-in-bucket/">
-    <b>1. </b>Introduction 
+    <b>3.2. </b>Create Object for S3 Bucket 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -217,7 +217,7 @@
             
 <li
   data-nav-id="/3-collection-storage/3.3-kinesis-firehose-stream/"
-  title="Introduction"
+  title="Create Firehose Stream"
   class="dd-item 
         
         
@@ -225,7 +225,7 @@
         "
 >
   <a href="/3-collection-storage/3.3-kinesis-firehose-stream/">
-    <b>1. </b>Introduction 
+    <b>3.3. </b>Create Firehose Stream 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -235,7 +235,7 @@
             
 <li
   data-nav-id="/3-collection-storage/3.4-sample-data/"
-  title="Introduction"
+  title="Create Sample Data"
   class="dd-item 
         
         
@@ -243,7 +243,7 @@
         "
 >
   <a href="/3-collection-storage/3.4-sample-data/">
-    <b>1. </b>Introduction 
+    <b>3.4. </b>Create Sample Data 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -274,7 +274,7 @@
             
 <li
   data-nav-id="/4-data-catalog/4.1-glue-crawler/"
-  title="Introduction"
+  title="Create Glue Crawler"
   class="dd-item 
         
         
@@ -282,7 +282,7 @@
         "
 >
   <a href="/4-data-catalog/4.1-glue-crawler/">
-    <b>1. </b>Introduction 
+    <b>4.1. </b>Create Glue Crawler 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -292,7 +292,7 @@
             
 <li
   data-nav-id="/4-data-catalog/4.2-test-data/"
-  title="Introduction"
+  title="Check Data"
   class="dd-item 
         
         
@@ -300,64 +300,7 @@
         "
 >
   <a href="/4-data-catalog/4.2-test-data/">
-    <b>1. </b>Introduction 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-     
-  </ul>
-  
-</li>
-           
-<li
-  data-nav-id="/6-analysis-visualize/"
-  title="Analysis and visualization"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="/6-analysis-visualize/">
-    <b>5. </b>Analysis and visualization 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-  <ul>
-          
-            
-<li
-  data-nav-id="/6-analysis-visualize/6.1-athena/"
-  title="Introduction"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="/6-analysis-visualize/6.1-athena/">
-    <b>1. </b>Introduction 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-    
-            
-<li
-  data-nav-id="/6-analysis-visualize/6.2-quicksight/"
-  title="Introduction"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="/6-analysis-visualize/6.2-quicksight/">
-    <b>1. </b>Introduction 
+    <b>4.2. </b>Check Data 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -386,8 +329,65 @@
 </li>
            
 <li
+  data-nav-id="/6-analysis-visualize/"
+  title="Analysis and Visualization"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/6-analysis-visualize/">
+    <b>6. </b>Analysis and Visualization 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/6-analysis-visualize/6.1-athena/"
+  title="Analysis with Athena"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/6-analysis-visualize/6.1-athena/">
+    <b>6.1. </b>Analysis with Athena 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/6-analysis-visualize/6.2-quicksight/"
+  title="Visualize with QuickSight"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/6-analysis-visualize/6.2-quicksight/">
+    <b>6.2. </b>Visualize with QuickSight 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
   data-nav-id="/7-clean-up/"
-  title="Clean up resources"
+  title="Cleanup Resources"
   class="dd-item 
         
         
@@ -395,7 +395,7 @@
         "
 >
   <a href="/7-clean-up/">
-    <b>7. </b>Clean up resources 
+    <b>7. </b>Cleanup Resources 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -533,27 +533,82 @@
 </span>
 
  
-<h1 id="triển-khai-ứng-dụng-sharenote-với-auto-scaling-group">Triển khai Ứng dụng ShareNote với Auto Scaling Group</h1>
-<h4 id="tổng-quan">Tổng quan</h4>
-<p>Ở bài thực hành này, chúng ta sẽ tiến hành việc triển khai ứng dụng với <strong>Auto Scaling Group</strong> nhằm đảm bảo khả năng co giãn của ứng dụng đó theo nhu cầu của người truy cập.
-Thêm vào đó, chúng ta cũng sẽ triển khai <strong>Load Balancer</strong> nhằm cân bằng tải và điều phối các yêu cầu truy cập từ phía người dùng đến Application Tier của chúng ta.</p>
-<p>Hãy chắc chắn rằng bạn đã xem qua tài liệu <a href="https://000004.awsstudygroup.com/">Triển khai Ứng dụng ShareNote trên Máy ảo Windows/AmazonLinux</a> và nắm được cách triển khai ứng dụng trên máy ảo. Chúng ta sẽ cần sử dụng máy ảo được triển khai ShareNote cho việc triển khai đồng loạt và mở rộng trong Auto Scaling Group.</p>
-<h4 id="auto-scaling-group">Auto Scaling Group</h4>
-<p><strong>Auto Scaling Group</strong> (<em>nhóm co giãn tự động</em>) là một nhóm các EC2 Instance. Nhóm này có thể co giãn số lượng của các EC2 Instance thành viên theo <strong>chính sách co giãn</strong> (<em>scaling policy</em>) mà bạn đặt ra.</p>
-<h4 id="launch-template">Launch Template</h4>
-<p><strong>Launch Template</strong> (<em>khuôn mẫu khởi tạo</em>) là một tính năng giúp bạn tạo khuôn mẫu cho việc khởi tạo các EC2 Instance. Nhờ thế, bạn có thể quy trình hóa và đơn giản hóa công tác khởi tạo các EC2 Instance cho dịch vụ <strong>Auto Scaling</strong> (<em>co giãn tự động</em>).</p>
-<h4 id="load-balancer">Load Balancer</h4>
-<p><strong>Load Balancer</strong> (<em>máy cân bằng tải</em>) là một công cụ có thể phân phối lưu lượng dữ liệu được trao đổi tới các tài nguyên AWS (cụ thể trong bài lab này là các EC2 Instances) trong <strong>Target Group</strong>.</p>
-<h4 id="target-group">Target Group</h4>
-<p><strong>Target Group</strong> (<em>nhóm mục tiêu</em>) là một nhóm những thành phần tài nguyên AWS sẽ nhận lưu lượng dữ liệu được phân phối và truyền tải bởi <strong>Load Balancer</strong>.</p>
-<h4 id="nội-dung">Nội dung:</h4>
+<h1 id="exploring-data-lake-on-aws">Exploring Data Lake on AWS</h1>
+<h4 id="introduction-to-data-lake">Introduction to Data Lake</h4>
+<p>A <strong>Data Lake</strong> is a centralized storage system that allows the storage of data in any format—structured, semi-structured, or unstructured. Unlike traditional databases that require data to be formatted before storage, a Data Lake enables the storage of raw data, which can later be processed or analyzed when needed.</p>
+<h4 id="benefits-of-data-lake">Benefits of Data Lake</h4>
+<ul>
+<li><strong>Flexible Storage</strong>: Supports data from multiple sources and in various formats.</li>
+<li><strong>Comprehensive Analytics</strong>: Facilitates big data analysis and AI/ML applications.</li>
+<li><strong>Cost-Efficiency</strong>: Uses low-cost storage solutions like Amazon S3.</li>
+<li><strong>Easy Integration</strong>: Seamlessly connects with analytics and reporting tools like Amazon Athena and QuickSight.</li>
+</ul>
+<h4 id="challenges-in-implementing-a-data-lake">Challenges in Implementing a Data Lake</h4>
+<ul>
+<li><strong>Data Management</strong>: How to organize and manage data effectively?</li>
+<li><strong>Security</strong>: How to prevent unauthorized access to data?</li>
+<li><strong>Scalability</strong>: The system must scale to handle the increasing volume of data.</li>
+<li><strong>Performance</strong>: It is necessary to optimize for data querying and processing.</li>
+<li><strong>Data Quality</strong>: Ensuring the accuracy and reliability of data is crucial.</li>
+</ul>
+<h4 id="workshop-architecture">Workshop Architecture</h4>
+<h5 id="overview-of-the-architecture">Overview of the Architecture</h5>
+<p>The following diagram illustrates the architecture of the Data Lake system we will deploy in this workshop:</p>
+<p><img alt="Workshop" src="/images/1/workshop.jpg"></p>
+<h5 id="architecture-description">Architecture Description</h5>
+<ul>
+<li>
+<p><strong>Data Collection</strong>:</p>
+<ul>
+<li>Data from multiple sources is collected via Kinesis.</li>
+<li>Kinesis Firehose Stream processes and transfers the data to Amazon S3.</li>
+</ul>
+</li>
+<li>
+<p><strong>Storing Raw Data</strong>:</p>
+<ul>
+<li>Raw data is stored in the &ldquo;raw data&rdquo; folder in S3.</li>
+<li>CloudFormation automatically deploys the necessary resources.</li>
+</ul>
+</li>
+<li>
+<p><strong>AWS Glue</strong>:</p>
+<ul>
+<li>AWS Glue Crawler scans the raw data in S3 to create metadata.</li>
+<li>Metadata is stored in the AWS Glue Data Catalog.</li>
+<li>An ETL Job (Extract, Transform, Load) processes and transforms the raw data into processed data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Storing Processed Data</strong>:</p>
+<ul>
+<li>The transformed data is stored in another S3 bucket under the &ldquo;processed-data&rdquo; folder.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Analysis and Visualization</strong>:</p>
+<ul>
+<li>AWS Glue Crawler scans the processed data and updates the Glue Data Catalog.</li>
+<li>Amazon Athena is used to query data in S3.</li>
+<li>Amazon QuickSight connects to the data for visualization and reporting.</li>
+</ul>
+</li>
+</ul>
+<h5 id="goals-of-the-workshop">Goals of the Workshop</h5>
+<ul>
+<li>Understand the components of the Data Lake architecture.</li>
+<li>Deploy a simple Data Lake system using AWS services.</li>
+<li>Integrate analytics and visualization tools to extract meaningful insights from the data.</li>
+</ul>
+<h4 id="workshop-content">Workshop Content</h4>
 <ol>
-<li><a href="1-prerequisite">Các bước chuẩn bị</a></li>
-<li><a href="2-launch-template">Khởi tạo Launch Template</a></li>
-<li><a href="3-target-group">Khởi tạo Target Group</a></li>
-<li><a href="5-load-balance">Khởi tạo Load Balancer</a></li>
-<li><a href="4-asg">Khởi tạo Auto Scaling Group</a></li>
-<li><a href="6-testing">Kiểm tra kết quả</a></li>
+<li><a href="/1-introduce/">Introduction</a></li>
+<li><a href="/2-preparation/">Preparation Steps</a></li>
+<li><a href="/3-collection-storage/">Data Collection and Storage</a></li>
+<li><a href="/4-data-catalog/">Create Data Catalog</a></li>
+<li><a href="/5-data-transform/">Data Transformation</a></li>
+<li><a href="/6-analysis-visualize/">Data Analysis and Visualization</a></li>
+<li><a href="/7-clean-up/">Clean Up Resources</a></li>
 </ol>
 	
   
@@ -810,6 +865,22 @@ Thêm vào đó, chúng ta cũng sẽ triển khai <strong>Load Balancer</strong
 
                     
                     
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                         
                     
                     
@@ -846,22 +917,6 @@ Thêm vào đó, chúng ta cũng sẽ triển khai <strong>Load Balancer</strong
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -902,19 +957,19 @@ Thêm vào đó, chúng ta cũng sẽ triển khai <strong>Load Balancer</strong
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734550383"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734550383"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734550383"></script>
-    <script src="/js/jquery.sticky.js?1734550383"></script>
-    <script src="/js/featherlight.min.js?1734550383"></script>
-    <script src="/js/highlight.pack.js?1734550383"></script>
+    <script src="/js/clipboard.min.js?1734557067"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734557067"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734557067"></script>
+    <script src="/js/jquery.sticky.js?1734557067"></script>
+    <script src="/js/featherlight.min.js?1734557067"></script>
+    <script src="/js/highlight.pack.js?1734557067"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734550383"></script>
-    <script src="/js/learn.js?1734550383"></script>
-    <script src="/js/hugo-learn.js?1734550383"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734557067"></script>
+    <script src="/js/learn.js?1734557067"></script>
+    <script src="/js/hugo-learn.js?1734557067"></script>
 
-    <link href="/mermaid/mermaid.css?1734550383" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734550383"></script>
+    <link href="/mermaid/mermaid.css?1734557067" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734557067"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

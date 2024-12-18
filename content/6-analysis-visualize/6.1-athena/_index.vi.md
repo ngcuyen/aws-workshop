@@ -14,8 +14,8 @@ pre = "<b>6.1. </b>"
 
 2. Thực hiện query với:
 
-- Data source: AwsDataCatalog
-- Database: summitdb
+- **Data source**: **AwsDataCatalog**
+- **Database**: **summitdb**
 - Thực hiện câu truy vấn:
 
 ```
@@ -29,7 +29,7 @@ ORDER BY count DESC
 
 ![S3](/images/6/6.1/query_athena.png?width=90pc)
 
-- Chọn Run query
+- Chọn **Run** query
 
 3. Kết quả câu truy vấn trên:
 
@@ -50,7 +50,7 @@ ORDER BY count DESC
 
 ![S3](/images/6/6.1/query2.png?width=90pc)
 
-- Chọn Run query
+- Chọn **Run** query
 
 3. Kết quả câu truy vấn trên:
 

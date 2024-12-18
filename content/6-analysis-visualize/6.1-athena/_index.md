@@ -1,14 +1,57 @@
 +++
-title = "Introduction"
+title = "Analysis with Athena"
 date = 2020
-weight = 2
+weight = 1
 chapter = false
-pre = "<b>1. </b>"
+pre = "<b>6.1. </b>"
 +++
 
-## Sơ đồ tổng quan bài thực hành
+## Analysis with Athena
 
-Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer.
-Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:
+1. Search for and select the **Athena** service
 
-![Diagram](../../../images/1/0.png?width=40pc)
+![S3](/images/4/4.2/athena.png?width=90pc)
+
+2. Execute the query with:
+
+- **Data source**: **AwsDataCatalog**
+- **Database**: **summitdb**
+- Execute the query:
+
+```
+SELECT artist_name,
+       count(artist_name) AS count
+FROM processed_data
+GROUP BY artist_name
+ORDER BY count DESC
+
+```
+
+![S3](/images/6/6.1/query_athena.png?width=90pc)
+
+- Select **Run** query
+
+3. The result of the above query:
+
+![S3](/images/6/6.1/result_query1.png?width=90pc)
+
+4. Next, execute the following query:
+
+```
+SELECT device_id,
+       track_name,
+       count(track_name) AS count
+FROM processed_data
+GROUP BY device_id, track_name
+ORDER BY count DESC
+
+
+```
+
+![S3](/images/6/6.1/query2.png?width=90pc)
+
+- Select **Run** query
+
+5. The result of the above query:
+
+![S3](/images/6/6.1/result_query2.png?width=90pc)

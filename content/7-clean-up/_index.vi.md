@@ -8,74 +8,169 @@ pre = "<b>7. </b>"
 
 Chúng ta sẽ dọn dẹp các tài nguyên sau:
 
-##### 1. **Xóa Visual QuickSight**:
+#### **Dọn dẹp tài nguyên ở Visual QuickSight**:
 
-1.  Chọn **Sheet** cần xóa.
-2.  Chọn **Delete**.
+1.  **Xóa Pie chart sheet**
 
----
+![QuickSight](/images/7/delete_piechart.png?width=90pc)
 
-##### 2. **Xóa Analyses QuickSight**:
+2. **Xóa Analyses QuickSight:**
 
-1.  Chọn **Analyses** cần xóa.
-2.  Chọn **Delete**.
+- Chọn **Analyses**.
+- Chọn **Analysis** cần xóa.
+- Chọn **Delete**.
 
----
+![QuickSight](/images/7/delete_qs_ana.png?width=90pc)
 
-##### 3. **Xóa Table database trong AWS Glue**:
+- Delete done
 
-1.  Truy cập vào **AWS Glue**.
-2.  Chọn **Tables**.
-3.  Chọn các table cần xóa.
-4.  Chọn **Action**.
-5.  Chọn **Delete** để xác nhận xóa Table.
+![QuickSight](/images/7/delete_done.png?width=90pc)
 
----
+3. **Xóa Dataset QuickSight:**
 
-##### 4. **Xóa Database trong AWS Glue**:
+![QuickSight](/images/7/delete_dataset.png?width=90pc)
+![QuickSight](/images/7/delete_cf_dataset.png?width=90pc)
 
-1.  Truy cập vào **AWS Glue**.
-2.  Chọn **Databases**.
-3.  Chọn database liên quan bài lab.
-4.  Chọn **Action**.
-5.  Chọn **Delete** xác nhận xóa database.
+4. Bạn cũng có thể xóa tài khoản QuickSight nếu không sử dụng
 
----
+- Tại giao diện **QuickSight**, chọn **Manage QuickSight**
 
-##### 5. **Xóa Notebook**:
+![QuickSight](/images/6/6.2/manage_quicksight.png?width=90pc)
 
-1.  Truy cập vào **AWS Glue**.
-2.  Chọn **Notebooks**.
-3.  Chọn **_aws-glue-notebook1_**.
-4.  Chọn **Action**.
-5.  Chọn **Delete** để xóa notebook.
+- Tại **Account settings**, chọn **Manage**
 
----
+![QuickSight](/images/7/delete_qs_acc.png?width=90pc)
 
-##### 6. **Xóa development endpoints**
+- Thực hiện xóa tài khoản
 
-1.  Truy cập **AWS Glue**.
-2.  Chọn endpoint cần xóa.
-3.  Chọn **Action**.
-4.  Chọn **Delete** để xác nhận xóa endpoint.
+![QuickSight](/images/7/delete_acc_form.png?width=90pc)
+
+- Hủy đăng ký **QuickSight** thành công
+
+![QuickSight](/images/7/delete_success.png?width=90pc)
 
 ---
 
-##### 7. **Xóa AWS S3 bucket**
+#### **Dọn dẹp tài nguyên ở AWS Glue**:
 
-1.  Truy cập vào **AWS S3**.
-2.  Chọn **Buckets**.
-3.  Chọn bucket liên quan bài lab.
-4.  Chọn **Empty**.
-5.  Nhập **permanently delete**, sau đó chọn **Empty**.
-6.  Chọn lại bucket cần xóa, chọn **Delete**.
-7.  Xác nhận xóa **bucket**.
+Truy cập vào **AWS Glue**.
+
+1. **Xóa các tables**
+
+- Chọn **Tables**.
+- Chọn các table cần xóa.
+- Chọn **Delete** để xác nhận xóa Table.
+
+![QuickSight](/images/7/delete_tables.png?width=90pc)
+![QuickSight](/images/7/cf_delete_table.png?width=90pc)
+
+2. **Xóa Interactive Sessions**
+
+- Chọn **Interactive Sessions**.
+- Chọn các session cần xóa.
+- Chọn **Delete** để xác nhận xóa session.
+
+![QuickSight](/images/7/delete_session.png?width=90pc)
+
+2. **Xóa crawler**
+
+- Chọn **Crawler**.
+- Chọn các crawler cần xóa.
+- Chọn Action
+- Chọn **Delete crawler** để xác nhận xóa crawler.
+
+![QuickSight](/images/7/delete_cwl.png?width=90pc)
 
 ---
 
-##### 8. **Xóa stack CloudFormation**
+#### **Dọn dẹp tài nguyên ở CloudFormation**:
 
-1.  Truy cập **AWS CloudFormation**.
-2.  Chọn **Stack**.
-3.  Chọn Stack liên quan bài lab.
-4.  Chọn **Delete**.
+- Vào giao diện **CloudFormation**
+- Chọn **Stack**
+- Chọn **stack name** cần xóa
+- Chọn **Delete**
+
+![QuickSight](/images/7/delete_cloudform.png?width=90pc)
+
+- Nếu delete stack **fail**
+  - Chọn **Retry delete**
+  - Chọn **Force delete this entire stack**
+
+![QuickSight](/images/7/force_delete_stack.png?width=90pc)
+
+---
+
+#### **Dọn dẹp tài nguyên ở Kinesis**:
+
+- Vào **Amazon Data Firehose**
+- Chọn **Firehose stream** cần xóa
+- Chọn **Delete**
+
+![QuickSight](/images/7/delete_firehose.png?width=90pc)
+![QuickSight](/images/7/cf_delete_firehose.png?width=90pc)
+
+---
+
+#### **Dọn dẹp tài nguyên ở CloudWatch**:
+
+- Vào giao diện **CloudWatch**
+- Chọn **Log groups**
+- Chọn tất cả **Log groups**
+- Chọn **Action**
+- Chọn **Delete log group(s)**
+
+![QuickSight](/images/7/delete_logs.png?width=90pc)
+![QuickSight](/images/7/cf_delete_logs.png?width=90pc)
+
+---
+
+#### **Dọn dẹp tài nguyên ở S3**:
+
+- Xóa tất cả các bucket liên quan tới bài lab
+
+- Chọn **bucket**
+- **Empty bucket**
+
+![QuickSight](/images/7/empty__bucket.png?width=90pc)
+![QuickSight](/images/7/cf_empty_s3.png?width=90pc)
+
+- Chọn lại bucket vừa empty
+- Chọn **Delete**
+
+![QuickSight](/images/7/delete_s3_bucket.png?width=90pc)
+![QuickSight](/images/7/cf_delete_bucket.png?width=90pc)
+
+{{% notice note %}}
+Thực hiện tương tự với các bucket còn lại
+{{% /notice %}}
+
+---
+
+#### **Dọn dẹp tài nguyên ở IAM**:
+
+Vào giao diện IAM
+
+**1. Xóa Policy**
+
+- Chọn **Policies**
+- Chọn **policy** liên quan đến bài lab
+- Chọn **Delete**
+
+![QuickSight](/images/7/delete_policy.png?width=90pc)
+![QuickSight](/images/7/cf_delete_policy.png?width=90pc)
+
+- Xóa policy thành công
+
+![QuickSight](/images/7/delete_policy_success.png?width=90pc)
+
+**2. Xóa Role**
+
+- Chọn **Roles**
+- Chọn **role** liên quan đến bài lab
+- Chọn **Delete**
+
+![QuickSight](/images/7/delete_role.png?width=90pc)
+
+- Xóa role thành công
+
+![QuickSight](/images/7/delete_role_success.png?width=90pc)

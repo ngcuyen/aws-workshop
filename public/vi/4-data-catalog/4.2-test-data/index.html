@@ -12,21 +12,21 @@
     <title>Kiểm tra dữ liệu :: Triển khai Ứng dụng ShareNote với Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1734550383" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734550383" rel="stylesheet">
-    <link href="/css/hybrid.css?1734550383" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734550383" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734550383" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734550383" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734550383" rel="stylesheet">
-    <link href="/css/theme.css?1734550383" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734550383" rel="stylesheet">
+    <link href="/css/nucleus.css?1734557100" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734557100" rel="stylesheet">
+    <link href="/css/hybrid.css?1734557100" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734557100" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734557100" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734557100" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734557100" rel="stylesheet">
+    <link href="/css/theme.css?1734557100" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734557100" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734550383" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734557100" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734550383"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734557100"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734550383"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734550383"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734557100"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734557100"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734550383"></script>
+<script type="text/javascript" src="/js/search.js?1734557100"></script>
  
   </div>
 
@@ -597,46 +597,46 @@
 </ol>
 <p><img alt="S3" src="/images/4/4.2/choose_bucket.png?width=90pc"></p>
 <ol start="3">
-<li>Chọn Create folder</li>
+<li>Chọn <strong>Create folder</strong></li>
 </ol>
 <p><img alt="S3" src="/images/4/4.2/create_fd_btn.png?width=90pc"></p>
 <ol start="4">
-<li>Đặt tên cho folder là Athena, sau đó chọn Create folder</li>
+<li>Đặt tên cho folder là <strong>Athena</strong>, sau đó chọn <strong>Create folder</strong></li>
 </ol>
 <p><img alt="S3" src="/images/4/4.2/name_create.png?width=90pc"></p>
 <ol start="5">
 <li>Ta được kết quả</li>
 </ol>
 <p><img alt="S3" src="/images/4/4.2/result_fd.png?width=90pc"></p>
-<p>Tiếp theo, ta sẽ sử dụng Athena cùng các câu truy vấn để kiểm tra cấu trúc dữ liệu</p>
+<p>Tiếp theo, ta sẽ sử dụng <strong>Athena</strong> cùng các câu truy vấn để kiểm tra cấu trúc dữ liệu</p>
 <ol start="6">
 <li>Tìm kiếm và chọn dịch vụ <strong>Athena</strong></li>
 </ol>
 <p><img alt="S3" src="/images/4/4.2/athena.png?width=90pc"></p>
 <ol start="7">
-<li>Trong Query editor, chọn Settings, sau đó chọn Manage</li>
+<li>Trong <strong>Query editor</strong>, chọn <strong>Settings</strong>, sau đó chọn <strong>Manage</strong></li>
 </ol>
 <p><img alt="S3" src="/images/4/4.2/manage_Athena.png?width=90pc"></p>
 <ol start="8">
-<li>Trong Manage settings</li>
+<li>Trong <strong>Manage settings</strong></li>
 </ol>
 <ul>
-<li>Chọn Browse S3</li>
-<li>Chọn đường dẫn dẫn tới thư mục Athena</li>
-<li>Chọn Save</li>
+<li>Chọn <strong>Browse S3</strong></li>
+<li>Chọn đường dẫn dẫn tới thư mục <strong>Athena</strong></li>
+<li>Chọn <strong>Save</strong></li>
 </ul>
 <p><img alt="S3" src="/images/4/4.2/set_path_athena.png?width=90pc"></p>
 <ol start="9">
 <li>Thực hiện query với:</li>
 </ol>
 <ul>
-<li>Data source: AwsDataCatalog</li>
-<li>Database: summitdb</li>
+<li><strong>Data source</strong>: <strong>AwsDataCatalog</strong></li>
+<li><strong>Database</strong>: <strong>summitdb</strong></li>
 <li>Thực hiện câu truy vấn: lấy 10 dòng của table raw2024</li>
 </ul>
 <pre tabindex="0"><code>SELECT * FROM &#34;summitdb&#34;.&#34;raw2024&#34; limit 10
 </code></pre><ul>
-<li>Chọn Run query</li>
+<li>Chọn <strong>Run</strong> query</li>
 </ul>
 <ol start="10">
 <li>Kết quả câu truy vấn trên:</li>
@@ -646,8 +646,8 @@
 <li>Tiếp tục thực hiện query với:</li>
 </ol>
 <ul>
-<li>Data source: AwsDataCatalog</li>
-<li>Database: summitdb</li>
+<li><strong>Data source</strong>: <strong>AwsDataCatalog</strong></li>
+<li><strong>Database</strong>: <strong>summitdb</strong></li>
 <li>Thực hiện câu truy vấn:</li>
 </ul>
 <pre tabindex="0"><code>SELECT activity_type,
@@ -656,7 +656,7 @@ FROM raw2024
 GROUP BY activity_type
 ORDER BY activity_type
 </code></pre><ul>
-<li>Chọn Run query</li>
+<li>Chọn <strong>Run</strong> query</li>
 </ul>
 <ol start="10">
 <li>Kết quả câu truy vấn trên:</li>
@@ -1026,19 +1026,19 @@ ORDER BY activity_type
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734550383"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734550383"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734550383"></script>
-    <script src="/js/jquery.sticky.js?1734550383"></script>
-    <script src="/js/featherlight.min.js?1734550383"></script>
-    <script src="/js/highlight.pack.js?1734550383"></script>
+    <script src="/js/clipboard.min.js?1734557100"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734557100"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734557100"></script>
+    <script src="/js/jquery.sticky.js?1734557100"></script>
+    <script src="/js/featherlight.min.js?1734557100"></script>
+    <script src="/js/highlight.pack.js?1734557100"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734550383"></script>
-    <script src="/js/learn.js?1734550383"></script>
-    <script src="/js/hugo-learn.js?1734550383"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734557100"></script>
+    <script src="/js/learn.js?1734557100"></script>
+    <script src="/js/hugo-learn.js?1734557100"></script>
 
-    <link href="/mermaid/mermaid.css?1734550383" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734550383"></script>
+    <link href="/mermaid/mermaid.css?1734557100" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734557100"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

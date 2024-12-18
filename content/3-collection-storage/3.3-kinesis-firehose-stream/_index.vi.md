@@ -22,33 +22,33 @@ pre = "<b>3.3. </b>"
 
 4. Tại giao diện **Create Firehose Stream**
 
-   - Tại Source chọn Direct PUT
-   - Tại Destination chọn Amazon S3
-   - Tại Firehose stream name đặt tên `FCJ-FirehoseStream`
+   - Tại **Source** chọn **Direct PUT**
+   - Tại **Destination** chọn **Amazon S3**
+   - Tại **Firehose stream name** đặt tên `FCJ-FirehoseStream`
 
    ![Kinesis](/images/3/3.3/firehose_parameters.png?width=90pc)
 
-   - Kiểm tra các giá trị ở Transform and convert records
+   - Kiểm tra các giá trị ở **Transform and convert records**
 
    ![Kinesis](/images/3/3.3/firehose_transform_convert.png?width=90pc)
 
-   - Ở Destination Setting
+   - Ở **Destination Setting**
 
-     - Chọn Browse
+     - Chọn **Browse**
        ![Kinesis](/images/3/3.3/firehose_browse_s3_btn.png?width=90pc)
-     - Chọn bucket asg-datalake-demo-2024
-     - Chọn Create
+     - Chọn bucket **asg-datalake-demo-2024**
+     - Chọn **Create**
 
        ![Kinesis](/images/3/3.3/firehose_choose_s3_bucket.png?width=90pc)
 
      - Kiểm tra
        ![Kinesis](/images/3/3.3/destination_setting_1.png?width=90pc)
-     - Ở S3 bucket prefix, nhập `data/raw`
-     - Ở S3 bucket error output prefix, nhập `data/error`
+     - Ở **S3 bucket prefix**, nhập `data/raw`
+     - Ở **S3 bucket error output prefix**, nhập `data/error`
 
        ![Kinesis](/images/3/3.3/destination_setting_2.png?width=90pc)
 
-     - Chọn Create Firehose stream
+     - Chọn **Create Firehose stream**
 
        ![Kinesis](/images/3/3.3/create_firehose_submit.png?width=90pc)
 

@@ -1,14 +1,35 @@
 +++
-title = "Introduction"
+title = "Create S3 Bucket"
 date = 2020
-weight = 2
+weight = 1
 chapter = false
-pre = "<b>1. </b>"
+pre = "<b>3.1. </b>"
 +++
 
-## Sơ đồ tổng quan bài thực hành
+## Create S3 Bucket
 
-Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer.
-Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:
+1. Search for and select the **S3** service.
 
-![Diagram](../../../images/1/0.png?width=40pc)
+   ![S3](/images/3/s3.png?width=90pc)
+
+2. In the **S3** interface, select **Create bucket**.
+
+   ![S3](/images/3/create_bucket.png?width=90pc)
+
+3. In the **Bucket name** field, enter `asg-datalake-demo-2024`.
+
+   ![S3](/images/3/name_bucket.png?width=90pc)
+
+4. Review the configuration settings as shown below:
+
+   ![S3](/images/3/create_bucket_2.png?width=90pc)
+
+   ![S3](/images/3/create_bucket_3.png?width=90pc)
+
+5. Click **Create bucket**.
+
+   ![S3](/images/3/submit_create.png?width=90pc)
+
+6. Bucket created successfully.
+
+   ![S3](/images/3/create_success.png?width=90pc)

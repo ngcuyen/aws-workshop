@@ -1,67 +1,176 @@
 +++
-title = "Clean up resources"
+title = "Cleanup Resources"
 date = 2021-06-08T18:57:03+07:00
 weight = 7
 chapter = false
 pre = "<b>7. </b>"
 +++
 
-Chúng ta sẽ dọn dẹp tài nguyên theo thứ tự như sau:
+We will clean up the following resources:
 
-1. **Xóa Auto Scaling Group**:
-   - Truy cập **EC2 Management Console**
-   - Trên thanh điều hướng bên trái, chọn Auto Scaling Groups
-   - Chọn Auto Scaling Group liên quan tới bài lab.
-   - Click Delete
-   - Gõ delete vào ô trống và nhấn delete
-2. **Xóa Load Balancer**:
-   - Truy cập **EC2 Management Console**
-   - Trên thanh điều hướng bên trái, chọn Load Balancers
-   - Chọn Load Balancer liên quan tới bài lab.
-   - Click Actions.
-   - Click Delete.
-3. **Xóa Target Group**:
-   - Truy cập **EC2 Management Console**
-   - Trên thanh điều hướng bên trái, chọn Target Groups
-   - Chọn Target Group liên quan tới bài lab.
-   - Click Actions.
-   - Click Delete.
-   - Click Yes, delete
-4. **Xóa Launch Template**:
-   - Truy cập **EC2 Management Console**
-   - Trên thanh điều hướng bên trái, chọn Launch Templates
-   - Chọn Launch Template liên quan tới bài lab.
-   - Click Actions.
-   - Click Delete template
-   - Gõ delete vào ô trống và nhấn delete
-5. **Xóa AMI**:
-   - Truy cập **EC2 Management Console**
-   - Trên thanh điều hướng bên trái, chọn AMIs
-   - Chọn AMI liên quan tới bài lab.
-   - Click Actions.
-   - Click Deregister.
-   - Click Continue.
-6. **Terminate EC2 instance**
-   - Truy cập **EC2 Management Console**
-   - Trên thanh điều hướng bên trái, chọn Intances
-   - Chọn tất cả EC2 Instance liên quan tới bài lab.
-   - Click Actions.
-   - Click Manage Instance State.
-   - Chọn Terminate.
-   - Click Change State
-7. **Xóa DB Instance**
-   - Truy cập **RDS Management Console**
-   - Trên thanh điều hướng bên trái, chọn Databases
-   - Chọn tất cả DB Instance liên quan tới bài lab.
-   - Click Actions.
-   - Click Delete
-   - Bỏ chọn _Create final snapshot?_ và chọn _I acknowledge that upon instance deletion, automated backups, including system snapshots and point-in-time recovery, will no longer be available_
-   - Gõ _delete me_ vào ô trống.
-   - Click _Delete_
-8. **Xóa Security Group**
-   - Truy cập **EC2 Management Console**
-   - Trên thanh điều hướng bên trái, chọn Security Groups
-   - Chọn tất cả Security Groups liên quan tới bài lab.
-   - Click Actions.
-   - Click Delete security groups
-   - Click Delete
+#### **Clean up resources in Visual QuickSight**:
+
+1.  **Delete Pie Chart Sheet**
+
+![QuickSight](/images/7/delete_piechart.png?width=90pc)
+
+2. **Delete QuickSight Analyses:**
+
+- Select **Analyses**.
+- Select the **Analysis** you want to delete.
+- Click **Delete**.
+
+![QuickSight](/images/7/delete_qs_ana.png?width=90pc)
+
+- Delete done
+
+![QuickSight](/images/7/delete_done.png?width=90pc)
+
+3. **Delete QuickSight Dataset:**
+
+![QuickSight](/images/7/delete_dataset.png?width=90pc)
+![QuickSight](/images/7/delete_cf_dataset.png?width=90pc)
+
+4. You can also delete your QuickSight account if not using it.
+
+- In the **QuickSight** interface, click **Manage QuickSight**
+
+![QuickSight](/images/6/6.2/manage_quicksight.png?width=90pc)
+
+- Under **Account settings**, click **Manage**
+
+![QuickSight](/images/7/delete_qs_acc.png?width=90pc)
+
+- Proceed to delete the account
+
+![QuickSight](/images/7/delete_acc_form.png?width=90pc)
+
+- QuickSight unsubscription successful
+
+![QuickSight](/images/7/delete_success.png?width=90pc)
+
+---
+
+#### **Clean up resources in AWS Glue**:
+
+Access **AWS Glue**.
+
+1. **Delete Tables**
+
+- Select **Tables**.
+- Choose the tables to delete.
+- Click **Delete** to confirm table deletion.
+
+![QuickSight](/images/7/delete_tables.png?width=90pc)
+![QuickSight](/images/7/cf_delete_table.png?width=90pc)
+
+2. **Delete Interactive Sessions**
+
+- Select **Interactive Sessions**.
+- Choose the sessions to delete.
+- Click **Delete** to confirm session deletion.
+
+![QuickSight](/images/7/delete_session.png?width=90pc)
+
+3. **Delete Crawlers**
+
+- Select **Crawler**.
+- Choose the crawlers to delete.
+- Click **Action**
+- Select **Delete crawler** to confirm crawler deletion.
+
+![QuickSight](/images/7/delete_cwl.png?width=90pc)
+
+---
+
+#### **Clean up resources in CloudFormation**:
+
+- Go to the **CloudFormation** interface.
+- Select **Stack**
+- Choose the **stack name** you want to delete.
+- Click **Delete**
+
+![QuickSight](/images/7/delete_cloudform.png?width=90pc)
+
+- If the stack deletion **fails**
+  - Click **Retry delete**
+  - Click **Force delete this entire stack**
+
+![QuickSight](/images/7/force_delete_stack.png?width=90pc)
+
+---
+
+#### **Clean up resources in Kinesis**:
+
+- Go to **Amazon Data Firehose**
+- Select the **Firehose stream** to delete.
+- Click **Delete**
+
+![QuickSight](/images/7/delete_firehose.png?width=90pc)
+![QuickSight](/images/7/cf_delete_firehose.png?width=90pc)
+
+---
+
+#### **Clean up resources in CloudWatch**:
+
+- Go to the **CloudWatch** interface.
+- Select **Log groups**
+- Select all **Log groups**
+- Click **Action**
+- Select **Delete log group(s)**
+
+![QuickSight](/images/7/delete_logs.png?width=90pc)
+![QuickSight](/images/7/cf_delete_logs.png?width=90pc)
+
+---
+
+#### **Clean up resources in S3**:
+
+- Delete all buckets related to the lab
+
+- Select **bucket**
+- Click **Empty bucket**
+
+![QuickSight](/images/7/empty__bucket.png?width=90pc)
+![QuickSight](/images/7/cf_empty_s3.png?width=90pc)
+
+- Select the emptied bucket
+- Click **Delete**
+
+![QuickSight](/images/7/delete_s3_bucket.png?width=90pc)
+![QuickSight](/images/7/cf_delete_bucket.png?width=90pc)
+
+{{% notice note %}}
+Perform the same action for the remaining buckets
+{{% /notice %}}
+
+---
+
+#### **Clean up resources in IAM**:
+
+Go to the IAM interface
+
+**1. Delete Policy**
+
+- Select **Policies**
+- Choose the **policy** related to the lab
+- Click **Delete**
+
+![QuickSight](/images/7/delete_policy.png?width=90pc)
+![QuickSight](/images/7/cf_delete_policy.png?width=90pc)
+
+- Policy deleted successfully
+
+![QuickSight](/images/7/delete_policy_success.png?width=90pc)
+
+**2. Delete Role**
+
+- Select **Roles**
+- Choose the **role** related to the lab
+- Click **Delete**
+
+![QuickSight](/images/7/delete_role.png?width=90pc)
+
+- Role deleted successfully
+
+![QuickSight](/images/7/delete_role_success.png?width=90pc)
