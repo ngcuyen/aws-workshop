@@ -12,21 +12,21 @@
     <title>Tạo Glue Crawler :: Triển khai Ứng dụng ShareNote với Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1734532445" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734532445" rel="stylesheet">
-    <link href="/css/hybrid.css?1734532445" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734532445" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734532445" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734532445" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734532445" rel="stylesheet">
-    <link href="/css/theme.css?1734532445" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734532445" rel="stylesheet">
+    <link href="/css/nucleus.css?1734540899" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734540899" rel="stylesheet">
+    <link href="/css/hybrid.css?1734540899" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734540899" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734540899" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734540899" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734540899" rel="stylesheet">
+    <link href="/css/theme.css?1734540899" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734540899" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734532445" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734540899" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734532445"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734540899"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734532445"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734532445"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734540899"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734540899"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734532445"></script>
+<script type="text/javascript" src="/js/search.js?1734540899"></script>
  
   </div>
 
@@ -217,7 +217,7 @@
             
 <li
   data-nav-id="/vi/3-collection-storage/3.3-kinesis-firehose-stream/"
-  title="Tạo Delivery Stream"
+  title="Tạo Firehose Stream"
   class="dd-item 
         
         
@@ -225,7 +225,7 @@
         "
 >
   <a href="/vi/3-collection-storage/3.3-kinesis-firehose-stream/">
-    <b>3.3. </b>Tạo Delivery Stream 
+    <b>3.3. </b>Tạo Firehose Stream 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -576,7 +576,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tạo-glue-crawler">Tạo Glue Crawler</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -600,7 +604,121 @@
 
 
 
-	
+	<h2 id="tạo-glue-crawler">Tạo Glue Crawler</h2>
+<ol>
+<li>
+<p>Tìm và chọn AWS Glue</p>
+<p><img alt="Glue" src="/images/4/4.1/glue_service.png?width=90pc"></p>
+</li>
+<li>
+<p>Trong giao diện AWS Glue</p>
+</li>
+</ol>
+<ul>
+<li>Chọn Crawler</li>
+<li>Chọn Create crawler
+<img alt="Glue" src="/images/4/4.1/btn_create_cwl.png?width=90pc"></li>
+</ul>
+<ol start="3">
+<li>Trong giao diện Add new crawler</li>
+</ol>
+<ul>
+<li>
+<p>Ở bước Set crawler properties</p>
+<ul>
+<li>Nhập Name là <code>summitcrawler</code></li>
+<li>Chọn Next</li>
+</ul>
+<p><img alt="Glue" src="/images/4/4.1/cwl_properties.png?width=90pc"></p>
+</li>
+<li>
+<p>Ở bước Choose data sources and classifiers</p>
+<ul>
+<li>Chọn Add a data source</li>
+</ul>
+<p><img alt="Glue" src="/images/4/4.1/add_data_source.png?width=90pc"></p>
+<ul>
+<li>Chọn Data source S3</li>
+<li>Chọn Browse S3</li>
+<li>Chọn S3 path (như hình ảnh)</li>
+<li>Chọn Crawler new sub-folders only</li>
+<li>Chọn Add an S3 data source</li>
+</ul>
+<p><img alt="Glue" src="/images/4/4.1/add_data_src_form.png?width=90pc"></p>
+<ul>
+<li>Sau đó chọn Next
+<img alt="Glue" src="/images/4/4.1/next_step2.png?width=90pc"></li>
+</ul>
+</li>
+<li>
+<p>Ở bước Configure security settings</p>
+<ul>
+<li>Chọn IAM role: AWSGlueServiceRoleDefault</li>
+<li>Chọn Next
+<img alt="Glue" src="/images/4/4.1/next_step3.png?width=90pc"></li>
+</ul>
+</li>
+<li>
+<p>Ở bước Set output and scheduling</p>
+<ul>
+<li>
+<p>Chọn Add database
+<img alt="Glue" src="/images/4/4.1/step4_add_db.png?width=90pc"></p>
+</li>
+<li>
+<p>Ở giao diện Create database:</p>
+<ul>
+<li>Đặt tên database: <code>summitdb</code></li>
+<li>Chọn Create database
+<img alt="Glue" src="/images/4/4.1/create_db.png?width=90pc"></li>
+</ul>
+</li>
+<li>
+<p>Quay lại giao diện bước Set output and scheduling</p>
+<ul>
+<li>Chọn target database: <code>summitdb</code></li>
+<li>Chọn Next</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="notices note" ><p>Nếu <strong>summitdb</strong> không hiển thị, bạn có thể bấm button reload bên cạnh textfield <strong>Target database</strong></p>
+</div>
+
+<p><img alt="Glue" src="/images/4/4.1/next_step4.png?width=90pc"></p>
+<ul>
+<li>
+<p>Ở bước Review and create</p>
+<ul>
+<li>Review lại các cấu hình</li>
+<li>Chọn Create crawler</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Glue" src="/images/4/4.1/review_create_cwl.png?width=90pc"></p>
+<ol start="4">
+<li>Sau khi tạo crawler thành công, chọn Run crawler</li>
+</ol>
+<p><img alt="Glue" src="/images/4/4.1/run_cwl.png?width=90pc"></p>
+<ol start="5">
+<li>Đợi một khoảng thời gian để crawler run. Sau khi run thành công, crawler ở trạng thái Complete</li>
+</ol>
+<p><img alt="Glue" src="/images/4/4.1/complete_run_swl.png?width=90pc"></p>
+<ol start="6">
+<li>Chọn Table ở giao diện AWS Glue, chúng ta sẽ thấy có 2 bảng dữ liệu.</li>
+</ol>
+<p><img alt="Glue" src="/images/4/4.1/check_data_in_table_after_run.png?width=90pc"></p>
+<ol start="7">
+<li>Dữ liệu ở raw2024</li>
+</ol>
+<p><img alt="Glue" src="/images/4/4.1/at_raw2024.png?width=90pc"></p>
+<ol start="8">
+<li>Dữ liệu ở reference_data</li>
+</ol>
+<p><img alt="Glue" src="/images/4/4.1/at_ref_data.png?width=90pc"></p>
+
 
 
 
@@ -977,19 +1095,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734532445"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734532445"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734532445"></script>
-    <script src="/js/jquery.sticky.js?1734532445"></script>
-    <script src="/js/featherlight.min.js?1734532445"></script>
-    <script src="/js/highlight.pack.js?1734532445"></script>
+    <script src="/js/clipboard.min.js?1734540899"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734540899"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734540899"></script>
+    <script src="/js/jquery.sticky.js?1734540899"></script>
+    <script src="/js/featherlight.min.js?1734540899"></script>
+    <script src="/js/highlight.pack.js?1734540899"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734532445"></script>
-    <script src="/js/learn.js?1734532445"></script>
-    <script src="/js/hugo-learn.js?1734532445"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734540899"></script>
+    <script src="/js/learn.js?1734540899"></script>
+    <script src="/js/hugo-learn.js?1734540899"></script>
 
-    <link href="/mermaid/mermaid.css?1734532445" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734532445"></script>
+    <link href="/mermaid/mermaid.css?1734540899" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734540899"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
