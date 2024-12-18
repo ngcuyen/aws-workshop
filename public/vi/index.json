@@ -32,7 +32,7 @@
 	"title": "Tạo Glue Crawler",
 	"tags": [],
 	"description": "",
-	"content": "Tạo Glue Crawler "
+	"content": "Tạo Glue Crawler Tìm và chọn AWS Glue\nTrong giao diện AWS Glue\nChọn Crawler Chọn Create crawler Trong giao diện Add new crawler Ở bước Set crawler properties\nNhập Name là summitcrawler Chọn Next Ở bước Choose data sources and classifiers\nChọn Add a data source Chọn Data source S3 Chọn Browse S3 Chọn S3 path (như hình ảnh) Chọn Crawler new sub-folders only Chọn Add an S3 data source Sau đó chọn Next Ở bước Configure security settings\nChọn IAM role: AWSGlueServiceRoleDefault Chọn Next Ở bước Set output and scheduling\nChọn Add database Ở giao diện Create database:\nĐặt tên database: summitdb Chọn Create database Quay lại giao diện bước Set output and scheduling\nChọn target database: summitdb Chọn Next Nếu summitdb không hiển thị, bạn có thể bấm button reload bên cạnh textfield Target database\nỞ bước Review and create\nReview lại các cấu hình Chọn Create crawler Sau khi tạo crawler thành công, chọn Run crawler Đợi một khoảng thời gian để crawler run. Sau khi run thành công, crawler ở trạng thái Complete Chọn Table ở giao diện AWS Glue, chúng ta sẽ thấy có 2 bảng dữ liệu. Dữ liệu ở raw2024 Dữ liệu ở reference_data "
 },
 {
 	"uri": "http://localhost:1313/vi/3-collection-storage/3.1-s3-bucket/",
@@ -53,7 +53,7 @@
 	"title": "Kiểm tra dữ liệu",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Kiểm tra dữ liệu Tìm kiếm và chọn dịch vụ S3 Chọn vào bucket asg-datalake-demo-2024 Chọn Create folder Đặt tên cho folder là Athena, sau đó chọn Create folder Ta được kết quả Tiếp theo, ta sẽ sử dụng Athena cùng các câu truy vấn để kiểm tra cấu trúc dữ liệu\nTìm kiếm và chọn dịch vụ Athena Trong Query editor, chọn Settings, sau đó chọn Manage Trong Manage settings Chọn Browse S3 Chọn đường dẫn dẫn tới thư mục Athena Chọn Save Thực hiện query với: Data source: AwsDataCatalog Database: summitdb Thực hiện câu truy vấn: lấy 10 dòng của table raw2024 SELECT * FROM \u0026#34;summitdb\u0026#34;.\u0026#34;raw2024\u0026#34; limit 10 Chọn Run query Kết quả câu truy vấn trên: Tiếp tục thực hiện query với: Data source: AwsDataCatalog Database: summitdb Thực hiện câu truy vấn: SELECT activity_type,\rcount(activity_type)\rFROM raw2024\rGROUP BY activity_type\rORDER BY activity_type Chọn Run query Kết quả câu truy vấn trên: "
 },
 {
 	"uri": "http://localhost:1313/vi/3-collection-storage/3.2-object-in-bucket/",
