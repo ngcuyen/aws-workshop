@@ -42,14 +42,21 @@
 	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
 },
 {
-	"uri": "http://localhost:1313/3-collection-storage/3.2-delivery-stream/",
+	"uri": "http://localhost:1313/3-collection-storage/3.2-object-in-bucket/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
 	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
 },
 {
-	"uri": "http://localhost:1313/3-collection-storage/3.3-sample-data/",
+	"uri": "http://localhost:1313/3-collection-storage/3.3-kinesis-firehose-stream/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Sơ đồ tổng quan bài thực hành Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer. Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:\n"
+},
+{
+	"uri": "http://localhost:1313/3-collection-storage/3.4-sample-data/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",

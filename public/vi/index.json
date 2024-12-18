@@ -39,7 +39,7 @@
 	"title": "Tạo S3 bucket",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Tạo S3 bucket Tìm kiếm và chọn dịch vụ S3\nTrong giao diện S3, chọn Create bucket\nTại Bucket name, đặt tên asg-datalake-demo-2024\nKiểm tra các thông số như hình dưới:\nClick Create bucket\nTạo bucket thành công\n"
 },
 {
 	"uri": "http://localhost:1313/vi/2-preparation/",
@@ -56,11 +56,11 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/vi/3-collection-storage/3.2-delivery-stream/",
-	"title": "Tạo Delivery Stream",
+	"uri": "http://localhost:1313/vi/3-collection-storage/3.2-object-in-bucket/",
+	"title": "Tạo object cho S3 bucket",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Tạo object cho S3 bucket Tiếp theo, click vào bucket vừa tạo. Tại tab Object chọn Create folder\nTrong giao diện Create bucket, đặt Folder name là data\nKiểm tra các thông số và chọn Create folder\nTương tự với cách tạo folder, ta sẽ tạo folder reference_data ở trong folder data\nTạo folder reference_data thành công\nTiến hành download file tracks_list.json\n"
 },
 {
 	"uri": "http://localhost:1313/vi/2-preparation/2.2-policy/",
@@ -77,25 +77,25 @@
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/vi/3-collection-storage/",
-	"title": "Thu thập và lưu trữ dữ liệu",
-	"tags": [],
-	"description": "",
-	"content": "Trong hướng dẫn này, chúng ta sẽ tạo một S3 bucket để lưu trữ dữ liệu và tạo một Delivery stream để thu thập dữ liệu.\nNội dung: Tạo S3 bucket Tạo Delivery Stream Tạo dữ liệu mẫu "
-},
-{
 	"uri": "http://localhost:1313/vi/2-preparation/2.3-attach-policy-to-role/",
 	"title": "Gắn policy vào role",
 	"tags": [],
 	"description": "",
-	"content": "Gắn policy vào role Ở phần này, ta gắn policy vào role đã tạo trước, để đảm bảo role có các quyền tương ứng được định nghĩa trong policy\nTrong IAM Dashboard\nChọn Role Chọn Create role "
+	"content": "Gắn policy vào role Ở phần này, ta gắn policy vào role đã tạo trước, để đảm bảo role có các quyền tương ứng được định nghĩa trong policy\nTrong IAM Dashboard\nChọn Role Chọn vào role AWSGlueServiceRoleDefault Trong chi tiết role AWSGlueServiceRoleDefault, chọn Attach policy\nChọn AWSGlueServicePolicy, click Add permission\nAttach policy vào role thành công\n"
 },
 {
-	"uri": "http://localhost:1313/vi/3-collection-storage/3.3-sample-data/",
-	"title": "Tạo dữ liệu mẫu",
+	"uri": "http://localhost:1313/vi/3-collection-storage/3.3-kinesis-firehose-stream/",
+	"title": "Tạo Delivery Stream",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "http://localhost:1313/vi/3-collection-storage/",
+	"title": "Thu thập và lưu trữ dữ liệu",
+	"tags": [],
+	"description": "",
+	"content": "Trong hướng dẫn này, chúng ta sẽ tạo một S3 bucket để lưu trữ dữ liệu và tạo một Firehose stream để thu thập dữ liệu. Trong quá trình này, ta sẽ dùng ta sử dụng Kinesis Data Generator để tạo dữ liệu mẫu thông qua CloudFormation\nNội dung: Tạo S3 bucket Tạo Firehose Stream Tạo dữ liệu mẫu "
 },
 {
 	"uri": "http://localhost:1313/vi/4-data-catalog/",
@@ -103,6 +103,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Nội dung: Tạo Glue Crawler Kiểm tra dữ liệu "
+},
+{
+	"uri": "http://localhost:1313/vi/3-collection-storage/3.4-sample-data/",
+	"title": "Tạo dữ liệu mẫu",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "http://localhost:1313/vi/5-data-transform/",
