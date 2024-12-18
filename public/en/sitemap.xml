@@ -54,6 +54,19 @@
                 href="http://localhost:1313/2-preparation/2.2-policy/"
                 />
   </url><url>
+    <loc>http://localhost:1313/2-preparation/2.3-attach-policy-to-role/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/vi/2-preparation/2.3-attach-policy-to-role/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/2-preparation/2.3-attach-policy-to-role/"
+                />
+  </url><url>
     <loc>http://localhost:1313/3-collection-storage/3.1-s3-bucket/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
@@ -67,30 +80,43 @@
                 href="http://localhost:1313/3-collection-storage/3.1-s3-bucket/"
                 />
   </url><url>
-    <loc>http://localhost:1313/3-collection-storage/3.2-delivery-stream/</loc>
+    <loc>http://localhost:1313/3-collection-storage/3.2-object-in-bucket/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/3-collection-storage/3.2-delivery-stream/"
+                href="http://localhost:1313/vi/3-collection-storage/3.2-object-in-bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/3-collection-storage/3.2-delivery-stream/"
+                href="http://localhost:1313/3-collection-storage/3.2-object-in-bucket/"
                 />
   </url><url>
-    <loc>http://localhost:1313/3-collection-storage/3.3-sample-data/</loc>
+    <loc>http://localhost:1313/3-collection-storage/3.3-kinesis-firehose-stream/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/3-collection-storage/3.3-sample-data/"
+                href="http://localhost:1313/vi/3-collection-storage/3.3-kinesis-firehose-stream/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/3-collection-storage/3.3-sample-data/"
+                href="http://localhost:1313/3-collection-storage/3.3-kinesis-firehose-stream/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/3-collection-storage/3.4-sample-data/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/vi/3-collection-storage/3.4-sample-data/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/3-collection-storage/3.4-sample-data/"
                 />
   </url><url>
     <loc>http://localhost:1313/4-data-catalog/4.1-glue-crawler/</loc>
@@ -210,30 +236,17 @@
                 href="http://localhost:1313/5-data-transform/"
                 />
   </url><url>
-    <loc>http://localhost:1313/7-data-warehouse/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/vi/7-data-warehouse/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/7-data-warehouse/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/8-clean-up/</loc>
+    <loc>http://localhost:1313/7-clean-up/</loc>
     <lastmod>2021-06-08T18:57:03+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/vi/8-clean-up/"
+                href="http://localhost:1313/vi/7-clean-up/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/8-clean-up/"
+                href="http://localhost:1313/7-clean-up/"
                 />
   </url><url>
     <loc>http://localhost:1313/categories/</loc>

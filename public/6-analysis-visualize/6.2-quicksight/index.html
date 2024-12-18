@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Introduction :: Deploy ShareNote Application on Auto Scaling Group</title>
+    <title>Visualize with QuickSight :: Deploy ShareNote Application on Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1731317452" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1731317452" rel="stylesheet">
-    <link href="/css/hybrid.css?1731317452" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1731317452" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1731317452" rel="stylesheet">
-    <link href="/css/auto-complete.css?1731317452" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1731317452" rel="stylesheet">
-    <link href="/css/theme.css?1731317452" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1731317452" rel="stylesheet">
+    <link href="/css/nucleus.css?1734557067" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734557067" rel="stylesheet">
+    <link href="/css/hybrid.css?1734557067" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734557067" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734557067" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734557067" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734557067" rel="stylesheet">
+    <link href="/css/theme.css?1734557067" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734557067" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1731317452" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734557067" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1731317452"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734557067"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1731317452"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1731317452"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734557067"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734557067"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1731317452"></script>
+<script type="text/javascript" src="/js/search.js?1734557067"></script>
  
   </div>
 
@@ -106,7 +106,7 @@
             
 <li
   data-nav-id="/2-preparation/2.1-iam-role/"
-  title="Introduction"
+  title="Create IAM Role"
   class="dd-item 
         
         
@@ -114,7 +114,7 @@
         "
 >
   <a href="/2-preparation/2.1-iam-role/">
-    <b>1. </b>Introduction 
+    <b>2.1. </b>Create IAM Role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -124,7 +124,7 @@
             
 <li
   data-nav-id="/2-preparation/2.2-policy/"
-  title="Introduction"
+  title="Create Policy"
   class="dd-item 
         
         
@@ -132,7 +132,25 @@
         "
 >
   <a href="/2-preparation/2.2-policy/">
-    <b>1. </b>Introduction 
+    <b>2.2. </b>Create Policy 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/2-preparation/2.3-attach-policy-to-role/"
+  title="Attach Policy to Role"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/2-preparation/2.3-attach-policy-to-role/">
+    <b>2.3. </b>Attach Policy to Role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -145,7 +163,7 @@
            
 <li
   data-nav-id="/3-collection-storage/"
-  title="Data Collection and Storage"
+  title="Collecting and Storing Data"
   class="dd-item 
         
         
@@ -153,7 +171,7 @@
         "
 >
   <a href="/3-collection-storage/">
-    <b>3. </b>Data Collection and Storage 
+    <b>3. </b>Collecting and Storing Data 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -163,7 +181,7 @@
             
 <li
   data-nav-id="/3-collection-storage/3.1-s3-bucket/"
-  title="Introduction"
+  title="Create S3 Bucket"
   class="dd-item 
         
         
@@ -171,7 +189,7 @@
         "
 >
   <a href="/3-collection-storage/3.1-s3-bucket/">
-    <b>1. </b>Introduction 
+    <b>3.1. </b>Create S3 Bucket 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -180,16 +198,16 @@
     
             
 <li
-  data-nav-id="/3-collection-storage/3.2-delivery-stream/"
-  title="Introduction"
+  data-nav-id="/3-collection-storage/3.2-object-in-bucket/"
+  title="Create Object for S3 Bucket"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/3-collection-storage/3.2-delivery-stream/">
-    <b>1. </b>Introduction 
+  <a href="/3-collection-storage/3.2-object-in-bucket/">
+    <b>3.2. </b>Create Object for S3 Bucket 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -198,16 +216,34 @@
     
             
 <li
-  data-nav-id="/3-collection-storage/3.3-sample-data/"
-  title="Introduction"
+  data-nav-id="/3-collection-storage/3.3-kinesis-firehose-stream/"
+  title="Create Firehose Stream"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/3-collection-storage/3.3-sample-data/">
-    <b>1. </b>Introduction 
+  <a href="/3-collection-storage/3.3-kinesis-firehose-stream/">
+    <b>3.3. </b>Create Firehose Stream 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/3-collection-storage/3.4-sample-data/"
+  title="Create Sample Data"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/3-collection-storage/3.4-sample-data/">
+    <b>3.4. </b>Create Sample Data 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -238,7 +274,7 @@
             
 <li
   data-nav-id="/4-data-catalog/4.1-glue-crawler/"
-  title="Introduction"
+  title="Create Glue Crawler"
   class="dd-item 
         
         
@@ -246,7 +282,7 @@
         "
 >
   <a href="/4-data-catalog/4.1-glue-crawler/">
-    <b>1. </b>Introduction 
+    <b>4.1. </b>Create Glue Crawler 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -256,7 +292,7 @@
             
 <li
   data-nav-id="/4-data-catalog/4.2-test-data/"
-  title="Introduction"
+  title="Check Data"
   class="dd-item 
         
         
@@ -264,64 +300,7 @@
         "
 >
   <a href="/4-data-catalog/4.2-test-data/">
-    <b>1. </b>Introduction 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-     
-  </ul>
-  
-</li>
-           
-<li
-  data-nav-id="/6-analysis-visualize/"
-  title="Analysis and visualization"
-  class="dd-item 
-        parent
-        
-        
-        "
->
-  <a href="/6-analysis-visualize/">
-    <b>5. </b>Analysis and visualization 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-  <ul>
-          
-            
-<li
-  data-nav-id="/6-analysis-visualize/6.1-athena/"
-  title="Introduction"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="/6-analysis-visualize/6.1-athena/">
-    <b>1. </b>Introduction 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-    
-            
-<li
-  data-nav-id="/6-analysis-visualize/6.2-quicksight/"
-  title="Introduction"
-  class="dd-item 
-        
-        active
-        
-        "
->
-  <a href="/6-analysis-visualize/6.2-quicksight/">
-    <b>1. </b>Introduction 
+    <b>4.2. </b>Check Data 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -350,33 +329,73 @@
 </li>
            
 <li
-  data-nav-id="/7-data-warehouse/"
-  title="Data Warehouse"
+  data-nav-id="/6-analysis-visualize/"
+  title="Analysis and Visualization"
+  class="dd-item 
+        parent
+        
+        
+        "
+>
+  <a href="/6-analysis-visualize/">
+    <b>6. </b>Analysis and Visualization 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/6-analysis-visualize/6.1-athena/"
+  title="Analysis with Athena"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/7-data-warehouse/">
-    <b>5. </b>Data Warehouse 
+  <a href="/6-analysis-visualize/6.1-athena/">
+    <b>6.1. </b>Analysis with Athena 
     <i class="fas fa-check read-icon"></i>
     
   </a>
    
 </li>
+    
+            
+<li
+  data-nav-id="/6-analysis-visualize/6.2-quicksight/"
+  title="Visualize with QuickSight"
+  class="dd-item 
+        
+        active
+        
+        "
+>
+  <a href="/6-analysis-visualize/6.2-quicksight/">
+    <b>6.2. </b>Visualize with QuickSight 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
            
 <li
-  data-nav-id="/8-clean-up/"
-  title="Clean up resources"
+  data-nav-id="/7-clean-up/"
+  title="Cleanup Resources"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/8-clean-up/">
-    <b>7. </b>Clean up resources 
+  <a href="/7-clean-up/">
+    <b>7. </b>Cleanup Resources 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -466,7 +485,6 @@
     </section>
     
     <section id="footer"><left>
-    
      <b> Workshop</b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7831210&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
@@ -482,7 +500,7 @@
     <left>
         <br>
         <br>
-            <b> Author </b> <br>
+            <b> Team </b> <br>
            
             <i>
                 <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Ngọc Uyển</a>
@@ -528,7 +546,7 @@
             
           
           
-            <a href='/'>Triển khai Ứng dụng ShareNote với Auto Scaling Group</a> > <a href='/6-analysis-visualize/'>Analysis and visualization</a> > Introduction
+            <a href='/'>Data Lake</a> > <a href='/6-analysis-visualize/'>Analysis and Visualization</a> > Visualize with QuickSight
           
         
           
@@ -543,7 +561,12 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#sơ-đồ-tổng-quan-bài-thực-hành">Sơ đồ tổng quan bài thực hành</a></li>
+    <li><a href="#visualize-with-quicksight">Visualize with QuickSight</a>
+      <ul>
+        <li><a href="#create-a-quicksight-account">Create a QuickSight Account</a></li>
+        <li><a href="#visualize-data">Visualize Data</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -561,7 +584,7 @@
           
             <h1>
               
-              Introduction
+              Visualize with QuickSight
             </h1>
           
 
@@ -569,10 +592,114 @@
 
 
 
-	<h2 id="sơ-đồ-tổng-quan-bài-thực-hành">Sơ đồ tổng quan bài thực hành</h2>
-<p>Trong bài thực hành này, chúng ta cần chuẩn bị một số dịch vụ để có thể tiến hành triển khai ứng dụng ShareNote sử dụng Auto Scaling Group cùng với Elastic Load Balancer.
-Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo kiến trúc như sau:</p>
-<p><img alt="Diagram" src="../../../images/1/0.png?width=40pc"></p>
+	<h2 id="visualize-with-quicksight">Visualize with QuickSight</h2>
+<p>We will use <strong>QuickSight</strong> to visualize data from the <strong>processed_data</strong> table.</p>
+<p>First, we will create a <strong>QuickSight</strong> account.</p>
+
+<div class="notices info" ><p>If you already have a <strong>QuickSight</strong> account, you can skip this step.</p>
+</div>
+
+<h3 id="create-a-quicksight-account">Create a QuickSight Account</h3>
+<ol>
+<li>Search for and select the <strong>QuickSight</strong> service</li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/quicksight.png?width=90pc"></p>
+<ol start="2">
+<li>Sign up for <strong>QuickSight</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/signup_ud.png?width=90pc"></p>
+<ol start="3">
+<li>Enter your <strong>email</strong>, select <strong>Authentication Method</strong>, and choose the region <strong>Asia Pacific (Singapore)</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/quicksight_form_ud.png?width=90pc"></p>
+<ol start="4">
+<li>In <strong>Account info</strong>:</li>
+</ol>
+<ul>
+<li>Enter <code>demo-visualize</code> as the <strong>QuickSight account name</strong></li>
+<li>IAM role: select <strong>Use QuickSight-managed role (default)</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/quicksight_form2.png?width=90pc"></p>
+<ul>
+<li>Select <strong>Finish</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/fiinish_signup.png?width=90pc"></p>
+<ul>
+<li>After successfully signing up, you will be redirected to the <strong>QuickSight</strong> dashboard.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/quicksight_dashboard.png?width=90pc"></p>
+<h3 id="visualize-data">Visualize Data</h3>
+<ol>
+<li>On the <strong>QuickSight</strong> dashboard, select <strong>Manage QuickSight</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/manage_quicksight.png?width=90pc"></p>
+<ol start="2">
+<li>Select <strong>Security &amp; permissions</strong>, then select <strong>Manage</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/click_manage_setting.png?width=90pc"></p>
+<ol start="3">
+<li>Check the services</li>
+</ol>
+<ul>
+<li>For <strong>Amazon S3</strong>: select <strong>S3 Buckets Linked To QuickSight Account</strong>, choose the bucket <strong>asg-datalake-demo-2024</strong>, and then select <strong>Finish</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/allow_s3.png?width=90pc"></p>
+<ol start="4">
+<li>Check the other services and then select <strong>Save</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/save_allow.png?width=90pc"></p>
+<ol start="5">
+<li>Return to the <strong>QuickSight</strong> dashboard</li>
+</ol>
+<ul>
+<li>Select <strong>Dataset</strong></li>
+<li>Select <strong>New dataset</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/create_dataset_btn_ud.png?width=90pc"></p>
+<ol start="6">
+<li>Create a <strong>data source</strong></li>
+</ol>
+<ul>
+<li>Select <strong>Athena</strong></li>
+<li>Enter <strong>Data source name</strong> as <code>summitdemo</code></li>
+<li>Select <strong>Validate Connection</strong>. If the connection is successful, it will display <strong>SSL is enabled</strong></li>
+<li>Select <strong>Create data source</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/create_data_source.png?width=90pc"></p>
+<ol start="7">
+<li>Select <strong>Table</strong>:</li>
+</ol>
+<ul>
+<li><strong>Catalog</strong>, select <strong>AwsDataCatalog</strong></li>
+<li><strong>Database</strong>, enter <code>summitdb</code></li>
+<li><strong>Table</strong>, select <strong>processed_data</strong></li>
+<li>Select <strong>Select</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/select_table.png?width=90pc"></p>
+<ol start="8">
+<li>In the <strong>Finish dataset creation</strong> step:</li>
+</ol>
+<ul>
+<li>Select <strong>Directly query your data</strong></li>
+<li>Select <strong>Visualize</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/finish_create_dataset.png?width=90pc"></p>
+<ol start="9">
+<li>Use <strong>Amazon QuickSight</strong> to visualize the transformed data:</li>
+</ol>
+<ul>
+<li>Create a <strong>Tree map</strong> of users and the number of tracks they listened to.</li>
+<li>Click to select <strong>Tree Map</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/tree_map.png?width=90pc"></p>
+<ul>
+<li>Result of the <strong>Tree map</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/treemap.png?width=90pc"></p>
+<ol start="10">
+<li>You can also use other <strong>Visual types</strong>, such as <strong>Pie chart</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/6/6.2/piechart.png?width=90pc"></p>
 
 
 
@@ -674,56 +801,6 @@ Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -790,6 +867,104 @@ Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -855,38 +1030,6 @@ Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -908,10 +1051,10 @@ Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo
 	 
 	 
 		
-			<a class="nav nav-prev" href="/6-analysis-visualize/6.1-athena/" title="Introduction"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/6-analysis-visualize/6.1-athena/" title="Analysis with Athena"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/5-data-transform/" title="Data Transformation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/7-clean-up/" title="Cleanup Resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -921,19 +1064,19 @@ Một cách tổng quan, chúng ta sẽ triển khai ứng dụng ShareNote theo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1731317452"></script>
-    <script src="/js/perfect-scrollbar.min.js?1731317452"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1731317452"></script>
-    <script src="/js/jquery.sticky.js?1731317452"></script>
-    <script src="/js/featherlight.min.js?1731317452"></script>
-    <script src="/js/highlight.pack.js?1731317452"></script>
+    <script src="/js/clipboard.min.js?1734557067"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734557067"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734557067"></script>
+    <script src="/js/jquery.sticky.js?1734557067"></script>
+    <script src="/js/featherlight.min.js?1734557067"></script>
+    <script src="/js/highlight.pack.js?1734557067"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1731317452"></script>
-    <script src="/js/learn.js?1731317452"></script>
-    <script src="/js/hugo-learn.js?1731317452"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734557067"></script>
+    <script src="/js/learn.js?1734557067"></script>
+    <script src="/js/hugo-learn.js?1734557067"></script>
 
-    <link href="/mermaid/mermaid.css?1731317452" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1731317452"></script>
+    <link href="/mermaid/mermaid.css?1734557067" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734557067"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

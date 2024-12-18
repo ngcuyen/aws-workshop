@@ -6,34 +6,75 @@ chapter = false
 pre = "<b>1. </b>"
 +++
 
-## Tổng quan
+# Tìm hiểu về Data Lake trên AWS
 
-**_Data Lake_** là một thuật ngữ chuyên môn có liên quan đến Big Data (Dữ liệu lớn). Data Lake đơn giản là nơi chứa dữ liệu thô (chưa xử lý) chờ được xử lý phân tích và đưa ra các đánh giá nhận xét (insight).
+#### Giới thiệu Data Lake
 
-**_Data Lake_** có các tính chất sau:
+**Data Lake** là một hệ thống lưu trữ tập trung cho phép lưu trữ dữ liệu dưới mọi định dạng - có cấu trúc, bán cấu trúc hoặc không cấu trúc. Không giống như các cơ sở dữ liệu truyền thống yêu cầu định dạng dữ liệu trước khi lưu trữ, Data Lake cho phép lưu trữ dữ liệu thô và xử lý hoặc phân tích khi cần.
 
-- Thu thập mọi thứ – chứa tất cả dữ liệu dạng thô hoặc đã được xử lý trong khoảng thời gian dài.
-- Đa người dùng – cho phép nhiều người dùng tinh chỉnh, khám phá và làm phong phú dữ liệu.
-- Truy cập linh hoạt – hỗ trợ nhiều cách thức truy cập dữ liệu (access pattern) trên cơ sở hạ tầng dùng chung: lô (batch), tương tác, trực tuyến, tìm kiếm, trong bộ nhớ và các công cụ xử lý khác.
+#### Lợi ích của Data Lake
 
-**_Amazon Glue:_** là một dịch vụ ETL hoàn chỉnh. Bạn có thể sử dụng Glue Crawler để nhận diện dữ liệu của bạn và lưu trữ thông tin dữ liệu (metadata) liên quan (ví dụ: định nghĩa bảng và schema) trong Glue Data Catalog. Sau khi được phân loại, dữ liệu của bạn có thể được tìm kiếm ngay, truy vấn và sẵn sàng cho các công việc ETL.
+- **Lưu trữ linh hoạt**: Hỗ trợ dữ liệu từ nhiều nguồn và dưới nhiều định dạng khác nhau.
 
-**_AWS Glue ETL_** có thể tạo mã để thực hiện công việc chuyển đổi dữ liệu và đưa dữ liệu vào vùng lưu trữ. AWS Glue có khả năng tạo mã Python có thể tùy chỉnh, tái sử dụng.
+- **Phân tích toàn diện**: Tạo điều kiện cho phân tích dữ liệu lớn và các ứng dụng AI/ML.
 
-Sau khi các ETL Job của bạn đã sẵn sàng, chúng ta có thể tạo lịch để chạy trên môi trường Apache Spark có khả năng mở rộng lớn được quản lý bởi AWS Glue.
+- **Tiết kiệm chi phí**: Sử dụng các giải pháp lưu trữ chi phí thấp như Amazon S3.
 
-**_Amazon Athena:_** một dịch vụ truy vấn tương tác được sử dụng để phân tích dữ liệu trong Amazon S3 với SQL tiêu chuẩn. Chúng ta chỉ cần trỏ đến dữ liệu của bạn trong Amazon S3, xác định schema và bắt đầu truy vấn bằng trình chỉnh sửa truy vấn tích hợp. Amazon Athena cho phép chúng ta khai thác tất cả dữ liệu của mình trong Amazon S3 mà không cần phải thiết lập các quy trình ETL phức tạp. Amazon Athena tính tiền dựa trên các truy vấn được chạy.
+- **Tích hợp dễ dàng**: Kết nối mượt mà với các công cụ phân tích và báo cáo như Amazon Athena và QuickSight.
 
-**_Amazon Athena_** sử dụng Presto với hỗ trợ SQL ANSI và hoạt động với nhiều định dạng dữ liệu tiêu chuẩn, bao gồm CSV, JSON, ORC, Avro và Parquet. Athena được khuyến nghị cho nhu cầu truy vấn nhanh, nhưng nó cũng có thể xử lý các phân tích phức tạp, bao gồm các phép Join với lượng dữ liệu lớn, các window functions và mảng.
+#### Thách thức khi triển khai Data Lake
 
-**_Amazon QuickSight:_** một dịch vụ biểu diễn dữ liệu được quản lý hoàn toàn bởi AWS.
+- **Quản Lý Dữ Liệu**: Làm thế nào để tổ chức và quản lý dữ liệu hiệu quả?
 
-- **Data source** là một kho lưu trữ dữ liệu bên ngoài và bạn cần cấu hình việc truy cập dữ liệu trong kho dữ liệu bên ngoài này, ví dụ. Amazon S3, Amazon Athena, Salesforce, v.v.
+- **Bảo Mật**: Làm sao để ngăn chặn truy cập trái phép vào dữ liệu?
 
-- **Dataset** xác định dữ liệu cụ thể trong Data source mà bạn muốn sử dụng. Ví dụ: Data source có thể là một bảng nếu bạn đang kết nối với Data source cơ sở dữ liệu. Nó có thể là một file nếu bạn đang kết nối với Data source Amazon S3.
+- **Khả Năng Mở Rộng**: Hệ thống phải có khả năng mở rộng để xử lý sự gia tăng dữ liệu.
 
-- **Analysis** là nơi chứa một tập hợp các Visual và câu chuyện có liên quan, ví dụ như tất cả các câu chuyện áp dụng cho một mục tiêu kinh doanh nhất định hoặc KPI.
+- **Hiệu Suất**: Cần tối ưu hóa cho việc truy vấn và xử lý dữ liệu.
 
-- **Visual** là một biểu diễn đồ họa cho dữ liệu của bạn. Bạn có thể tạo nhiều loại Visual khác nhau trong một analysis, sử dụng các bộ dữ liệu và loại Visual khác nhau.
+- **Chất Lượng Dữ Liệu**: Đảm bảo tính chính xác và độ tin cậy của dữ liệu là rất quan trọng.
 
-- **Dashboard** là một trang bao gồm một hoặc nhiều Analysis chỉ cho phép xem mà bạn có thể chia sẻ với những người dùng Amazon QuickSight khác cho mục đích báo cáo. Dashboard lưu giữ cấu hình của bản Analysis tại thời điểm bạn xuất bản nó, bao gồm những thứ như lọc, tham số, điều khiển và thứ tự sắp xếp.
+#### Kiến trúc Workshop
+
+##### Tổng quan về kiến trúc
+
+Hình dưới đây minh họa kiến trúc hệ thống Data Lake mà chúng ta sẽ triển khai trong workshop này:
+![Workshop](/images/1/workshop.jpg)
+
+##### Mô tả kiến trúc
+
+- Thu thập dữ liệu:
+
+  - Dữ liệu từ nhiều nguồn khác nhau được thu thập qua Kinesis.
+  - Kinesis Firehose Stream xử lý và chuyển dữ liệu đến Amazon S3.
+
+- Lưu trữ dữ liệu thô:
+
+  - Dữ liệu thô được lưu trữ trong S3 ở thư mục "raw data".
+  - CloudFormation tự động triển khai các tài nguyên cần thiết.
+
+- AWS Glue:
+
+  - AWS Glue Crawler quét dữ liệu thô trong S3 để tạo metadata.
+  - Metadata được lưu trữ trong AWS Glue Data Catalog.
+  - Một ETL Job (Extract, Transform, Load) xử lý và chuyển đổi dữ liệu thô thành dữ liệu đã qua xử lý.
+
+- Lưu trữ dữ liệu đã xử lý:
+
+  - Dữ liệu đã được chuyển đổi được lưu trong một bucket S3 khác dưới thư mục "processed-data".
+
+- Phân tích và trực quan hóa dữ liệu:
+
+  - AWS Glue Crawler quét dữ liệu đã qua xử lý và cập nhật Glue Data Catalog.
+  - Amazon Athena được sử dụng để truy vấn dữ liệu trong S3.
+  - Amazon QuickSight kết nối đến dữ liệu để trực quan hóa và báo cáo.
+
+##### Mục tiêu của workshop
+
+- Hiểu các thành phần của kiến trúc Data Lake.
+- Triển khai một hệ thống Data Lake đơn giản bằng các dịch vụ AWS.
+- Tích hợp các công cụ phân tích và trực quan hóa để trích xuất thông tin hữu ích từ dữ liệu.
+
+{{% notice info %}}
+Bài lab này được thực hiện ở region Singapore (ap-southeast-1).
+{{% /notice %}}

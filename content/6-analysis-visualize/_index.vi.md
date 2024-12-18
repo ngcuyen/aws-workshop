@@ -6,13 +6,13 @@ chapter = false
 pre = "<b>6. </b>"
 +++
 
-## Tổng quan về Amazon Athena
+## Amazon Athena
 
 **Amazon Athena** là một dịch vụ truy vấn tương tác được sử dụng để phân tích dữ liệu trong Amazon S3 bằng SQL tiêu chuẩn. Chúng ta chỉ cần trỏ đến dữ liệu của bạn trong Amazon S3, xác định schema và bắt đầu truy vấn bằng trình chỉnh sửa truy vấn tích hợp. Amazon Athena cho phép chúng ta khai thác tất cả dữ liệu của mình trong Amazon S3 mà không cần phải thiết lập các quy trình ETL phức tạp. Amazon Athena tính tiền dựa trên số lượng truy vấn được chạy.
 
 **Amazon Athena** sử dụng Presto với hỗ trợ SQL ANSI và làm việc với nhiều định dạng dữ liệu tiêu chuẩn, bao gồm CSV, JSON, ORC, Avro, và Parquet. Athena được khuyến nghị cho các nhu cầu truy vấn nhanh, nhưng cũng có khả năng xử lý phân tích phức tạp, bao gồm các phép join với lượng dữ liệu lớn, các window function và mảng.
 
-## Tổng quan về Amazon QuickSight
+## Amazon QuickSight
 
 **Amazon QuickSight** là một dịch vụ biểu diễn dữ liệu được quản lý hoàn toàn bởi AWS.
 

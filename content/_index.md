@@ -1,40 +1,78 @@
-+++
-title = "Triển khai Ứng dụng ShareNote với Auto Scaling Group"
-date = 2021
-weight = 1
-chapter = false
-+++
+---
+title: 'Data Lake'
+date: 2021
+weight: 1
+chapter: false
+---
 
-# Triển khai Ứng dụng ShareNote với Auto Scaling Group
+# Exploring Data Lake on AWS
 
-#### Tổng quan
+#### Introduction to Data Lake
 
-Ở bài thực hành này, chúng ta sẽ tiến hành việc triển khai ứng dụng với **Auto Scaling Group** nhằm đảm bảo khả năng co giãn của ứng dụng đó theo nhu cầu của người truy cập.
-Thêm vào đó, chúng ta cũng sẽ triển khai **Load Balancer** nhằm cân bằng tải và điều phối các yêu cầu truy cập từ phía người dùng đến Application Tier của chúng ta.
+A **Data Lake** is a centralized storage system that allows the storage of data in any format—structured, semi-structured, or unstructured. Unlike traditional databases that require data to be formatted before storage, a Data Lake enables the storage of raw data, which can later be processed or analyzed when needed.
 
-Hãy chắc chắn rằng bạn đã xem qua tài liệu [Triển khai Ứng dụng ShareNote trên Máy ảo Windows/AmazonLinux](https://000004.awsstudygroup.com/) và nắm được cách triển khai ứng dụng trên máy ảo. Chúng ta sẽ cần sử dụng máy ảo được triển khai ShareNote cho việc triển khai đồng loạt và mở rộng trong Auto Scaling Group.
+#### Benefits of Data Lake
 
-#### Auto Scaling Group
+- **Flexible Storage**: Supports data from multiple sources and in various formats.
+- **Comprehensive Analytics**: Facilitates big data analysis and AI/ML applications.
+- **Cost-Efficiency**: Uses low-cost storage solutions like Amazon S3.
+- **Easy Integration**: Seamlessly connects with analytics and reporting tools like Amazon Athena and QuickSight.
 
-**Auto Scaling Group** (_nhóm co giãn tự động_) là một nhóm các EC2 Instance. Nhóm này có thể co giãn số lượng của các EC2 Instance thành viên theo **chính sách co giãn** (_scaling policy_) mà bạn đặt ra.
+#### Challenges in Implementing a Data Lake
 
-#### Launch Template
+- **Data Management**: How to organize and manage data effectively?
+- **Security**: How to prevent unauthorized access to data?
+- **Scalability**: The system must scale to handle the increasing volume of data.
+- **Performance**: It is necessary to optimize for data querying and processing.
+- **Data Quality**: Ensuring the accuracy and reliability of data is crucial.
 
-**Launch Template** (_khuôn mẫu khởi tạo_) là một tính năng giúp bạn tạo khuôn mẫu cho việc khởi tạo các EC2 Instance. Nhờ thế, bạn có thể quy trình hóa và đơn giản hóa công tác khởi tạo các EC2 Instance cho dịch vụ **Auto Scaling** (_co giãn tự động_).
+#### Workshop Architecture
 
-#### Load Balancer
+##### Overview of the Architecture
 
-**Load Balancer** (_máy cân bằng tải_) là một công cụ có thể phân phối lưu lượng dữ liệu được trao đổi tới các tài nguyên AWS (cụ thể trong bài lab này là các EC2 Instances) trong **Target Group**.
+The following diagram illustrates the architecture of the Data Lake system we will deploy in this workshop:
 
-#### Target Group
+![Workshop](/images/1/workshop.jpg)
 
-**Target Group** (_nhóm mục tiêu_) là một nhóm những thành phần tài nguyên AWS sẽ nhận lưu lượng dữ liệu được phân phối và truyền tải bởi **Load Balancer**.
+##### Architecture Description
 
-#### Nội dung:
+- **Data Collection**:
 
-1. [Các bước chuẩn bị](1-prerequisite)
-2. [Khởi tạo Launch Template](2-launch-template)
-3. [Khởi tạo Target Group](3-target-group)
-4. [Khởi tạo Load Balancer](5-load-balance)
-5. [Khởi tạo Auto Scaling Group](4-asg)
-6. [Kiểm tra kết quả](6-testing)
+  - Data from multiple sources is collected via Kinesis.
+  - Kinesis Firehose Stream processes and transfers the data to Amazon S3.
+
+- **Storing Raw Data**:
+
+  - Raw data is stored in the "raw data" folder in S3.
+  - CloudFormation automatically deploys the necessary resources.
+
+- **AWS Glue**:
+
+  - AWS Glue Crawler scans the raw data in S3 to create metadata.
+  - Metadata is stored in the AWS Glue Data Catalog.
+  - An ETL Job (Extract, Transform, Load) processes and transforms the raw data into processed data.
+
+- **Storing Processed Data**:
+
+  - The transformed data is stored in another S3 bucket under the "processed-data" folder.
+
+- **Data Analysis and Visualization**:
+  - AWS Glue Crawler scans the processed data and updates the Glue Data Catalog.
+  - Amazon Athena is used to query data in S3.
+  - Amazon QuickSight connects to the data for visualization and reporting.
+
+##### Goals of the Workshop
+
+- Understand the components of the Data Lake architecture.
+- Deploy a simple Data Lake system using AWS services.
+- Integrate analytics and visualization tools to extract meaningful insights from the data.
+
+#### Workshop Content
+
+1. [Introduction](1-introduce)
+2. [Preparation Steps](2-preparation)
+3. [Data Collection and Storage](3-collection-storage)
+4. [Create Data Catalog](4-data-catalog)
+5. [Data Transformation](5-data-transform)
+6. [Data Analysis and Visualization](6-analysis-visualize)
+7. [Clean Up Resources](7-clean-up)

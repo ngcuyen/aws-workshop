@@ -1,34 +1,78 @@
 +++
-title = "Data Lake and Data Warehouse"
+title = "Data Lake"
 date = 2021
 weight = 1
 chapter = false
 +++
 
-# Triển khai Ứng dụng ShareNote với Auto Scaling Group
+# Tìm hiểu về Data Lake trên AWS
 
-#### Tổng quan
+#### Giới thiệu Data Lake
 
-Ở bài thực hành này, chúng ta sẽ tiến hành việc triển khai ứng dụng với **Auto Scaling Group** nhằm đảm bảo khả năng co giãn của ứng dụng đó theo nhu cầu của người truy cập.
-Thêm vào đó, chúng ta cũng sẽ triển khai **Load Balancer** nhằm cân bằng tải và điều phối các yêu cầu truy cập từ phía người dùng đến Application Tier của chúng ta.
+**Data Lake** là một hệ thống lưu trữ tập trung cho phép lưu trữ dữ liệu dưới mọi định dạng - có cấu trúc, bán cấu trúc hoặc không cấu trúc. Không giống như các cơ sở dữ liệu truyền thống yêu cầu định dạng dữ liệu trước khi lưu trữ, Data Lake cho phép lưu trữ dữ liệu thô và xử lý hoặc phân tích khi cần.
 
-Hãy chắc chắn rằng bạn đã xem qua tài liệu [Triển khai Ứng dụng ShareNote trên Máy ảo Windows/AmazonLinux](https://000004.awsstudygroup.com/) và nắm được cách triển khai ứng dụng trên máy ảo. Chúng ta sẽ cần sử dụng máy ảo được triển khai ShareNote cho việc triển khai đồng loạt và mở rộng trong Auto Scaling Group.
+#### Lợi ích của Data Lake
 
-#### Auto Scaling Group
+- **Lưu trữ linh hoạt**: Hỗ trợ dữ liệu từ nhiều nguồn và dưới nhiều định dạng khác nhau.
 
-**Auto Scaling Group** (_nhóm co giãn tự động_) là một nhóm các EC2 Instance. Nhóm này có thể co giãn số lượng của các EC2 Instance thành viên theo **chính sách co giãn** (_scaling policy_) mà bạn đặt ra.
+- **Phân tích toàn diện**: Tạo điều kiện cho phân tích dữ liệu lớn và các ứng dụng AI/ML.
 
-#### Launch Template
+- **Tiết kiệm chi phí**: Sử dụng các giải pháp lưu trữ chi phí thấp như Amazon S3.
 
-**Launch Template** (_khuôn mẫu khởi tạo_) là một tính năng giúp bạn tạo khuôn mẫu cho việc khởi tạo các EC2 Instance. Nhờ thế, bạn có thể quy trình hóa và đơn giản hóa công tác khởi tạo các EC2 Instance cho dịch vụ **Auto Scaling** (_co giãn tự động_).
+- **Tích hợp dễ dàng**: Kết nối mượt mà với các công cụ phân tích và báo cáo như Amazon Athena và QuickSight.
 
-#### Load Balancer
+#### Thách thức khi triển khai Data Lake
 
-**Load Balancer** (_máy cân bằng tải_) là một công cụ có thể phân phối lưu lượng dữ liệu được trao đổi tới các tài nguyên AWS (cụ thể trong bài lab này là các EC2 Instances) trong **Target Group**.
+- **Quản Lý Dữ Liệu**: Làm thế nào để tổ chức và quản lý dữ liệu hiệu quả?
 
-#### Target Group
+- **Bảo Mật**: Làm sao để ngăn chặn truy cập trái phép vào dữ liệu?
 
-**Target Group** (_nhóm mục tiêu_) là một nhóm những thành phần tài nguyên AWS sẽ nhận lưu lượng dữ liệu được phân phối và truyền tải bởi **Load Balancer**.
+- **Khả Năng Mở Rộng**: Hệ thống phải có khả năng mở rộng để xử lý sự gia tăng dữ liệu.
+
+- **Hiệu Suất**: Cần tối ưu hóa cho việc truy vấn và xử lý dữ liệu.
+
+- **Chất Lượng Dữ Liệu**: Đảm bảo tính chính xác và độ tin cậy của dữ liệu là rất quan trọng.
+
+#### Kiến trúc Workshop
+
+##### Tổng quan về kiến trúc
+
+Hình dưới đây minh họa kiến trúc hệ thống Data Lake mà chúng ta sẽ triển khai trong workshop này:
+![Workshop](/images/1/workshop.jpg)
+
+##### Mô tả kiến trúc
+
+- Thu thập dữ liệu:
+
+  - Dữ liệu từ nhiều nguồn khác nhau được thu thập qua Kinesis.
+  - Kinesis Firehose Stream xử lý và chuyển dữ liệu đến Amazon S3.
+
+- Lưu trữ dữ liệu thô:
+
+  - Dữ liệu thô được lưu trữ trong S3 ở thư mục "raw data".
+  - CloudFormation tự động triển khai các tài nguyên cần thiết.
+
+- AWS Glue:
+
+  - AWS Glue Crawler quét dữ liệu thô trong S3 để tạo metadata.
+  - Metadata được lưu trữ trong AWS Glue Data Catalog.
+  - Một ETL Job (Extract, Transform, Load) xử lý và chuyển đổi dữ liệu thô thành dữ liệu đã qua xử lý.
+
+- Lưu trữ dữ liệu đã xử lý:
+
+  - Dữ liệu đã được chuyển đổi được lưu trong một bucket S3 khác dưới thư mục "processed-data".
+
+- Phân tích và trực quan hóa dữ liệu:
+
+  - AWS Glue Crawler quét dữ liệu đã qua xử lý và cập nhật Glue Data Catalog.
+  - Amazon Athena được sử dụng để truy vấn dữ liệu trong S3.
+  - Amazon QuickSight kết nối đến dữ liệu để trực quan hóa và báo cáo.
+
+##### Mục tiêu của workshop
+
+- Hiểu các thành phần của kiến trúc Data Lake.
+- Triển khai một hệ thống Data Lake đơn giản bằng các dịch vụ AWS.
+- Tích hợp các công cụ phân tích và trực quan hóa để trích xuất thông tin hữu ích từ dữ liệu.
 
 #### Nội dung:
 
@@ -38,5 +82,4 @@ Hãy chắc chắn rằng bạn đã xem qua tài liệu [Triển khai Ứng d�
 4. [Tạo Data Catalog](4-data-catalog)
 5. [Chuyển đổi dữ liệu](5-data-transform)
 6. [Phân tích và trực quan hóa](6-analysis-visualize)
-7. [Data Warehouse](7-data-warehouse)
-8. [Dọn dẹp tài nguyên](8-clean-up)
+7. [Dọn dẹp tài nguyên](7-clean-up)

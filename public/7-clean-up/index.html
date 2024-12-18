@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Dọn dẹp tài nguyên :: Deploy ShareNote Application on Auto Scaling Group</title>
+    <title>Cleanup Resources :: Deploy ShareNote Application on Auto Scaling Group</title>
 
     
-    <link href="/css/nucleus.css?1731309232" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1731309232" rel="stylesheet">
-    <link href="/css/hybrid.css?1731309232" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1731309232" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1731309232" rel="stylesheet">
-    <link href="/css/auto-complete.css?1731309232" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1731309232" rel="stylesheet">
-    <link href="/css/theme.css?1731309232" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1731309232" rel="stylesheet">
+    <link href="/css/nucleus.css?1734557067" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734557067" rel="stylesheet">
+    <link href="/css/hybrid.css?1734557067" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734557067" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734557067" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734557067" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734557067" rel="stylesheet">
+    <link href="/css/theme.css?1734557067" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734557067" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1731309232" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734557067" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1731309232"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734557067"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1731309232"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1731309232"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734557067"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734557067"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1731309232"></script>
+<script type="text/javascript" src="/js/search.js?1734557067"></script>
  
   </div>
 
@@ -71,7 +71,7 @@
                
 <li
   data-nav-id="/1-introduce/"
-  title="Các bước chuẩn bị"
+  title="Introduction"
   class="dd-item 
         
         
@@ -79,7 +79,7 @@
         "
 >
   <a href="/1-introduce/">
-    <b>1. </b>Các bước chuẩn bị 
+    <b>1. </b>Introduction 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -88,7 +88,7 @@
            
 <li
   data-nav-id="/2-preparation/"
-  title="Khởi tạo Launch Template"
+  title="Preparation Steps"
   class="dd-item 
         
         
@@ -96,16 +96,74 @@
         "
 >
   <a href="/2-preparation/">
-    <b>2. </b>Khởi tạo Launch Template 
+    <b>2. </b>Preparation Steps 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/2-preparation/2.1-iam-role/"
+  title="Create IAM Role"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/2-preparation/2.1-iam-role/">
+    <b>2.1. </b>Create IAM Role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
    
 </li>
+    
+            
+<li
+  data-nav-id="/2-preparation/2.2-policy/"
+  title="Create Policy"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/2-preparation/2.2-policy/">
+    <b>2.2. </b>Create Policy 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/2-preparation/2.3-attach-policy-to-role/"
+  title="Attach Policy to Role"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/2-preparation/2.3-attach-policy-to-role/">
+    <b>2.3. </b>Attach Policy to Role 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
            
 <li
   data-nav-id="/3-collection-storage/"
-  title="Khởi tạo Target Group"
+  title="Collecting and Storing Data"
   class="dd-item 
         
         
@@ -113,16 +171,92 @@
         "
 >
   <a href="/3-collection-storage/">
-    <b>3. </b>Khởi tạo Target Group 
+    <b>3. </b>Collecting and Storing Data 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/3-collection-storage/3.1-s3-bucket/"
+  title="Create S3 Bucket"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/3-collection-storage/3.1-s3-bucket/">
+    <b>3.1. </b>Create S3 Bucket 
     <i class="fas fa-check read-icon"></i>
     
   </a>
    
 </li>
+    
+            
+<li
+  data-nav-id="/3-collection-storage/3.2-object-in-bucket/"
+  title="Create Object for S3 Bucket"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/3-collection-storage/3.2-object-in-bucket/">
+    <b>3.2. </b>Create Object for S3 Bucket 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/3-collection-storage/3.3-kinesis-firehose-stream/"
+  title="Create Firehose Stream"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/3-collection-storage/3.3-kinesis-firehose-stream/">
+    <b>3.3. </b>Create Firehose Stream 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/3-collection-storage/3.4-sample-data/"
+  title="Create Sample Data"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/3-collection-storage/3.4-sample-data/">
+    <b>3.4. </b>Create Sample Data 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
            
 <li
   data-nav-id="/4-data-catalog/"
-  title="Khởi tạo Load Balancer"
+  title="Create Data Catalog"
   class="dd-item 
         
         
@@ -130,16 +264,56 @@
         "
 >
   <a href="/4-data-catalog/">
-    <b>4. </b>Khởi tạo Load Balancer 
+    <b>4. </b>Create Data Catalog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/4-data-catalog/4.1-glue-crawler/"
+  title="Create Glue Crawler"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/4-data-catalog/4.1-glue-crawler/">
+    <b>4.1. </b>Create Glue Crawler 
     <i class="fas fa-check read-icon"></i>
     
   </a>
    
 </li>
+    
+            
+<li
+  data-nav-id="/4-data-catalog/4.2-test-data/"
+  title="Check Data"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/4-data-catalog/4.2-test-data/">
+    <b>4.2. </b>Check Data 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
            
 <li
   data-nav-id="/5-data-transform/"
-  title="Khởi tạo Auto Scaling Group"
+  title="Data Transformation"
   class="dd-item 
         
         
@@ -147,7 +321,7 @@
         "
 >
   <a href="/5-data-transform/">
-    <b>5. </b>Khởi tạo Auto Scaling Group 
+    <b>5. </b>Data Transformation 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -156,7 +330,7 @@
            
 <li
   data-nav-id="/6-analysis-visualize/"
-  title="Khởi tạo Auto Scaling Group"
+  title="Analysis and Visualization"
   class="dd-item 
         
         
@@ -164,16 +338,56 @@
         "
 >
   <a href="/6-analysis-visualize/">
-    <b>5. </b>Khởi tạo Auto Scaling Group 
+    <b>6. </b>Analysis and Visualization 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/6-analysis-visualize/6.1-athena/"
+  title="Analysis with Athena"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/6-analysis-visualize/6.1-athena/">
+    <b>6.1. </b>Analysis with Athena 
     <i class="fas fa-check read-icon"></i>
     
   </a>
    
 </li>
+    
+            
+<li
+  data-nav-id="/6-analysis-visualize/6.2-quicksight/"
+  title="Visualize with QuickSight"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/6-analysis-visualize/6.2-quicksight/">
+    <b>6.2. </b>Visualize with QuickSight 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
            
 <li
   data-nav-id="/7-clean-up/"
-  title="Dọn dẹp tài nguyên"
+  title="Cleanup Resources"
   class="dd-item 
         
         active
@@ -181,7 +395,7 @@
         "
 >
   <a href="/7-clean-up/">
-    <b>7. </b>Dọn dẹp tài nguyên 
+    <b>7. </b>Cleanup Resources 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -224,7 +438,7 @@
                        
                 <option
                   id="en"
-                  value="//localhost:1313/7-clean-up/"
+                  value="http://localhost:1313/7-clean-up/"
                   selected
                 >
                   English
@@ -232,7 +446,7 @@
                             
                 <option
                   id="vi"
-                  value="//localhost:1313/vi/7-clean-up/"
+                  value="http://localhost:1313/vi/7-clean-up/"
                 >
                   Tiếng Việt
                 </option>
@@ -271,7 +485,6 @@
     </section>
     
     <section id="footer"><left>
-    
      <b> Workshop</b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7831210&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
@@ -282,7 +495,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>17-09-2021</font></i>
+        <i><font color=orange>11-11-2024</font></i>
     </left>
     <left>
         <br>
@@ -290,7 +503,7 @@
             <b> Team </b> <br>
            
             <i>
-                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Ngọc Uyển</a>
         </i>
         </left>
 
@@ -329,7 +542,7 @@
             
           
           
-            <a href='/'>Triển khai Ứng dụng ShareNote với Auto Scaling Group</a> > Dọn dẹp tài nguyên
+            <a href='/'>Data Lake</a> > Cleanup Resources
           
         
           
@@ -340,7 +553,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -356,7 +577,7 @@
           
             <h1>
               
-              Dọn dẹp tài nguyên
+              Cleanup Resources
             </h1>
           
 
@@ -364,90 +585,170 @@
 
 
 
-	<p>Chúng ta sẽ dọn dẹp tài nguyên theo thứ tự như sau:</p>
+	<p>We will clean up the following resources:</p>
+<h4 id="clean-up-resources-in-visual-quicksight"><strong>Clean up resources in Visual QuickSight</strong>:</h4>
 <ol>
-<li><strong>Xóa Auto Scaling Group</strong>:
-<ul>
-<li>Truy cập <strong>EC2 Management Console</strong></li>
-<li>Trên thanh điều hướng bên trái, chọn Auto Scaling Groups</li>
-<li>Chọn Auto Scaling Group liên quan tới bài lab.</li>
-<li>Click Delete</li>
-<li>Gõ delete vào ô trống và nhấn delete</li>
-</ul>
-</li>
-<li><strong>Xóa Load Balancer</strong>:
-<ul>
-<li>Truy cập <strong>EC2 Management Console</strong></li>
-<li>Trên thanh điều hướng bên trái, chọn Load Balancers</li>
-<li>Chọn Load Balancer liên quan tới bài lab.</li>
-<li>Click Actions.</li>
-<li>Click Delete.</li>
-</ul>
-</li>
-<li><strong>Xóa Target Group</strong>:
-<ul>
-<li>Truy cập <strong>EC2 Management Console</strong></li>
-<li>Trên thanh điều hướng bên trái, chọn Target Groups</li>
-<li>Chọn Target Group liên quan tới bài lab.</li>
-<li>Click Actions.</li>
-<li>Click Delete.</li>
-<li>Click Yes, delete</li>
-</ul>
-</li>
-<li><strong>Xóa Launch Template</strong>:
-<ul>
-<li>Truy cập <strong>EC2 Management Console</strong></li>
-<li>Trên thanh điều hướng bên trái, chọn Launch Templates</li>
-<li>Chọn Launch Template liên quan tới bài lab.</li>
-<li>Click Actions.</li>
-<li>Click Delete template</li>
-<li>Gõ delete vào ô trống và nhấn delete</li>
-</ul>
-</li>
-<li><strong>Xóa AMI</strong>:
-<ul>
-<li>Truy cập <strong>EC2 Management Console</strong></li>
-<li>Trên thanh điều hướng bên trái, chọn AMIs</li>
-<li>Chọn AMI liên quan tới bài lab.</li>
-<li>Click Actions.</li>
-<li>Click Deregister.</li>
-<li>Click Continue.</li>
-</ul>
-</li>
-<li><strong>Terminate EC2 instance</strong>
-<ul>
-<li>Truy cập <strong>EC2 Management Console</strong></li>
-<li>Trên thanh điều hướng bên trái, chọn Intances</li>
-<li>Chọn tất cả EC2 Instance liên quan tới bài lab.</li>
-<li>Click Actions.</li>
-<li>Click Manage Instance State.</li>
-<li>Chọn Terminate.</li>
-<li>Click Change State</li>
-</ul>
-</li>
-<li><strong>Xóa DB Instance</strong>
-<ul>
-<li>Truy cập <strong>RDS Management Console</strong></li>
-<li>Trên thanh điều hướng bên trái, chọn Databases</li>
-<li>Chọn tất cả DB Instance liên quan tới bài lab.</li>
-<li>Click Actions.</li>
-<li>Click Delete</li>
-<li>Bỏ chọn <em>Create final snapshot?</em> và chọn <em>I acknowledge that upon instance deletion, automated backups, including system snapshots and point-in-time recovery, will no longer be available</em></li>
-<li>Gõ <em>delete me</em> vào ô trống.</li>
-<li>Click <em>Delete</em></li>
-</ul>
-</li>
-<li><strong>Xóa Security Group</strong>
-<ul>
-<li>Truy cập <strong>EC2 Management Console</strong></li>
-<li>Trên thanh điều hướng bên trái, chọn Security Groups</li>
-<li>Chọn tất cả Security Groups liên quan tới bài lab.</li>
-<li>Click Actions.</li>
-<li>Click Delete security groups</li>
-<li>Click Delete</li>
-</ul>
-</li>
+<li><strong>Delete Pie Chart Sheet</strong></li>
 </ol>
+<p><img alt="QuickSight" src="/images/7/delete_piechart.png?width=90pc"></p>
+<ol start="2">
+<li><strong>Delete QuickSight Analyses:</strong></li>
+</ol>
+<ul>
+<li>Select <strong>Analyses</strong>.</li>
+<li>Select the <strong>Analysis</strong> you want to delete.</li>
+<li>Click <strong>Delete</strong>.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_qs_ana.png?width=90pc"></p>
+<ul>
+<li>Delete done</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_done.png?width=90pc"></p>
+<ol start="3">
+<li><strong>Delete QuickSight Dataset:</strong></li>
+</ol>
+<p><img alt="QuickSight" src="/images/7/delete_dataset.png?width=90pc">
+<img alt="QuickSight" src="/images/7/delete_cf_dataset.png?width=90pc"></p>
+<ol start="4">
+<li>You can also delete your QuickSight account if not using it.</li>
+</ol>
+<ul>
+<li>In the <strong>QuickSight</strong> interface, click <strong>Manage QuickSight</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/6/6.2/manage_quicksight.png?width=90pc"></p>
+<ul>
+<li>Under <strong>Account settings</strong>, click <strong>Manage</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_qs_acc.png?width=90pc"></p>
+<ul>
+<li>Proceed to delete the account</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_acc_form.png?width=90pc"></p>
+<ul>
+<li>QuickSight unsubscription successful</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_success.png?width=90pc"></p>
+<hr>
+<h4 id="clean-up-resources-in-aws-glue"><strong>Clean up resources in AWS Glue</strong>:</h4>
+<p>Access <strong>AWS Glue</strong>.</p>
+<ol>
+<li><strong>Delete Tables</strong></li>
+</ol>
+<ul>
+<li>Select <strong>Tables</strong>.</li>
+<li>Choose the tables to delete.</li>
+<li>Click <strong>Delete</strong> to confirm table deletion.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_tables.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_table.png?width=90pc"></p>
+<ol start="2">
+<li><strong>Delete Interactive Sessions</strong></li>
+</ol>
+<ul>
+<li>Select <strong>Interactive Sessions</strong>.</li>
+<li>Choose the sessions to delete.</li>
+<li>Click <strong>Delete</strong> to confirm session deletion.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_session.png?width=90pc"></p>
+<ol start="3">
+<li><strong>Delete Crawlers</strong></li>
+</ol>
+<ul>
+<li>Select <strong>Crawler</strong>.</li>
+<li>Choose the crawlers to delete.</li>
+<li>Click <strong>Action</strong></li>
+<li>Select <strong>Delete crawler</strong> to confirm crawler deletion.</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_cwl.png?width=90pc"></p>
+<hr>
+<h4 id="clean-up-resources-in-cloudformation"><strong>Clean up resources in CloudFormation</strong>:</h4>
+<ul>
+<li>Go to the <strong>CloudFormation</strong> interface.</li>
+<li>Select <strong>Stack</strong></li>
+<li>Choose the <strong>stack name</strong> you want to delete.</li>
+<li>Click <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_cloudform.png?width=90pc"></p>
+<ul>
+<li>If the stack deletion <strong>fails</strong>
+<ul>
+<li>Click <strong>Retry delete</strong></li>
+<li>Click <strong>Force delete this entire stack</strong></li>
+</ul>
+</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/force_delete_stack.png?width=90pc"></p>
+<hr>
+<h4 id="clean-up-resources-in-kinesis"><strong>Clean up resources in Kinesis</strong>:</h4>
+<ul>
+<li>Go to <strong>Amazon Data Firehose</strong></li>
+<li>Select the <strong>Firehose stream</strong> to delete.</li>
+<li>Click <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_firehose.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_firehose.png?width=90pc"></p>
+<hr>
+<h4 id="clean-up-resources-in-cloudwatch"><strong>Clean up resources in CloudWatch</strong>:</h4>
+<ul>
+<li>Go to the <strong>CloudWatch</strong> interface.</li>
+<li>Select <strong>Log groups</strong></li>
+<li>Select all <strong>Log groups</strong></li>
+<li>Click <strong>Action</strong></li>
+<li>Select <strong>Delete log group(s)</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_logs.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_logs.png?width=90pc"></p>
+<hr>
+<h4 id="clean-up-resources-in-s3"><strong>Clean up resources in S3</strong>:</h4>
+<ul>
+<li>
+<p>Delete all buckets related to the lab</p>
+</li>
+<li>
+<p>Select <strong>bucket</strong></p>
+</li>
+<li>
+<p>Click <strong>Empty bucket</strong></p>
+</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/empty__bucket.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_empty_s3.png?width=90pc"></p>
+<ul>
+<li>Select the emptied bucket</li>
+<li>Click <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_s3_bucket.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_bucket.png?width=90pc"></p>
+
+<div class="notices note" ><p>Perform the same action for the remaining buckets</p>
+</div>
+
+<hr>
+<h4 id="clean-up-resources-in-iam"><strong>Clean up resources in IAM</strong>:</h4>
+<p>Go to the IAM interface</p>
+<p><strong>1. Delete Policy</strong></p>
+<ul>
+<li>Select <strong>Policies</strong></li>
+<li>Choose the <strong>policy</strong> related to the lab</li>
+<li>Click <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_policy.png?width=90pc">
+<img alt="QuickSight" src="/images/7/cf_delete_policy.png?width=90pc"></p>
+<ul>
+<li>Policy deleted successfully</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_policy_success.png?width=90pc"></p>
+<p><strong>2. Delete Role</strong></p>
+<ul>
+<li>Select <strong>Roles</strong></li>
+<li>Choose the <strong>role</strong> related to the lab</li>
+<li>Click <strong>Delete</strong></li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_role.png?width=90pc"></p>
+<ul>
+<li>Role deleted successfully</li>
+</ul>
+<p><img alt="QuickSight" src="/images/7/delete_role_success.png?width=90pc"></p>
 
 
 
@@ -512,11 +813,76 @@
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
 
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
                     
                         
             
@@ -578,6 +944,125 @@
                     
                     
 
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -608,10 +1093,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/6-analysis-visualize/" title="Khởi tạo Auto Scaling Group"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/6-analysis-visualize/6.2-quicksight/" title="Visualize with QuickSight"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/1-introduce/" title="Các bước chuẩn bị" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/1-introduce/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -621,19 +1106,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1731309232"></script>
-    <script src="/js/perfect-scrollbar.min.js?1731309232"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1731309232"></script>
-    <script src="/js/jquery.sticky.js?1731309232"></script>
-    <script src="/js/featherlight.min.js?1731309232"></script>
-    <script src="/js/highlight.pack.js?1731309232"></script>
+    <script src="/js/clipboard.min.js?1734557068"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734557068"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734557068"></script>
+    <script src="/js/jquery.sticky.js?1734557068"></script>
+    <script src="/js/featherlight.min.js?1734557068"></script>
+    <script src="/js/highlight.pack.js?1734557068"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1731309232"></script>
-    <script src="/js/learn.js?1731309232"></script>
-    <script src="/js/hugo-learn.js?1731309232"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734557068"></script>
+    <script src="/js/learn.js?1734557068"></script>
+    <script src="/js/hugo-learn.js?1734557068"></script>
 
-    <link href="/mermaid/mermaid.css?1731309232" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1731309232"></script>
+    <link href="/mermaid/mermaid.css?1734557068" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734557068"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
